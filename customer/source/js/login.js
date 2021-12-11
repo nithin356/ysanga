@@ -31,6 +31,7 @@ function login() {
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
+          console.log(jsonData.otp);
           $(".otpScreen").slideDown().show();
           $(".lgnBtn").slideDown().hide();
           $(".phoneField").slideDown().hide();
@@ -66,7 +67,7 @@ function verify() {
   otp = otp.replaceAll(",", "");
   $.ajax({
     type: "POST",
-    url: API_URL + "customer/verifyotp",
+    url: API_URL + "customer/verifyotp/",
     data: {
       phone: pnum,
       otp: otp,
@@ -74,9 +75,13 @@ function verify() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
-        alert("otp");
+        location.reload();
       } else {
-        alert("ostp");
+        $(".otp").addClass("bellno");
+        setTimeout(() => {
+          $(".otp").removeClass("bellno");
+          $(".otp").val("");
+        }, 1000);
       }
     },
   });

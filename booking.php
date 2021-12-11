@@ -32,41 +32,30 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m4 l2">
-                                        <select>
-                                            <option value="" disabled selected>Select Room</option>
-                                            <option value="1">Master Suite</option>
-                                            <option value="2">Mini-Suite</option>
-                                            <option value="3">Ultra Deluxe</option>
-                                            <option value="4">Luxury</option>
-                                            <option value="5">Premium </option>
-                                            <option value="6">Normal</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <select>
-                                            <option value="" disabled selected>No of adults</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="1">4</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <select>
-                                            <option value="" disabled selected>No of childrens</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="1">4</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
                                         <input type="text" id="from" name="from">
                                         <label for="from">Arrival Date</label>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="to" name="to">
-                                        <label for="to">Departure Date</label>
+                                        <select>
+                                            <option value="" disabled selected>Time Slot</option>
+                                            <option value="1">9:00 AM - 2:30 PM</option>
+                                            <option value="2">3:00 PM - 9:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s12 m4 l2">
+                                        <select>
+                                            <option value="" disabled selected hidden>Type of Events</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="1">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s12 m4 l2">
+                                        <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">
+                                    </div>
+                                    <div class="input-field col s12 m4 l2">
+                                        <input type="text" id="otherReq" name="otherReq" placeholder="Other Requirements">
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <input type="submit" value="submit" class="form-btn">

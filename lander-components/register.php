@@ -24,12 +24,11 @@
                     </div>
                     <center>
                         <div class="form-inp otpScreen">
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1>
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1>
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1>
+                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1> <b>-</b>
+                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1> <b>-</b>
+                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1> <b>-</b>
                             <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)' maxlength=1>
                         </div>
-                        <div class="otpScreen">Time left : <span id="timer text-success">1</span></div>
                         <div>
                             <div class="input-field s4 lgnBtn">
                                 <input type="button" id="login" value="Login" class="waves-effect waves-light log-in-btn">
@@ -38,6 +37,7 @@
                                 <input type="button" id="verify" value="Verify" class="waves-effect waves-light log-in-btn">
                             </div>
                         </div>
+                        <div class="otpScreen">Time left : <span id="timer text-success">1</span></div>
                     </center>
                 </form>
             </div>

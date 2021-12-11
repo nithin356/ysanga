@@ -2,7 +2,7 @@
     <div class="mm">
         <div class="mm-inn">
             <div class="mm-logo">
-                <a href="index.html"><img src="images/logo.png" alt="">
+                <a href="index.html"><img src="img/siteimages/logo.png" height="40" width="40" alt="">
                 </a>
             </div>
             <div class="mm-icon"><span><i class="fa fa-bars show-menu" aria-hidden="true"></i></span>

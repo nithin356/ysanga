@@ -199,7 +199,7 @@
         </div>
         <div class="row">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" />
+                <a href="index.php"><img src="img/siteimages/logo.png" height="40" width="40" alt="" />
                 </a>
             </div>
             <div class="menu-bar">

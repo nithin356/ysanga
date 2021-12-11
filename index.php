@@ -17,7 +17,7 @@
 		<div>
 			<div class="slider fullscreen">
 				<ul class="slides">
-					<li> <img src="images/slider/1.jpg" alt="">
+					<li> <img src="img/siteimages/banner.png" alt="">
 						<!-- random image -->
 						<div class="caption center-align slid-cap">
 							<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -76,7 +76,7 @@
 									<div class="hom-hot-av-tic"> Available Tickets: 42 </div> <img src="images/room/3.jpg" alt="">
 								</div>
 								<div class="to-ho-hotel-con-23">
-									<div class="to-ho-hotel-con-2"> <a href="all-rooms.html">
+									<div class="to-ho-hotel-con-2"> <a href="booking.php">
 											<h4>Master Room</h4>
 										</a> </div>
 									<div class="to-ho-hotel-con-3">

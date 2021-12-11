@@ -15,6 +15,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="customer/source/css/custom.css" rel="stylesheet">
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>

@@ -13,15 +13,15 @@
                 <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
                 <h4>Login</h4>
-                <p>Verify your phone number to proceed!</p>
+                <div class="alert alert-danger alert-dismissable loginErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="loginError"></span> </div>
                 <form class="s12">
-                    <div>
+                    <div class="phoneField">
                         <div class="input-field s12">
                             <input type="text" maxlength="10" id="phone" data-ng-model="phone" class="validate">
                             <label>Phone Number</label>
                         </div>
+                        <br />
                     </div>
-                    <br />
                     <center>
                         <div class="form-inp otpScreen">
                             <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1>
@@ -31,8 +31,11 @@
                         </div>
                         <div class="otpScreen">Time left : <span id="timer text-success">1</span></div>
                         <div>
-                            <div class="input-field s4">
+                            <div class="input-field s4 lgnBtn">
                                 <input type="button" id="login" value="Login" class="waves-effect waves-light log-in-btn">
+                            </div>
+                            <div class="input-field s4 vryBtn">
+                                <input type="button" id="verify" value="Verify" class="waves-effect waves-light log-in-btn">
                             </div>
                         </div>
                     </center>

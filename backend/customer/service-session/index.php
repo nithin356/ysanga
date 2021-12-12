@@ -2,7 +2,7 @@
 include_once '../../access/connect.php';
 session_start();
 $sid = $_POST['sid'];
-$sessionservice = mysqli_query($connection, "SELECT * FROM ys_service WHERE yn_sid='$sid'");
+$sessionservice = mysqli_query($connection, "SELECT * FROM ys_service WHERE yn_sid='$sid' AND yn_status='1'");
 $count = mysqli_num_rows($sessionservice);
 if ($count > 0) {
     $row = mysqli_fetch_assoc($sessionservice);

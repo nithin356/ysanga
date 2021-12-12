@@ -5,6 +5,19 @@ $(document).ready(function () {
   });
   //Services
   $(".services").click(function () {
-    alert($(this).attr("data-service"));
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/service-session/",
+      data: {
+        sid: $(this).attr("data-service"),
+      },
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          window.href.location = "booking.php";
+        } else {
+        }
+      },
+    });
   });
 });

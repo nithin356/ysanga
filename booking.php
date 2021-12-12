@@ -428,6 +428,7 @@
     <!--ALL SCRIPT FILES-->
     <?php include 'lander-components/jslink.php' ?>
     <!--ALL SCRIPT FILES-->
+    <script src="customer/source/js/booking.js"></script>
 
 </body>
 

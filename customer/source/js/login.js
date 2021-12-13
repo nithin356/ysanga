@@ -3,6 +3,7 @@ $(document).ready(function () {
   $(".otpScreen").hide();
   $(".vryBtn").hide();
   $(".loginErrordiv").hide();
+  $(".RegErrordiv").slideDown().hide();
 
   //Login Click
   $("#login").on("click", function () {
@@ -13,6 +14,12 @@ $(document).ready(function () {
   $("#verify").on("click", function () {
     verify();
   });
+
+  //Register
+  $("#Rsubmit").on("click", function () {
+    register();
+  });
+
 });
 
 //Login
@@ -50,11 +57,43 @@ function login() {
 }
 
 //Register
+var Remail="";
 function register() {
   var Rusername = $("#Rusername").val();
-  var Remail = $("#Remail").val();
-  var Rpassword = $("#Rpswd").val();
-  var RCpassword = $("#Rcpswd").val();
+  var Rphno = $("#Rphonenumber").val();
+  Remail = $("#Remail").val();
+  var Lphone = Rphno.length;
+if(Rusername=""||Rphno==""||Remail=="")
+{
+  $(".RegError").html("Please fill all the fields!");
+
+}else if(Lphone!=10){
+  $(".RegError").html("Invalid Phone Number!");
+
+}else{
+  emailVal();
+  alert ("Success");
+ $.ajax({
+      type: "POST",
+      url: API_URL + "",
+      data: {
+        Rusername: Rusername,
+        Rphone: Rphno,
+        Remail : Remail,
+      },
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+        } else {
+         
+        }
+      },
+    });
+}
+
+  // var Rpassword = $("#Rpswd").val();
+  // var RCpassword = $("#Rcpswd").val();
+
 }
 
 //Verify
@@ -86,6 +125,21 @@ function verify() {
     },
   });
 }
+
+//Email Validation
+function emailVal() {
+  var pattern =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // var email = $(".userem").val();
+  if (Remail.match(pattern)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//Phone Number VAlidation
+
 
 //OTP registration
 let digitValidate = function (ele) {

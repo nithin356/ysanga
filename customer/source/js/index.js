@@ -5,17 +5,20 @@ $(document).ready(function () {
   });
   //Services
   $(".services").click(function () {
+    var sid = $(this).attr("data-service");
     $.ajax({
       type: "POST",
       url: API_URL + "customer/service-session/",
       data: {
-        sid: $(this).attr("data-service"),
+        sid: sid,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
-          window.href.location = "booking.php";
+          window.location.href = "booking.php";
         } else {
+          // alert(sid);
+          // alert(jsonData.message);
         }
       },
     });

@@ -93,7 +93,7 @@ function validateLogin() {
         } else if (jsonData.status === "emailError") {
           $(".emailError").html(jsonData.message);
         } else if (jsonData.status === "success") {
-          window.location = "index";
+          window.location = "index.php";
         }
       },
     });

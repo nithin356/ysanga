@@ -1,5 +1,5 @@
 <?php
-include "../../access/connect.php";
+include "../../backend/access/connect.php";
 if (isset($_POST['resetemail'])) {
     $remail = $_POST['resetemail'];
     $query = "SELECT * FROM `ec_adminsignup` WHERE ec_ad_email='$remail'";

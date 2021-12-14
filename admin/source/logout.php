@@ -1,7 +1,7 @@
 <?php
 session_start();
-unset($_SESSION['ec_ad_id']);
+unset($_SESSION['yn_aid']);
 session_destroy();
-header("Location: ../login");
+header("Location: ../login.php");
 exit;
 ?>

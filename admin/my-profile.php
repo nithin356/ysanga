@@ -1,6 +1,3 @@
-<?php
-include '../access/adminaccesscontrol.php';
-?>
 <!doctype html>
 <html class="fixed">
 

@@ -36,7 +36,11 @@
 							<input name="phone" type="text" placeholder="Enter your phone" class="form-control input-lg in_phone " />
 							<p class="mnmsg text-danger phoneerror"></p>
 						</div>
-
+						<div class="form-group mb-lg">
+							<label>Company</label>
+							<input name="company" type="text" placeholder="Enter your Company" class="form-control input-lg in_com" />
+							<p class="mnmsg text-danger comerr"></p>
+						</div>
 						<div class="form-group mb-none">
 							<div class="row">
 								<div class="col-sm-6 mb-lg">

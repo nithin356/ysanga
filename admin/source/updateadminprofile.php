@@ -1,5 +1,5 @@
 <?php
-include "../../access/adminaccesscontrol.php";
+include "../../backend/access/connect.php";
 $data = 0;
 $id = $_SESSION['ec_ad_id'];
 $name = $_POST['name'];

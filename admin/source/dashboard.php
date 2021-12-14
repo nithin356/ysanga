@@ -1,5 +1,5 @@
 <?php
-include "../../access/adminaccesscontrol.php";
+include "../../backend/access/connect.php";
 $product = mysqli_query($connection, "SELECT * FROM ec_product");
 $pcount = mysqli_num_rows($product);
 $payment = mysqli_query($connection, "SELECT * FROM ec_payment_track");

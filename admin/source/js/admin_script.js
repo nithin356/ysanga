@@ -97,12 +97,14 @@ function validate() {
   var email = $(".in_email").val();
   var pass = $(".in_pass").val();
   var cpass = $(".in_cpass").val();
+  var company = $(".in_com").val();
   if (
     name === "" ||
     phone === "" ||
     email === "" ||
     pass === "" ||
-    cpass === ""
+    cpass === "" ||
+    company === ""
   ) {
     swal("Warning!", "Please fill all the fields!", "warning");
   } else if (!valName()) {
@@ -128,6 +130,7 @@ function validate() {
         phone: phone,
         email: email,
         pass: pass,
+        company: company,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
@@ -136,7 +139,7 @@ function validate() {
         } else if (jsonData.status === "errorphone") {
           $(".phoneerror").html(jsonData.message);
         } else if (jsonData.status === "success") {
-          window.location = "login";
+          window.location = "login.php";
         }
       },
     });

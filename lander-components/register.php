@@ -64,21 +64,27 @@
                 <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
                 <h4>Create an Account</h4>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                <div class="alert alert-danger alert-dismissable RegErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="RegError"></span> </div>
                 <form class="s12">
                     <div>
                         <div class="input-field s12">
-                            <input type="text" data-ng-model="name1" class="validate">
+                            <input type="text" id="Rusername" data-ng-model="name1" class="validate">
                             <label>User name</label>
                         </div>
                     </div>
                     <div>
                         <div class="input-field s12">
-                            <input type="email" class="validate">
-                            <label>Email id</label>
+                            <input type="number" id="Rphonenumber" class="validate">
+                            <label>Phone Number</label>
                         </div>
                     </div>
                     <div>
+                        <div class="input-field s12">
+                            <input type="email" id="Remail" class="validate">
+                            <label>Email id</label>
+                        </div>
+                    </div>
+                    <!-- <div>
                         <div class="input-field s12">
                             <input type="password" class="validate">
                             <label>Password</label>
@@ -89,10 +95,10 @@
                             <input type="password" class="validate">
                             <label>Confirm password</label>
                         </div>
-                    </div>
+                    </div> -->
                     <div>
                         <div class="input-field s4">
-                            <input type="submit" value="Register" class="waves-effect waves-light log-in-btn">
+                            <input type="submit" id="Rsubmit" value="Register" class="waves-effect waves-light log-in-btn">
                         </div>
                     </div>
                     <div>

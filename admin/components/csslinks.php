@@ -1,10 +1,10 @@
 <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Qavenue</title>
-<meta name="keywords" content="Qavenue" />
-<meta name="description" content="Qavenue">
-<meta name="author" content="Qavenue">
+<title>Yuvakasanga</title>
+<meta name="keywords" content="Yuvakasanga" />
+<meta name="description" content="Yuvakasanga">
+<meta name="author" content="Yuvakasanga">
 <link rel="shortcut icon" type="image/x-icon" href="../lander-assets/images/logo/favi.png">
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -40,6 +40,8 @@
 <link rel="stylesheet" type="text/css" href="../admin-assets/stylesheets/jquery.dataTables.css">
 <!-- Head Libs -->
 <script src="../admin-assets/vendor/modernizr/modernizr.js"></script>
+<link rel="stylesheet" href="../admin-assets/stylesheets/file-upload.css">
+
 <style>
 .toggle label {
     border-left-color: #fff;

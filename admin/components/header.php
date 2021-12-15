@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="logo-container">
 		<a href="../" class="logo">
-			<img src="../admin-assets/images/q-logo.svg" height="35" width="200" alt="JSOFT Admin" />
+			<img src="../admin-assets/images/cdek.png" height="40" width="50" alt="JSOFT Admin" />
 		</a>
 		<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 			<i class="fa fa-bars" aria-label="Toggle sidebar"></i>

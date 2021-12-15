@@ -1,12 +1,14 @@
 <?php
 include_once '../../access/connect.php';
 session_start();
-$sid =  $_SESSION['yn_sid'];
-$sessionservice = mysqli_query($connection, "SELECT * FROM ys_service WHERE yn_sid='$sid' AND yn_status='1'");
+$sid =  4;
+$sessionservice = mysqli_query($connection, "SELECT * FROM ys_service JOIN ys_service_img on ys_service.yn_sid=ys_service_img.yn_s_id WHERE yn_sid='$sid' AND yn_status='1' AND yn_s_cover='1'");
+
 $count = mysqli_num_rows($sessionservice);
 if ($count > 0) {
-    $array = mysqli_fetch_array($sessionservice);
-    $data = array("status" => "OK", "message" => "success", $array);
+    $rowservice = mysqli_fetch_assoc($sessionservice);
+    $service = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "img" => $rowservice['yn_s_images']);
+    $data = array("status" => "OK", "message" => "success", "service" => $service);
 } else {
     $data = array("status" => "KO", "message" => "There was an error, Please try again!");
 }

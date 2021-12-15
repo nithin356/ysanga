@@ -26,8 +26,13 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a href="addWoSellers">
+                                <a href="add-auditorium.php">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Add Auditorium
+                                </a>
+                            </li>
+                            <li>
+                                <a href="view-auditorium.php">
+                                    <i class="fa fa-eye" aria-hidden="true"></i> View Auditorium
                                 </a>
                             </li>
                         </ul>

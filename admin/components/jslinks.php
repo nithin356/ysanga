@@ -33,6 +33,7 @@
 <script src="../admin-assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
 <script src="../admin-assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
 <script src="../admin-assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+<script src="../admin-assets/javascripts/file-upload.js"></script>
 
 
 <!-- Theme Base, Components and Settings -->

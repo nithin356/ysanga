@@ -11,7 +11,7 @@
 	<section class="body-sign">
 		<div class="center-sign">
 			<a href="/" class="logo pull-left">
-				<img src="../admin-assets/images/q-logo.svg" height="54" alt="Porto Admin" />
+				<img src="../admin-assets/images/cdek.png" height="54" alt="Porto Admin" />
 			</a>
 
 			<div class="panel panel-sign">

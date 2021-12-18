@@ -15,7 +15,7 @@ $(document).ready(function () {
         if (jsonData.status === "error") {
           alert("show error message");
         } else if (jsonData.status === "success") {
-          alert("show success message and reload");
+          location.reload();
         }
       },
     });

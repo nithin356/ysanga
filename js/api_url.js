@@ -1,4 +1,4 @@
-const API_URL = "";
+var API_URL = "";
 $(document).ready(function () {
   if (window.location.href.indexOf("yuvaksangabackend") > -1) {
     API_URL =

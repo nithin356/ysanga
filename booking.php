@@ -2,6 +2,11 @@
 <html lang="en">
 <!-- Head CSS Files -->
 <?php include 'lander-components/head.php' ?>
+<style>
+    .owl-nav {
+        display: none;
+    }
+</style>
 <!-- Head CSS Files -->
 
 <body data-ng-app="">
@@ -14,9 +19,12 @@
         <!--TOP HEADER SECTION-->
 
         <!-- YOUR CODE HERE -->
-        <div class="hp-view">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1497026654798!6m8!1m7!1sIId_fF3cldIAAAQ7LuSTng!2m2!1d5.553927350344909!2d-0.2005543181775732!3f189.99!4f0!5f0.7820865974627469" allowfullscreen=""></iframe>
-        </div>
+        <!-- <div class="hp-view">
+          <iframe src="https://www.w3schools.com/bootstrap/la.jpg" allowfullscreen=""></iframe>
+        </div> -->
+            <div id="content">
+
+            </div>
         <!--END HOTEL ROOMS-->
         <!--CHECK AVAILABILITY FORM-->
         <div class="check-available">
@@ -338,6 +346,8 @@
     <?php include 'lander-components/jslink.php' ?>
     <!--ALL SCRIPT FILES-->
     <script src="customer/source/js/booking.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
 </body>
 

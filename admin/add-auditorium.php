@@ -66,6 +66,36 @@
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-sm-2">Capacity <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="capac" class="form-control vn_cap" placeholder="Enter the room capacity"></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2">Phone <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="phone" class="form-control vn_phone" placeholder="Enter the phone number"></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2">Price <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="price" class="form-control vn_price" placeholder="Enter the price"></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-sm-2">Cover Image <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <div class="custom-file-container" data-upload-id="myFirstImage">
@@ -82,7 +112,7 @@
                                         <label class="col-sm-2">Upload Image <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <div class="custom-file-container" data-upload-id="mySecondImage">
-                                                <label>Upload Mutiple Images <span class="text-danger" style="font-size: 12px;">(Images views better in 1400*700, jpg or png is supported)</span>  </label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear all</a>
+                                                <label>Upload Mutiple Images <span class="text-danger" style="font-size: 12px;">(Images views better in 940*650, jpg or png is supported)</span>  </label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear all</a>
                                                 <label class="custom-file-container__custom-file">
                                                     <input type="file" class="custom-file-container__custom-file__custom-file-input" multiple name="multi-image[]" required>
                                                     <span class="custom-file-container__custom-file__custom-file-control"></span>

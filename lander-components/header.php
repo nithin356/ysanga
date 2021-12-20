@@ -39,7 +39,7 @@
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>
                     </li>
                     <li>
-                        <a href="#!" data-toggle="modal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
+                        <a href="#!" id="loginModal" data-toggle="modal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
                     </li>
                     <li>
                         <a href="#!" data-toggle="modal" data-target="#modal3"><img src="images/icon/13.png" alt=""> Forgot Password</a>

@@ -7,3 +7,4 @@
 <script src="js/custom.js"></script>
 <script src="js/api_url.js"></script>
 <script src="customer/source/js/login.js"></script>
+<script src="js/getsession.js"></script>

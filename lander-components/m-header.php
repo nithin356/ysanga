@@ -30,7 +30,7 @@
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>
                     </li>
                     <li class="side-bar-close">
-                        <a href="#!" data-toggle="modal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
+                        <a href="#!" data-toggle="modal" id="loginModal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
                     </li>
                 </ul>
             </div>

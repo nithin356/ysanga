@@ -1,6 +1,5 @@
-<div class="">
+<!-- <div class="" style="display: none;">
     <div>
-        <!--TOP SECTION-->
         <div class="hom-footer-section">
             <div class="container">
                 <div class="row">
@@ -18,7 +17,7 @@
                         <h5>Phone: (+404) 142 21 23 78</h5>
                     </div>
                     <div class="foot-com foot-3">
-                        <!--<a class="waves-effect waves-light" href="#">online room booking</a>--><a class="waves-effect waves-light" href="booking.html">room reservation</a>
+                        <a class="waves-effect waves-light" href="#">online room booking</a><a class="waves-effect waves-light" href="booking.html">room reservation</a>
                     </div>
                     <div class="foot-com foot-4">
                         <a href="#"><img src="images/card.png" alt="" />
@@ -28,7 +27,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <footer class="site-footer clearfix">
     <div class="sidebar-container">
         <div class="sidebar-inner">
@@ -134,8 +133,8 @@
     </div>
     <!-- #quaternary -->
 </footer>
-<section class="copy">
+<!-- <section class="copy">
     <div class="container">
         <p>copyrights © 2017 RN53Themes.net. &nbsp;&nbsp;All rights reserved. </p>
     </div>
-</section>
+</section> -->

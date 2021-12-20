@@ -22,9 +22,9 @@
         <!-- <div class="hp-view">
           <iframe src="https://www.w3schools.com/bootstrap/la.jpg" allowfullscreen=""></iframe>
         </div> -->
-            <div id="content">
+        <div id="content">
 
-            </div>
+        </div>
         <!--END HOTEL ROOMS-->
         <!--CHECK AVAILABILITY FORM-->
         <div class="check-available">
@@ -83,12 +83,11 @@
                         <div class="row">
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
-                                    <h4><span>Master Suite</span> Room</h4>
-                                    <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
+                                    <h4 class="serviceName">Loading...</h4>
+                                    <p class="serviceSdesc">Loading...</p>
                                 </div>
                                 <div class="hp-amini detai-2p">
-                                    <p>Maecenas erat lorem, vulputate sed ex at, vehicula dignissim risus. Nullam non nisi congue elit cursus tempus. Nunc vel ante nec libero semper maximus. Donec cursus sed massa eget commodo. Phasellus semper neque id iaculis malesuada. Nulla efficitur dui vitae orci blandit tempor. Mauris sed venenatis nibh, sed sodales risus.</p>
-                                    <p>Nam sit amet tortor in elit fermentum consectetur et sit amet eros. Sed varius velit at eros tempor sodales. Fusce at enim at lectus sollicitudin pharetra at in risus. Donec ut semper turpis. Maecenas lobortis ante ut eros scelerisque, at semper augue ullamcorper.</p>
+                                    <p class="serviceLdesc">Loading...</p>
                                 </div>
                             </div>
                             <div class="hp-section">
@@ -120,31 +119,8 @@
                                 </div>
                                 <div class="">
                                     <div class="h-gal">
-                                        <ul>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/1.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/2.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/3.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/4.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/5.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/6.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/1.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/2.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/3.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/4.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/5.jpg" alt="">
-                                            </li>
-                                            <li><img class="materialboxed" data-caption="Hotel Captions" src="images/room/6.jpg" alt="">
-                                            </li>
+                                        <ul class="photoservice">
+                                        
                                         </ul>
                                     </div>
                                 </div>
@@ -299,7 +275,7 @@
                         <!--=========================================-->
                         <div class="hp-call hp-right-com hp-right-com-block">
                             <div class="hp-call-in"> <img src="images/icon/dbc4.png" alt="">
-                                <h3><span>Check Availability. Call us!</span> +01 4214 4214</h3> <small>We are available 24/7 Monday to Sunday</small> <a href="#">Call Now</a>
+                                <h3><span>Check Availability. Call us!</span><span class="servicePhone">Loading</span></h3> <small>We are available 24/7 Monday to Sunday</small> <a class="hrefCall">Call Now</a>
                             </div>
                         </div>
                         <!--=========================================-->

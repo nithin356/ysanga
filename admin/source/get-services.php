@@ -14,6 +14,6 @@ if ($count > 0) {
 
     $data = array("status" => "OK", "message" => "success", "service" => $service);
 } else {
-    $data = array("status" => "KO", "message" => "There was an error, Please try again!".mysqli_error($connection));
+    $data = array("status" => "KO", "message" => "There was an error, Please try again!".$id);
 }
 echo json_encode($data);

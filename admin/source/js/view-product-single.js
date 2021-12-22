@@ -30,6 +30,8 @@ $(document).ready(function () {
         if (jsonData.status === "success") {
           swal("Success!", "" + jsonData.message, "success");
           load_product();
+        }else{
+          alert(jsonData.message);
         }
       },
     });

@@ -17,7 +17,7 @@ if (isset($_POST) & !empty($_POST)) {
         $image_id = $_POST['image-id'];
 
         if (!empty($cover_img) && isset($cover_img)) {
-            $targetdir = "../uploads/";
+            $targetdir = "../../uploads/";
 
             $upload_img = imageUpload($targetdir, $cover_img);
             if ($upload_img['status'] == 'success') {

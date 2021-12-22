@@ -154,7 +154,7 @@ if ($no_product) { ?>
                         <label class="col-sm-2">Cover Image <span class="required">*</span></label>
                         <div class="col-sm-10 input-group">
                             <div class="custom-file-container" data-upload-id="myFirstImages">
-                                <label>Upload Cover Image <span class="text-danger" style="font-size: 12px;">(Images views better in 540*600)</span></label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear</a>
+                                <label>Upload Cover Image <span class="text-danger" style="font-size: 12px;">(Images views better in 1400*700)</span></label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear</a>
                                 <label class="custom-file-container__custom-file">
 
                                     <input type="hidden" name="type" value="cover">
@@ -199,7 +199,7 @@ if ($no_product) { ?>
                         <label class="col-sm-2">Upload Image <span class="required">*</span></label>
                         <div class="col-sm-10 input-group">
                             <div class="custom-file-container" data-upload-id="mySecondImages">
-                                <label>Upload Mutiple Images <span class="text-danger" style="font-size: 12px;">(Images views better in 540*600, jpg or png is supported)</span></label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear all</a>
+                                <label>Upload Mutiple Images <span class="text-danger" style="font-size: 12px;">(Images views better in 940*650, jpg or png is supported)</span></label><a href="javascript:void(0)" class="custom-file-container__image-clear text-danger pull-right" title="Clear Image">Clear all</a>
                                 <label class="custom-file-container__custom-file">
 
                                     <input type="hidden" name="type" value="multi">

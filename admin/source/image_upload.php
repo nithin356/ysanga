@@ -20,7 +20,7 @@ function imageUpload($target_dir, $img_upload)
     }
     //check file size
     else if ($img_files > 10000000000000) {
-        $msg .= "Image size is more then 10Mb, please upload smaller size image  ";
+        $msg .= "Image size is more then 10Mb, please upload smaller size image $img_files";
     }
 
     //allowing certain file formats
@@ -72,7 +72,7 @@ function multiImageUpload($target_dir, $img_upload)
         }
         //check file size
         else if ($img_files[$i] > 10000000000000) {
-            $msg .= "Image size is more then 10Mb, please upload smaller size image  ";
+            $msg .= "Image size is more then 10Mb, please upload smaller size image  $img_files";
         }
 
         //allowing certain file formats

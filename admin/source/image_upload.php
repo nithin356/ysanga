@@ -19,7 +19,7 @@ function imageUpload($target_dir, $img_upload)
         $msg .= "file already exists, ";
     }
     //check file size
-    else if ($img_files > 10000000) {
+    else if ($img_files > 10000000000000) {
         $msg .= "Image size is more then 10Mb, please upload smaller size image  ";
     }
 
@@ -71,7 +71,7 @@ function multiImageUpload($target_dir, $img_upload)
             $msg .= "file already exists, ";
         }
         //check file size
-        else if ($img_files[$i] > 10000000) {
+        else if ($img_files[$i] > 10000000000000) {
             $msg .= "Image size is more then 10Mb, please upload smaller size image  ";
         }
 

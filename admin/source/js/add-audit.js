@@ -1,6 +1,7 @@
 var firstUploads = new FileUploadWithPreview("myFirstImage");
 var secondUploads = new FileUploadWithPreview("mySecondImage");
 $(document).ready(function () {
+  $(".bread-crumbs").html("Add Auditorium");
   $("#product-form").submit(function (e) {
     e.preventDefault();
     $.ajax({

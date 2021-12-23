@@ -45,6 +45,7 @@
             $("#view-product-single").load("./source/view-audit.php");
         }
     </script>
+    <script src="source/js/admin_profile.js"></script>
 </body>
 
 </html>

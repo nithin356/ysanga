@@ -1,6 +1,8 @@
+<?php
+include '../backend/access/adminaccesscontrol.php';
+?>
 <!-- Basic -->
 <meta charset="UTF-8">
-
 <title>Yuvakasanga</title>
 <meta name="keywords" content="Yuvakasanga" />
 <meta name="description" content="Yuvakasanga">

@@ -142,6 +142,8 @@
     <!--Script.js-->
     <?php include "components/jslinks.php"; ?>
     <script src="source/js/add-audit.js"></script>
+    <script src="source/js/admin_profile.js"></script>
+
 </body>
 
 </html>

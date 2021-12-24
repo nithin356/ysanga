@@ -1,3 +1,4 @@
+var featured = 0;
 $(document).ready(function () {
   //Load Events
   loadService();
@@ -32,7 +33,9 @@ function loadService() {
         }
         for (var i = 0; i < jsonData.service.length; i++) {
           $(".getService").append(
-            '<div class="' +
+            '<div onclick="indiservice(this)" data-service="' +
+              jsonData.service[i].sid +
+              '" class="' +
               classdata +
               '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic"> Seating Capacity: ' +
               jsonData.service[i].capacity +
@@ -49,6 +52,43 @@ function loadService() {
               '</span><span class="ho-hot-pri">₹ ' +
               jsonData.service[i].price +
               "</span></li></ul></div></div></div></div>"
+          );
+          var f = "";
+          if (featured != 0) {
+            f =
+              '<div class="ribbon ribbon-top-left"><span>Featured</span></div>';
+          }
+          $(".ourService").empty();
+          var array = jsonData.service[i].specs;
+          var str_array = array.split(",");
+          var specs = "";
+          for (var w = 0; w < str_array.length; w++) {
+            specs += "<li>" + str_array[w] + "</li>";
+          }
+          var add = "";
+          if ($(window).width() < 960) {
+            add = '';
+          } else {
+            add = 'height="120px"';
+          }
+          $(".ourService").html(
+            '<div class="room">' +
+              f +
+              '<div class="r1 r-com"><img '+add+' src="uploads/' +
+              jsonData.service[i].img +
+              '" alt="" /></div><div class="r2 r-com"><h4>' +
+              jsonData.service[i].sname +
+              '</h4><div class="r2-ratt"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><span>Excellent 4.5 / 5</span> </div><ul><li>Capacity: ' +
+              jsonData.service[i].capacity +
+              '</li><li></li><li></li></ul></div><div class="r3 r-com"><ul>' +
+              specs +
+              '</ul></div><div class="r4 r-com"><p>Price</p><p><span class="room-price-1">₹ ' +
+              jsonData.service[i].price +
+              '</span> <span class="room-price">₹: ' +
+              jsonData.service[i].price +
+              '</span></p><p>Non Refundable</p></div><div class="r5 r-com"><div class="r2-available" style="display:none;">Available</div><center><br><a onclick="indiservice(this)" data-service="' +
+              jsonData.service[i].sid +
+              '" class="inn-room-book" style="cursor: pointer;">Book</a></center></div></div>'
           );
         }
       } else {
@@ -76,6 +116,6 @@ function indiservice(e) {
       },
     });
   } else {
-    $('#loginModal').click();
+    $("#loginModal").click();
   }
 }

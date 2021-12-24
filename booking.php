@@ -6,6 +6,48 @@
     .owl-nav {
         display: none;
     }
+
+    .rate {
+        float: left !important;
+        height: 46px !important;
+        padding: 0 10px !important;
+    }
+
+    .rate:not(:checked)>input {
+        position: absolute !important;
+        top: -9999px !important;
+    }
+
+    .rate:not(:checked)>label {
+        float: right !important;
+        width: 1em !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        font-size: 30px !important;
+        color: #ccc !important;
+    }
+
+    .rate:not(:checked)>label:before {
+        content: '★ ' !important;
+    }
+
+    .rate>input:checked~label {
+        color: #ffc700 !important;
+    }
+
+    .rate:not(:checked)>label:hover,
+    .rate:not(:checked)>label:hover~label {
+        color: #deb217 !important;
+    }
+
+    .rate>input:checked+label:hover,
+    .rate>input:checked+label:hover~label,
+    .rate>input:checked~label:hover,
+    .rate>input:checked~label:hover~label,
+    .rate>label:hover~input:checked~label {
+        color: #c59b08 !important;
+    }
 </style>
 <!-- Head CSS Files -->
 
@@ -23,7 +65,7 @@
           <iframe src="https://www.w3schools.com/bootstrap/la.jpg" allowfullscreen=""></iframe>
         </div> -->
         <div id="content">
-
+            <img src="img/siteimages/ezgif-2-6d0b072c3d3f.gif" style="width: 100%;margin-top:50px;" />
         </div>
         <!--END HOTEL ROOMS-->
         <!--CHECK AVAILABILITY FORM-->
@@ -93,45 +135,30 @@
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
                                     <h4><span>Aminitiese</span> Room</h4>
-                                    <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
                                 </div>
                                 <div class="hp-amini hp-amini-block">
-                                    <ul>
-                                        <li><img src="images/icon/a1.png" alt=""> Elevator in building</li>
-                                        <li><img src="images/icon/a2.png" alt=""> Friendly workspace</li>
-                                        <li><img src="images/icon/a3.png" alt=""> Instant Book</li>
-                                        <li><img src="images/icon/a4.png" alt=""> Wireless Internet</li>
-                                        <li><img src="images/icon/a5.png" alt=""> Free parking on premises</li>
-                                        <li><img src="images/icon/a6.png" alt=""> Free parking on street</li>
-                                        <li><img src="images/icon/a7.png" alt=""> Elevator in building</li>
-                                        <li><img src="images/icon/a8.png" alt=""> Friendly workspace</li>
-                                        <li><img src="images/icon/a9.png" alt=""> Instant Book</li>
-                                        <li><img src="images/icon/a10.png" alt=""> Wireless Internet</li>
-                                        <li><img src="images/icon/a11.png" alt=""> Free parking on premises</li>
-                                        <li><img src="images/icon/a12.png" alt=""> Free parking on street</li>
+                                    <ul class="specs">
                                     </ul>
                                 </div>
                             </div>
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
-                                    <h4><span>Photo Gallery</span> Master Suite</h4>
-                                    <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
+                                    <h4><span>Photo Gallery</span> of <span class="serviceName"></span></h4>
                                 </div>
                                 <div class="">
                                     <div class="h-gal">
                                         <ul class="photoservice">
-                                        
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
-                                    <h4><span>Ratings</span> Suite Room</h4>
-                                    <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
+                                    <h4><span>Ratings</span> <span class="serviceName"></span></h4>
                                 </div>
                                 <div class="hp-review">
-                                    <div class="hp-review-left">
+                                    <!-- <div class="hp-review-left">
                                         <div class="hp-review-left-1">
                                             <div class="hp-review-left-11">Excellent</div>
                                             <div class="hp-review-left-12">
@@ -162,111 +189,21 @@
                                                 <div class="hp-review-left-13 hp-review-left-poor"></div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="hp-review-right">
-                                        <h5>Overall Ratings</h5>
-                                        <p><span>4.5 <i class="fa fa-star" aria-hidden="true"></i></span> based on 242 reviews</p>
+                                        <p class="reviewdata"></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
                                     <h4><span>USER</span> REVIEWS</h4>
-                                    <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
                                 </div>
                                 <div class="lp-ur-all-rat lp-ur-all-rat-block">
-                                    <ul>
-                                        <li>
-                                            <div class="lr-user-wr-img"> <img src="images/users/2.png" alt=""> </div>
-                                            <div class="lr-user-wr-con lr-user-wr-con-block">
-                                                <h6>Jacob Michael <span>4.5 <i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">19th January, 2017</span>
-                                                <p>Good service... nice and clean rooms... very good spread of buffet and friendly staffs. Located in heart of city and easy to reach any places in a short distance. </p>
-                                                <ul>
-                                                    <li><a href="#!"><span>Like</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Dis-Like</span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Report</span> <i class="fa fa-flag-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Comments</span> <i class="fa fa-commenting-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Share Now</span> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="lr-user-wr-img"> <img src="images/users/3.png" alt=""> </div>
-                                            <div class="lr-user-wr-con lr-user-wr-con-block">
-                                                <h6>Gabriel Elijah <span>5.0 <i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">21th July, 2016</span>
-                                                <p>The hotel is clean, convenient and good value for money. Staff are courteous and helpful. However, they need more training to be efficient.</p>
-                                                <ul>
-                                                    <li><a href="#!"><span>Like</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Dis-Like</span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Report</span> <i class="fa fa-flag-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Comments</span> <i class="fa fa-commenting-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Share Now</span> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="lr-user-wr-img"> <img src="images/users/4.png" alt=""> </div>
-                                            <div class="lr-user-wr-con lr-user-wr-con-block">
-                                                <h6>Luke Mason <span>4.2 <i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">21th March, 2018</span>
-                                                <p>Too much good experience with hospitality, cleanliness, facility and privacy and good value for money... To keep mind relaxing... Keep it up... </p>
-                                                <ul>
-                                                    <li><a href="#!"><span>Like</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Dis-Like</span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Report</span> <i class="fa fa-flag-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Comments</span> <i class="fa fa-commenting-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Share Now</span> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="lr-user-wr-img"> <img src="images/users/5.png" alt=""> </div>
-                                            <div class="lr-user-wr-con lr-user-wr-con-block">
-                                                <h6>Kevin Jack <span>3.6 <i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">21th Aug, 2018</span>
-                                                <p>I am deaf. Bar is closed and Restaurant is okay ... It should be more decoration as beautiful. I enjoyed swimming top floor and weather is good</p>
-                                                <ul>
-                                                    <li><a href="#!"><span>Like</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Dis-Like</span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Report</span> <i class="fa fa-flag-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Comments</span> <i class="fa fa-commenting-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Share Now</span> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="lr-user-wr-img"> <img src="images/users/6.png" alt=""> </div>
-                                            <div class="lr-user-wr-con lr-user-wr-con-block">
-                                                <h6>Nicholas Tyler <span>4.4 <i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">21th Aug, 2018</span>
-                                                <p>Overall, it was good experience. Rooms were spacious and they were kept very clean and tidy. Room service was good.</p>
-                                                <ul>
-                                                    <li><a href="#!"><span>Like</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Dis-Like</span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Report</span> <i class="fa fa-flag-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Comments</span> <i class="fa fa-commenting-o" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><span>Share Now</span> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-                                                    <li><a href="#!"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul> <a class="waves-effect waves-light wr-re-btn" href="!#" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Write Review</a>
+                                    <ul class="myReview">
+                                        
+                                    </ul>
+                                    <a class="waves-effect waves-light wr-re-btn" href="!#" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Write Review</a>
                                 </div>
                             </div>
                         </div>
@@ -282,25 +219,16 @@
                         <!--=========================================-->
                         <div class="hp-book hp-right-com hp-right-com-block">
                             <div class="hp-book-in">
-                                <button class="like-button"><i class="fa fa-heart-o"></i> Bookmark this listing</button> <span>159 people bookmarked this place</span>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i> Share</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i> Tweet</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i> Share</a>
-                                    </li>
-                                    <!-- <li><a class="pinterest-share" href="#"><i class="fa fa-pinterest-p"></i> Pin</a></li> -->
-                                </ul>
+                                <button class="like-button"><i class="fa fa-heart-o"></i> Bookmark this listing</button> <span class="address"></span>
                             </div>
                         </div>
                         <!--=========================================-->
                         <!--=========================================-->
-                        <div class="hp-card hp-right-com hp-right-com-block">
+                        <!-- <div class="hp-card hp-right-com hp-right-com-block">
                             <div class="hp-card-in">
                                 <h3>We Accept</h3> <span>159 people bookmarked this place</span> <img src="images/card.png" alt="">
                             </div>
-                        </div>
+                        </div> -->
                         <!--=========================================-->
                     </div>
                 </div>
@@ -309,7 +237,44 @@
         <!-- YOUR CODE HERE -->
 
     </section>
-
+    <div id="commend" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+                <h1>Hello... <span>{{ name1 }}</span></h1>
+                <h1>Hello... <span>{{ name1 }}</span></h1>
+            </div>
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                </a>
+                <h4>Write Your Review</h4>
+                <form class="s12" id="ratingsForm">
+                    <div>
+                        <div class="input-field s12">
+                            <textarea class="materialize-textarea myReviewData"></textarea>
+                            <label>Type your commends</label>
+                        </div>
+                    </div>
+                    <div class="stars">
+                        <input onclick="myStar(1);" type="radio" name="star" class="star-1" id="star-1" />
+                        <label class="star-1" for="star-1">1</label>
+                        <input onclick="myStar(2);" type="radio" name="star" class="star-2" id="star-2" />
+                        <label class="star-2" for="star-2">2</label>
+                        <input onclick="myStar(3);" type="radio" name="star" class="star-3" id="star-3" />
+                        <label class="star-3" for="star-3">3</label>
+                        <input onclick="myStar(4);" type="radio" name="star" class="star-4" id="star-4" />
+                        <label class="star-4" for="star-4">4</label>
+                        <input onclick="myStar(5);" type="radio" name="star" class="star-5" id="star-5" />
+                        <label class="star-5" for="star-5">5</label> <span></span>
+                    </div>
+                    <div>
+                        <div class="input-field s4">
+                            <input type="button" value="Submit Your Review" onclick="submitReview()" class="waves-effect waves-light log-in-btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!--Start Footer SECTION-->
     <?php include 'lander-components/footer.php' ?>
     <!--END Footer SECTION-->
@@ -321,9 +286,12 @@
     <!--ALL SCRIPT FILES-->
     <?php include 'lander-components/jslink.php' ?>
     <!--ALL SCRIPT FILES-->
-    <script src="customer/source/js/booking.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+    <script src="customer/source/js/booking.js"></script>
+  
 
 </body>
 

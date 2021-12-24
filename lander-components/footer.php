@@ -36,7 +36,7 @@
                     <div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-12 col-md-3 foot-logo"> <img src="images/logo1.png" alt="logo">
+                                <div class="col-sm-12 col-md-3 foot-logo"> <img  height="80" width="80" alt=""  src="img/siteimages/logo.png" alt="logo">
                                     <p class="hasimg">Hotels worldwide incl. Infos, Ratings and Photos. Make your Hotel Reservation cheap.</p>
                                     <p class="hasimg">The top-rated hotel booking services.</p>
                                 </div>

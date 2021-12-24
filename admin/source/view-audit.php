@@ -105,16 +105,7 @@ if ($no_product) { ?>
                     <p class="col-sm-offset-2  pull-right text-info">Currently <?php echo $active_status; ?></p>
                     <p class="col-sm-offset-2  text-danger"></p>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2">Price <span class="required">*</span></label>
-                    <div class="col-sm-10 input-group">
-                        <span class="input-group-addon">
-                            ₹ &nbsp;
-                        </span>
-                        <input type="text" name="price" class="form-control vn_price" placeholder="eg.: 100" value="<?php echo $price ?>" />
-                    </div>
-                    <p class="col-sm-offset-2  text-danger"></p>
-                </div>
+
                 <div class="form-group">
                     <label class="col-sm-2">Phone <span class="required">*</span></label>
                     <div class="col-sm-10 input-group">
@@ -134,6 +125,36 @@ if ($no_product) { ?>
                         <input type="text" name="vn_cap" class="form-control vn_cap" placeholder="Enter seating capacity" value="<?php echo $row['yn_capacity']; ?>" />
                     </div>
                     <p class="col-sm-offset-2  text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Price <span class="required">*</span></label>
+                    <div class="col-sm-10 input-group">
+                        <span class="input-group-addon">
+                            ₹ &nbsp;
+                        </span>
+                        <input type="text" name="price" class="form-control vn_price" placeholder="eg.: 100" value="<?php echo $price ?>" />
+                    </div>
+                    <p class="col-sm-offset-2  text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Specifications <span class="required">*</span></label>
+                    <div class="col-sm-10 input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-file-text"></i>
+                        </span>
+                        <textarea type="text" name="specifications" class="form-control vn_specs" placeholder="Eg: Air Condition,Etc. please use comma after each specifications."><?php echo $row['yn_specs']; ?></textarea>
+                    </div>
+                    <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Address <span class="required">*</span></label>
+                    <div class="col-sm-10 input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-file-text"></i>
+                        </span>
+                        <textarea type="text" name="address" class="form-control vn_addrs" placeholder="Enter the Address."  ><?php echo $row['yn_address']; ?></textarea>
+                    </div>
+                    <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                 </div>
                 <hr>
                 <div class="form-group cover">
@@ -213,7 +234,7 @@ if ($no_product) { ?>
                         <button class="btn btn-info col-sm-offset-2" type="submit">upload</button>
                     </div>
                     <br>
-                </form>    
+                </form>
             </div>
             <footer class="panel-footer">
                 <div class="row">

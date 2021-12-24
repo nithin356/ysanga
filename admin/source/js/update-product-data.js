@@ -9,6 +9,8 @@ $(document).ready(function () {
     var price = $(".vn_price").val();
     var capacity = $(".vn_cap").val();
     var phone = $(".vn_phone").val();
+    var specs = $(".vn_specs").val();
+    var address = $(".vn_addrs").val();
 
     if (
       name === "" ||
@@ -16,6 +18,8 @@ $(document).ready(function () {
       bdes === "" ||
       price === "" ||
       capacity === "" ||
+      address === "" ||
+      specs === "" ||
       phone === ""
     ) {
       swal("Warning!", "Please fill all the fields!", "warning");
@@ -32,6 +36,8 @@ $(document).ready(function () {
           price: price,
           status: status,
           capacity: capacity,
+          specifications: specs,
+          address: address,
           phone: phone,
         },
         success: function (response) {

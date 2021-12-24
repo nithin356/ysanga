@@ -11,9 +11,11 @@ $ldesc = trim($_POST['ldesc']);
 $capacity = trim($_POST['capac']);
 $price = trim($_POST['price']);
 $phone = trim($_POST['phone']);
+$specs = trim($_POST['specifications']);
+$addr = trim($_POST['address']);
 $cover_img = $_FILES['cover-image'];
 $multi_img = $_FILES['multi-image'];
-$Query = mysqli_query($connection, "INSERT INTO ys_service (yn_sname, yn_sdesc, yn_ldesc, yn_capacity, yn_price, yn_status, yn_a_id, yn_phone) VALUES ('$name', '$sdesc', '$ldesc','$capacity','$price', '1', '$id', '$phone')");
+$Query = mysqli_query($connection, "INSERT INTO ys_service (yn_sname, yn_sdesc, yn_ldesc, yn_capacity, yn_price, yn_status, yn_a_id, yn_phone, yn_specs, yn_address) VALUES ('$name', '$sdesc', '$ldesc','$capacity','$price', '1', '$id', '$phone', $specs, $addr)");
 if ($Query) {
     $auditid = mysqli_insert_id($connection);
     if (!empty($cover_img) && isset($cover_img)) {

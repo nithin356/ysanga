@@ -6,7 +6,7 @@ $count = mysqli_num_rows($sessionservice);
 if ($count > 0) {
     $service = array();
     while ($rowservice = mysqli_fetch_assoc($sessionservice)) {
-        $services = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "img" => $rowservice['yn_s_images'], "price" => $rowservice['yn_price'], "capacity" => $rowservice['yn_capacity'], "img" => $rowservice['yn_s_images']);
+        $services = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "img" => $rowservice['yn_s_images'], "price" => $rowservice['yn_price'], "capacity" => $rowservice['yn_capacity'], "img" => $rowservice['yn_s_images'], "specs" => $rowservice['yn_specs']);
         array_push($service, $services);
     }
 

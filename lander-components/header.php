@@ -5,14 +5,14 @@
                 <ul>
                     <li><a class='dropdown-button' href='#' data-activates='dropdown1'> My Account <i class="fa fa-angle-down"></i></a>
                     </li>
-                    <li><a href="hotel-details.html">Our Hotels</a>
-                    </li>
+                    <!-- <li><a href="hotel-details.html">Our Hotels</a>
+                    </li> -->
                     <li><a href="about-us.html">About Us</a>
                     </li>
-                    <li><a href="contact-us.html">Contact Us</a>
+                    <!-- <li><a href="contact-us.html">Contact Us</a>
                     </li>
                     <li><a class='dropdown-button' href='#' data-activates='dropdown2'>Language <i class="fa fa-angle-down"></i></a>
-                    </li>
+                    </li> -->
                     <li><a href="#">Toll Free No: 1800 102 7275</a>
                     </li>
                 </ul>
@@ -204,20 +204,18 @@
             </div>
             <div class="menu-bar">
                 <ul>
-                    <li><a href="#" class='dropdown-button' data-activates='drop-home'>Home <i class="fa fa-angle-down"></i></a>
+                    <li><a href="index.php">Home </a>
                     </li>
-                    <li><a href="#" class='dropdown-button' data-activates='drop-room'>Rooms <i class="fa fa-angle-down"></i></a>
+                    <li><a href="services.php">Services</a>
                     </li>
-                    <li><a href="services.html">Services</a>
-                    </li>
-                    <li><a href="menu.html">Menu</a>
+                    <!-- <li><a href="menu.html">Menu</a>
                     </li>
                     <li><a href="events.html">Events</a>
                     </li>
                     <li><a href="aminities1.html">Amenities</a>
                     </li>
                     <li><a href="#" class='dropdown-button' data-activates='drop-page'>Pages <i class="fa fa-angle-down"></i></a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

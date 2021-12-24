@@ -96,6 +96,26 @@
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-sm-2">Specifications <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="specifications" class="form-control vn_specs" placeholder="Eg: Air Condition,Etc. please use comma after each specifications."></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2">Address <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="address" class="form-control vn_addr" placeholder="Enter the Address."></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-sm-2">Cover Image <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <div class="custom-file-container" data-upload-id="myFirstImage">

@@ -1,5 +1,7 @@
 var starVal = 0;
 $(document).ready(function () {
+  $(".hideme").show();
+
   if (getSessionKey()) {
     loadServices();
   } else {
@@ -58,6 +60,9 @@ function loadServices() {
           dots: false,
         });
         //Review
+        $(".reviewdata").empty();
+        $(".myReview").empty();
+        $(".hideme").hide();
         $(".materialboxed").materialbox();
         $(".reviewdata").html(
           "<span>" +
@@ -93,12 +98,16 @@ function loadServices() {
 function audreview() {
   $(".reviewdata").empty();
   $(".myReview").empty();
+  $(".hideme").show();
+
   $.ajax({
     type: "POST",
     url: API_URL + "customer/service/",
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
+        $(".hideme").hide();
+
         $(".reviewdata").html(
           "<span>" +
             jsonData.service.resultReview +
@@ -135,7 +144,7 @@ function myStar(val) {
 }
 
 function submitReview() {
-  var rdata = $('.myReviewData').val();
+  var rdata = $(".myReviewData").val();
   $.ajax({
     type: "POST",
     url: API_URL + "customer/submitreview/",
@@ -146,9 +155,9 @@ function submitReview() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
-        starVal=0;
-        $('.myReviewData').val('');
-        $('.pop-close').click();
+        starVal = 0;
+        $(".myReviewData").val("");
+        $(".pop-close").click();
         audreview();
       } else {
       }

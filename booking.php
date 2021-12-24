@@ -7,46 +7,120 @@
         display: none;
     }
 
-    .rate {
-        float: left !important;
-        height: 46px !important;
-        padding: 0 10px !important;
+    @keyframes ldio-ayfowbn9khk {
+        0% {
+            opacity: 1
+        }
+
+        100% {
+            opacity: 0
+        }
     }
 
-    .rate:not(:checked)>input {
-        position: absolute !important;
-        top: -9999px !important;
+    .ldio-ayfowbn9khk div {
+        left: 94px;
+        top: 48px;
+        position: absolute;
+        animation: ldio-ayfowbn9khk linear 1s infinite;
+        background: #3f3d3d;
+        width: 12px;
+        height: 24px;
+        border-radius: 6px / 12px;
+        transform-origin: 6px 52px;
     }
 
-    .rate:not(:checked)>label {
-        float: right !important;
-        width: 1em !important;
-        overflow: hidden !important;
-        white-space: nowrap !important;
-        cursor: pointer !important;
-        font-size: 30px !important;
-        color: #ccc !important;
+    .ldio-ayfowbn9khk div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -0.9166666666666666s;
+        background: #3f3d3d;
     }
 
-    .rate:not(:checked)>label:before {
-        content: '★ ' !important;
+    .ldio-ayfowbn9khk div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -0.8333333333333334s;
+        background: #3f3d3d;
     }
 
-    .rate>input:checked~label {
-        color: #ffc700 !important;
+    .ldio-ayfowbn9khk div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.75s;
+        background: #3f3d3d;
     }
 
-    .rate:not(:checked)>label:hover,
-    .rate:not(:checked)>label:hover~label {
-        color: #deb217 !important;
+    .ldio-ayfowbn9khk div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.6666666666666666s;
+        background: #3f3d3d;
     }
 
-    .rate>input:checked+label:hover,
-    .rate>input:checked+label:hover~label,
-    .rate>input:checked~label:hover,
-    .rate>input:checked~label:hover~label,
-    .rate>label:hover~input:checked~label {
-        color: #c59b08 !important;
+    .ldio-ayfowbn9khk div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.5833333333333334s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.5s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.4166666666666667s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.3333333333333333s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.25s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.16666666666666666s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.08333333333333333s;
+        background: #3f3d3d;
+    }
+
+    .ldio-ayfowbn9khk div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+        background: #3f3d3d;
+    }
+
+    .loadingio-spinner-spinner-i7cawj2sq {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        overflow: hidden;
+        background: none;
+    }
+
+    .ldio-ayfowbn9khk {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0;
+        /* see note above */
+    }
+
+    .ldio-ayfowbn9khk div {
+        box-sizing: content-box;
     }
 </style>
 <!-- Head CSS Files -->
@@ -137,6 +211,22 @@
                                     <h4><span>Aminitiese</span> Room</h4>
                                 </div>
                                 <div class="hp-amini hp-amini-block">
+                                <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
+                                        <div class="ldio-ayfowbn9khk">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
                                     <ul class="specs">
                                     </ul>
                                 </div>
@@ -150,6 +240,22 @@
                                         <ul class="photoservice">
 
                                         </ul>
+                                        <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
+                                        <div class="ldio-ayfowbn9khk">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +297,25 @@
                                         </div>
                                     </div> -->
                                     <div class="hp-review-right">
-                                        <p class="reviewdata"></p>
+                                        <p class="reviewdata">
+
+                                        </p>
+                                        <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
+                                            <div class="ldio-ayfowbn9khk">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -201,8 +325,24 @@
                                 </div>
                                 <div class="lp-ur-all-rat lp-ur-all-rat-block">
                                     <ul class="myReview">
-                                        
+
                                     </ul>
+                                    <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
+                                        <div class="ldio-ayfowbn9khk">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
                                     <a class="waves-effect waves-light wr-re-btn" href="!#" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Write Review</a>
                                 </div>
                             </div>
@@ -291,7 +431,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
     <script src="customer/source/js/booking.js"></script>
-  
+
 
 </body>
 

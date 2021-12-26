@@ -30,6 +30,7 @@ function loadBooking() {
             status =
               "<label style='color:Green;font-size:12px;line-height:0;'>Success</label>";
             pbtn = "style=display:none;";
+            pbtns = "style=display:none;";
           }
           var timeslot = jsonData.booking[i].timeslot;
           if (timeslot === "1") {

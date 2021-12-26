@@ -3,44 +3,42 @@ var fromEditSession = 0;
 $(document).ready(function () {
   $(".hideme").show();
   $(".hidemeReview").hide();
-
-  if (getSessionKey()) {
-    loadServices();
-    if (window.location.href.indexOf("uidtrackSessionedit=true") > -1) {
-      loadEditServices();
-      fromEditSession = 1;
-      $(".btnCheckSubmit").val("EDIT");
-    }
-  } else {
-    $("#loginModal").click();
+  loadServices();
+  if (window.location.href.indexOf("uidtrackSessionedit=true") > -1) {
+    loadEditServices();
+    fromEditSession = 1;
+    $(".btnCheckSubmit").val("EDIT");
   }
-
   $("#submitData").submit(function (e) {
-    e.preventDefault();
-    var arrival = $(".arrival").val();
-    var timeSlot = $("select.timeslot option").filter(":selected").val();
-    var toe = $("select.toe option").filter(":selected").val();
-    var noa = $("#nameorg").val();
-    var others = $("#otherReq").val();
-    $.ajax({
-      type: "POST",
-      url: API_URL + "customer/checking/",
-      data: {
-        arrival: arrival,
-        timeSlot: timeSlot,
-        toe: toe,
-        noa: noa,
-        others: others,
-        edit: fromEditSession,
-      },
-      success: function (response) {
-        var jsonData = JSON.parse(response);
-        if (jsonData.status === "OK") {
-          $(".clickThisFor").click();
-        } else {
-        }
-      },
-    });
+    if (getSessionKey()) {
+      e.preventDefault();
+      var arrival = $(".arrival").val();
+      var timeSlot = $("select.timeslot option").filter(":selected").val();
+      var toe = $("select.toe option").filter(":selected").val();
+      var noa = $("#nameorg").val();
+      var others = $("#otherReq").val();
+      $.ajax({
+        type: "POST",
+        url: API_URL + "customer/checking/",
+        data: {
+          arrival: arrival,
+          timeSlot: timeSlot,
+          toe: toe,
+          noa: noa,
+          others: others,
+          edit: fromEditSession,
+        },
+        success: function (response) {
+          var jsonData = JSON.parse(response);
+          if (jsonData.status === "OK") {
+            $(".clickThisFor").click();
+          } else {
+          }
+        },
+      });
+    } else {
+      $("#loginModal").click();
+    }
   });
 });
 
@@ -131,48 +129,52 @@ function loadServices() {
 }
 
 function audreview() {
-  $(".hidemeReview").hide();
-  $(".reviewdata").empty();
-  $(".myReview").empty();
-  $(".hideme").show();
+  if (getSessionKey()) {
+    $(".hidemeReview").hide();
+    $(".reviewdata").empty();
+    $(".myReview").empty();
+    $(".hideme").show();
 
-  $.ajax({
-    type: "POST",
-    url: API_URL + "customer/service/",
-    success: function (response) {
-      var jsonData = JSON.parse(response);
-      if (jsonData.status === "OK") {
-        $(".hideme").hide();
-        $(".hidemeReview").show();
-        $(".reviewdata").html(
-          "<span>" +
-            jsonData.service.resultReview +
-            '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
-            jsonData.service.creview +
-            " reviews</label>"
-        );
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/service/",
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          $(".hideme").hide();
+          $(".hidemeReview").show();
+          $(".reviewdata").html(
+            "<span>" +
+              jsonData.service.resultReview +
+              '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
+              jsonData.service.creview +
+              " reviews</label>"
+          );
 
-        var review = "";
-        for (var i = 0; i < jsonData.service.review.length; i++) {
-          var date = jsonData.service.review[i].date;
-          date = date.substring(0, date.length - 2);
-          const timestamp = moment(date).fromNow();
-          review +=
-            '<li><div class="lr-user-wr-img"> <img src="images/users/2.png" alt=""> </div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
-            jsonData.service.review[i].uname +
-            " <span>" +
-            jsonData.service.review[i].stars +
-            '<i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">' +
-            timestamp +
-            "</span><p>" +
-            jsonData.service.review[i].review +
-            "</p></div></li>";
+          var review = "";
+          for (var i = 0; i < jsonData.service.review.length; i++) {
+            var date = jsonData.service.review[i].date;
+            date = date.substring(0, date.length - 2);
+            const timestamp = moment(date).fromNow();
+            review +=
+              '<li><div class="lr-user-wr-img"> <img src="images/users/2.png" alt=""> </div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
+              jsonData.service.review[i].uname +
+              " <span>" +
+              jsonData.service.review[i].stars +
+              '<i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">' +
+              timestamp +
+              "</span><p>" +
+              jsonData.service.review[i].review +
+              "</p></div></li>";
+          }
+          $(".myReview").html(review);
+        } else {
         }
-        $(".myReview").html(review);
-      } else {
-      }
-    },
-  });
+      },
+    });
+  } else {
+    $("#loginModal").click();
+  }
 }
 
 function myStar(val) {
@@ -180,53 +182,61 @@ function myStar(val) {
 }
 
 function submitReview() {
-  var rdata = $(".myReviewData").val();
-  $.ajax({
-    type: "POST",
-    url: API_URL + "customer/submitreview/",
-    data: {
-      review: rdata,
-      star: starVal,
-    },
-    success: function (response) {
-      var jsonData = JSON.parse(response);
-      if (jsonData.status === "OK") {
-        starVal = 0;
-        $(".myReviewData").val("");
-        $(".pop-close").click();
-        audreview();
-      } else {
-      }
-    },
-  });
+  if (getSessionKey()) {
+    var rdata = $(".myReviewData").val();
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/submitreview/",
+      data: {
+        review: rdata,
+        star: starVal,
+      },
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          starVal = 0;
+          $(".myReviewData").val("");
+          $(".pop-close").click();
+          audreview();
+        } else {
+        }
+      },
+    });
+  } else {
+    $("#loginModal").click();
+  }
 }
 
 function loadEditServices() {
-  $.ajax({
-    type: "POST",
-    url: API_URL + "customer/booking-session/",
-    success: function (response) {
-      var jsonData = JSON.parse(response);
-      if (jsonData.status === "OK") {
-        $(".aData").hide();
-        $(".arrival").val(jsonData.booking.arrival);
-        $(".timeslot")
-          .find("option[value=" + jsonData.booking.timeslot + "]")
-          .attr("selected", "selected");
-        $(".toe")
-          .find("option[value=" + jsonData.booking.eventtype + "]")
-          .attr("selected", "selected");
-        if (jsonData.booking.timeslot == 1) {
-          $(".time-slot").html("9:00 AM - 2:30 PM");
-        } else {
-          $(".time-slot").html("3:00 PM - 9:00 PM");
-        }
-        $(".event-slot").html(jsonData.booking.eventtype);
+  if (getSessionKey()) {
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/booking-session/",
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          $(".aData").hide();
+          $(".arrival").val(jsonData.booking.arrival);
+          $(".timeslot")
+            .find("option[value=" + jsonData.booking.timeslot + "]")
+            .attr("selected", "selected");
+          $(".toe")
+            .find("option[value=" + jsonData.booking.eventtype + "]")
+            .attr("selected", "selected");
+          if (jsonData.booking.timeslot == 1) {
+            $(".time-slot").html("9:00 AM - 2:30 PM");
+          } else {
+            $(".time-slot").html("3:00 PM - 9:00 PM");
+          }
+          $(".event-slot").html(jsonData.booking.eventtype);
 
-        $("#nameorg").val(jsonData.booking.org);
-        $("#otherReq").val(jsonData.booking.other);
-      } else {
-      }
-    },
-  });
+          $("#nameorg").val(jsonData.booking.org);
+          $("#otherReq").val(jsonData.booking.other);
+        } else {
+        }
+      },
+    });
+  } else {
+    $("#loginModal").click();
+  }
 }

@@ -122,7 +122,7 @@ function loadService() {
 }
 
 function indiservice(e) {
-  if (getSessionKey()) {
+  // if (getSessionKey()) {
     var sid = $(e).attr("data-service");
     $.ajax({
       type: "POST",
@@ -138,7 +138,7 @@ function indiservice(e) {
         }
       },
     });
-  } else {
-    $("#loginModal").click();
-  }
+  // } else {
+  //   $("#loginModal").click();
+  // }
 }

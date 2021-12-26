@@ -38,6 +38,11 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="booking.php">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            <span>Your Booking</span>
+                        </a>
+                    </li> <li>
                         <a href="source/logout.php">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
                             <span>Logout</span>

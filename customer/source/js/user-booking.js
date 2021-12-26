@@ -17,17 +17,19 @@ function loadBooking() {
         for (var i = 0; i < jsonData.booking.length; i++) {
           var status = jsonData.booking[i].status;
           var pbtn = "";
+          var pbtns = "";
           if (status == 0) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Pending Aprroval</label>";
+            pbtn = "style=display:none;";
           } else if (status == 1) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Payment Pending</label>";
-            // pbtn="style=display:none;"
+            pbtns = "style=display:none;";
           } else if (status == 2) {
             status =
               "<label style='color:Green;font-size:12px;line-height:0;'>Success</label>";
-            // pbtn="style=display:none;"
+            pbtn = "style=display:none;";
           }
           var timeslot = jsonData.booking[i].timeslot;
           if (timeslot === "1") {
@@ -72,10 +74,10 @@ function loadBooking() {
             timeslot +
             ".<br>Event Type &nbsp;: " +
             eventtype +
-            '.</p> <a class="waves-effect waves-light inn-re-mo-btn" ' +
+            '.</p> <a id="rzp-button1" class="waves-effect waves-light inn-re-mo-btn" ' +
             pbtn +
             '><i class="fa fa-lock"></i> Pay</a> <a class="waves-effect waves-light inn-re-mo-btn" ' +
-            pbtn +
+            pbtns +
             ' onclick="indieditservice(' +
             jsonData.booking[i].sid +
             "," +

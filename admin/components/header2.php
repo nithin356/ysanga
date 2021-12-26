@@ -5,7 +5,7 @@
         <ol class="breadcrumbs">
             <li><span class="bread-crumbs"></li>
             <li>
-                <a href="index">
+                <a href="index.php">
                     <i class="fa fa-home"></i>&nbsp;&nbsp;
                 </a>
             </li>

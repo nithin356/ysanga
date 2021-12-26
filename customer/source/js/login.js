@@ -19,7 +19,6 @@ $(document).ready(function () {
   $("#Rsubmit").on("click", function () {
     register();
   });
-
 });
 
 //Login
@@ -38,6 +37,7 @@ function login() {
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
+          $("#timer").html(jsonData.otp);
           console.log(jsonData.otp);
           $(".otpScreen").slideDown().show();
           $(".lgnBtn").slideDown().hide();
@@ -57,43 +57,38 @@ function login() {
 }
 
 //Register
-var Remail="";
+var Remail = "";
 function register() {
   var Rusername = $("#Rusername").val();
   var Rphno = $("#Rphonenumber").val();
   Remail = $("#Remail").val();
   var Lphone = Rphno.length;
-if(Rusername=""||Rphno==""||Remail=="")
-{
-  $(".RegError").html("Please fill all the fields!");
-
-}else if(Lphone!=10){
-  $(".RegError").html("Invalid Phone Number!");
-
-}else{
-  emailVal();
-  alert ("Success");
- $.ajax({
+  if ((Rusername = "" || Rphno == "" || Remail == "")) {
+    $(".RegError").html("Please fill all the fields!");
+  } else if (Lphone != 10) {
+    $(".RegError").html("Invalid Phone Number!");
+  } else {
+    emailVal();
+    alert("Success");
+    $.ajax({
       type: "POST",
       url: API_URL + "",
       data: {
         Rusername: Rusername,
         Rphone: Rphno,
-        Remail : Remail,
+        Remail: Remail,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
         } else {
-         
         }
       },
     });
-}
+  }
 
   // var Rpassword = $("#Rpswd").val();
   // var RCpassword = $("#Rcpswd").val();
-
 }
 
 //Verify
@@ -139,7 +134,6 @@ function emailVal() {
 }
 
 //Phone Number VAlidation
-
 
 //OTP registration
 let digitValidate = function (ele) {

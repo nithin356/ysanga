@@ -37,7 +37,8 @@
                                 <input type="button" id="verify" value="Verify" class="waves-effect waves-light log-in-btn">
                             </div>
                         </div>
-                        <!-- <div class="otpScreen">Time left : <span id="timer text-success">1</span></div> -->
+                        <div class="otpScreen"></div>
+                        <span id="timer" class="text-success"></span>
                     </center>
                 </form>
             </div>

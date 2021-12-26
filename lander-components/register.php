@@ -24,10 +24,10 @@
                     </div>
                     <center>
                         <div class="form-inp otpScreen">
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1> <b>-</b>
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1> <b>-</b>
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1> <b>-</b>
-                            <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)' maxlength=1>
+                            <input class="otp" type="number" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1> <b>-</b>
+                            <input class="otp" type="number" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1> <b>-</b>
+                            <input class="otp" type="number" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1> <b>-</b>
+                            <input class="otp" type="number" oninput='digitValidate(this)' onkeyup='tabChange(4)' maxlength=1>
                         </div>
                         <div>
                             <div class="input-field s4 lgnBtn">

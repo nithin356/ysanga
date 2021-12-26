@@ -21,10 +21,10 @@ function loadService() {
         var classdata = "";
         if (len == 1) {
           $(".hom1").show();
-          classdata = "col-md-12";
+          classdata = "col-md-4";
         } else if (len == 2) {
           $(".hom1").show();
-          classdata = "col-md-6";
+          classdata = "col-md-4";
         } else if (len == 0) {
           $(".hom1").hide();
         } else {
@@ -32,6 +32,25 @@ function loadService() {
           classdata = "col-md-4";
         }
         for (var i = 0; i < jsonData.service.length; i++) {
+          var mydataReview = "";
+          if (jsonData.service[i].fullRation == 1) {
+            mydataReview =
+              'Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>';
+          } else if (jsonData.service[i].fullRation == 2) {
+            mydataReview =
+              'Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>';
+          } else if (jsonData.service[i].fullRation == 3) {
+            mydataReview =
+              'Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>';
+          } else if (jsonData.service[i].fullRation == 4) {
+            mydataReview =
+              'Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>';
+          } else if (jsonData.service[i].fullRation == 5) {
+            mydataReview =
+              'Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>';
+          } else if (jsonData.service[i].fullRation == 0) {
+            mydataReview = "";
+          }
           $(".getService").append(
             '<div onclick="indiservice(this)" data-service="' +
               jsonData.service[i].sid +
@@ -41,13 +60,15 @@ function loadService() {
               jsonData.service[i].capacity +
               ' </div> <img src="uploads/' +
               jsonData.service[i].img +
-              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"> <a onclick="indiservice(this)" class="services" data-service="' +
+              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"> <a class="services" data-service="' +
               jsonData.service[i].sid +
               '"><h4>' +
               jsonData.service[i].sname +
               '</h4></a> </div><div class="to-ho-hotel-con-3"><ul><li>' +
               jsonData.service[i].sdesc +
-              '<div class="dir-rat-star ho-hot-rat-star"> Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></div></li><li><span class="ho-hot-pri-dis">₹ ' +
+              '<div class="dir-rat-star ho-hot-rat-star"> ' +
+              mydataReview +
+              ' </div></li><li><span class="ho-hot-pri-dis">₹ ' +
               jsonData.service[i].price +
               '</span><span class="ho-hot-pri">₹ ' +
               jsonData.service[i].price +
@@ -67,18 +88,20 @@ function loadService() {
           }
           var add = "";
           if ($(window).width() < 960) {
-            add = '';
+            add = "";
           } else {
             add = 'height="120px"';
           }
           $(".ourService").html(
             '<div class="room">' +
               f +
-              '<div class="r1 r-com"><img '+add+' src="uploads/' +
+              '<div class="r1 r-com"><img ' +
+              add +
+              ' src="uploads/' +
               jsonData.service[i].img +
               '" alt="" /></div><div class="r2 r-com"><h4>' +
               jsonData.service[i].sname +
-              '</h4><div class="r2-ratt"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><span>Excellent 4.5 / 5</span> </div><ul><li>Capacity: ' +
+              '</h4><div class="r2-ratt"> '+mydataReview+' <span> '+jsonData.service[i].fullRation+' / 5</span> </div><ul><li>Capacity: ' +
               jsonData.service[i].capacity +
               '</li><li></li><li></li></ul></div><div class="r3 r-com"><ul>' +
               specs +

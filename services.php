@@ -72,7 +72,7 @@
                     <ul>
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li><a href="services.php">Rooms</a>
+                        <li><a href="services.php">Services</a>
                         </li>
                     </ul>
                 </div>

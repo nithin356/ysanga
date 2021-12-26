@@ -20,20 +20,12 @@
             <div class="all-drop-down">
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content drop-con-man'>
-                    <li>
-                        <a href="dashboard.html"><img src="images/icon/15.png" alt=""> My Account</a>
-                    </li>
+
                     <li>
                         <a href="db-profile.html"><img src="images/icon/2.png" alt=""> My Profile</a>
                     </li>
                     <li>
-                        <a href="db-booking.html"><img src="images/icon/16.png" alt=""> My Bookings</a>
-                    </li>
-                    <li>
-                        <a href="db-event.html"><img src="images/icon/17.png" alt=""> My Events</a>
-                    </li>
-                    <li>
-                        <a href="db-activity.html"><img src="images/icon/14.png" alt=""> My Activity</a>
+                        <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
                     <li>
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>
@@ -41,9 +33,9 @@
                     <li>
                         <a href="#!" id="loginModal" data-toggle="modal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#!" data-toggle="modal" data-target="#modal3"><img src="images/icon/13.png" alt=""> Forgot Password</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- Dropdown Structure -->
                 <ul id='drop-home' class='dropdown-content drop-con-man'>

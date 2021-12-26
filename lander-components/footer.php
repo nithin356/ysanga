@@ -37,12 +37,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 col-md-3 foot-logo"> <img  height="80" width="80" alt=""  src="img/siteimages/logo.png" alt="logo">
-                                    <p class="hasimg">Hotels worldwide incl. Infos, Ratings and Photos. Make your Hotel Reservation cheap.</p>
-                                    <p class="hasimg">The top-rated hotel booking services.</p>
+                                    <!-- <p class="hasimg">Hotels worldwide incl. Infos, Ratings and Photos. Make your Hotel Reservation cheap.</p>
+                                    <p class="hasimg">The top-rated hotel booking services.</p> -->
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <h4>Support &amp; Help</h4>
-                                    <ul class="two-columns">
+                                    <!-- <ul class="two-columns">
                                         <li><a href="dashboard.html">Dashboard</a>
                                         </li>
                                         <li><a href="db-activity.html">DB Activity</a>
@@ -59,11 +59,11 @@
                                         </li>
                                         <li><a href="menu1.html">Food Menu</a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <h4>Popular Services</h4>
-                                    <ul class="two-columns">
+                                    <!-- <ul class="two-columns">
                                         <li><a href="all-hotels.html">Our Hotels</a>
                                         </li>
                                         <li><a href="about-us.html">About Us</a>
@@ -80,17 +80,17 @@
                                         </li>
                                         <li><a href="all-rooms.html">Normal Room</a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <h4>Address</h4>
-                                    <p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To Airport</p>
-                                    <p> <span class="foot-phone">Phone: </span> <span class="foot-phone">+01 1245 2541</span> </p>
+                                    <!-- <p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To Airport</p>
+                                    <p> <span class="foot-phone">Phone: </span> <span class="foot-phone">+01 1245 2541</span> </p> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="foot-sec2">
+                    <div class="foot-sec2" style="display: none;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 col-md-3">

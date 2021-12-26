@@ -148,7 +148,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="inn-com-form">
-                            <form class="col s12">
+                            <form class="col s12" id="submitData">
                                 <div class="row">
                                     <div class="col s12 avail-title">
                                         <h4>Check Availability</h4>
@@ -156,24 +156,26 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="from" name="from">
-                                        <label for="from">Arrival Date</label>
+                                        <input type="text" id="from" name="from" class="arrival">
+                                        <label for="from" class="aData">Arrival Date</label>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <select>
+                                        <select class="timeslot">
                                             <option value="" disabled selected>Time Slot</option>
                                             <option value="1">9:00 AM - 2:30 PM</option>
                                             <option value="2">3:00 PM - 9:00 PM</option>
                                         </select>
+                                        <span class="time-slot"></span>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <select>
+                                        <select class="toe">
                                             <option value="" disabled selected hidden>Type of Events</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="1">4</option>
                                         </select>
+                                        <span class="event-slot"></span>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">
@@ -182,7 +184,7 @@
                                         <input type="text" id="otherReq" name="otherReq" placeholder="Other Requirements">
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <input type="submit" value="submit" class="form-btn">
+                                        <input type="submit" value="submit" class="form-btn btnCheckSubmit">
                                     </div>
                                 </div>
                             </form>
@@ -211,7 +213,7 @@
                                     <h4><span>Aminitiese</span> Room</h4>
                                 </div>
                                 <div class="hp-amini hp-amini-block">
-                                <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
+                                    <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
                                         <div class="ldio-ayfowbn9khk">
                                             <div></div>
                                             <div></div>
@@ -241,21 +243,21 @@
 
                                         </ul>
                                         <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
-                                        <div class="ldio-ayfowbn9khk">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
+                                            <div class="ldio-ayfowbn9khk">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -320,30 +322,11 @@
                                 </div>
                             </div>
                             <div class="hp-section">
-                                <div class="hp-sub-tit hp-sub-tit-block">
-                                    <h4><span>USER</span> REVIEWS</h4>
-                                </div>
                                 <div class="lp-ur-all-rat lp-ur-all-rat-block">
                                     <ul class="myReview">
 
                                     </ul>
-                                    <div class="hideme loadingio-spinner-spinner-i7cawj2sq">
-                                        <div class="ldio-ayfowbn9khk">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                    </div>
-                                    <a class="waves-effect waves-light wr-re-btn" href="!#" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Write Review</a>
+                                    <a class="waves-effect waves-light wr-re-btn hidemeReview" href="!#" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Write Review</a>
                                 </div>
                             </div>
                         </div>
@@ -359,7 +342,8 @@
                         <!--=========================================-->
                         <div class="hp-book hp-right-com hp-right-com-block">
                             <div class="hp-book-in">
-                                <button class="like-button"><i class="fa fa-heart-o"></i> Bookmark this listing</button> <span class="address"></span>
+                                <!-- <button class="like-button"><i class="fa fa-heart-o"></i> Bookmark this listing</button> -->
+                                <span class="address"></span>
                             </div>
                         </div>
                         <!--=========================================-->
@@ -377,19 +361,20 @@
         <!-- YOUR CODE HERE -->
 
     </section>
+    <a href="!#" data-toggle="modal" data-target="#success" class="clickThisFor" style="display: none;"></a>
     <div id="commend" class="modal fade" role="dialog">
         <div class="log-in-pop">
-            <div class="log-in-pop-left">
+            <!-- <div class="log-in-pop-left">
                 <h1>Hello... <span>{{ name1 }}</span></h1>
                 <h1>Hello... <span>{{ name1 }}</span></h1>
-            </div>
+            </div> -->
             <div class="log-in-pop-right">
                 <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
                 <h4>Write Your Review</h4>
                 <form class="s12" id="ratingsForm">
                     <div>
-                        <div class="input-field s12">
+                        <div class="input-field s12" style="width: 100%;">
                             <textarea class="materialize-textarea myReviewData"></textarea>
                             <label>Type your commends</label>
                         </div>
@@ -410,6 +395,20 @@
                         <div class="input-field s4">
                             <input type="button" value="Submit Your Review" onclick="submitReview()" class="waves-effect waves-light log-in-btn">
                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                </a>
+                <h4>Thank you!</h4>
+                <form class="s12" id="ratingsForm">
+                    <div>
+                        <label>Will get back to you! Thanks for your patience!</label>
                     </div>
                 </form>
             </div>

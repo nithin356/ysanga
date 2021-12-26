@@ -12,19 +12,10 @@
                 </div>
                 <ul>
                     <li class="side-bar-close">
-                        <a href="dashboard.html"><img src="images/icon/15.png" alt=""> My Account</a>
-                    </li>
-                    <li class="side-bar-close">
                         <a href="db-profile.html"><img src="images/icon/2.png" alt=""> My Profile</a>
                     </li>
                     <li class="side-bar-close">
-                        <a href="db-booking.html"><img src="images/icon/16.png" alt=""> My Bookings</a>
-                    </li>
-                    <li class="side-bar-close">
-                        <a href="db-event.html"><img src="images/icon/17.png" alt=""> My Events</a>
-                    </li>
-                    <li class="side-bar-close">
-                        <a href="db-activity.html"><img src="images/icon/14.png" alt=""> My Activity</a>
+                        <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
                     <li class="side-bar-close">
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>

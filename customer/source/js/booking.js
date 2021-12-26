@@ -1,12 +1,47 @@
 var starVal = 0;
+var fromEditSession = 0;
 $(document).ready(function () {
   $(".hideme").show();
+  $(".hidemeReview").hide();
 
   if (getSessionKey()) {
     loadServices();
+    if (window.location.href.indexOf("uidtrackSessionedit=true") > -1) {
+      loadEditServices();
+      fromEditSession = 1;
+      $(".btnCheckSubmit").val("EDIT");
+    }
   } else {
     $("#loginModal").click();
   }
+
+  $("#submitData").submit(function (e) {
+    e.preventDefault();
+    var arrival = $(".arrival").val();
+    var timeSlot = $("select.timeslot option").filter(":selected").val();
+    var toe = $("select.toe option").filter(":selected").val();
+    var noa = $("#nameorg").val();
+    var others = $("#otherReq").val();
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/checking/",
+      data: {
+        arrival: arrival,
+        timeSlot: timeSlot,
+        toe: toe,
+        noa: noa,
+        others: others,
+        edit: fromEditSession,
+      },
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          $(".clickThisFor").click();
+        } else {
+        }
+      },
+    });
+  });
 });
 
 function loadServices() {
@@ -71,7 +106,7 @@ function loadServices() {
             jsonData.service.creview +
             " reviews</label>"
         );
-
+        $(".hidemeReview").show();
         var review = "";
         for (var i = 0; i < jsonData.service.review.length; i++) {
           var date = jsonData.service.review[i].date;
@@ -96,6 +131,7 @@ function loadServices() {
 }
 
 function audreview() {
+  $(".hidemeReview").hide();
   $(".reviewdata").empty();
   $(".myReview").empty();
   $(".hideme").show();
@@ -107,7 +143,7 @@ function audreview() {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
         $(".hideme").hide();
-
+        $(".hidemeReview").show();
         $(".reviewdata").html(
           "<span>" +
             jsonData.service.resultReview +
@@ -159,6 +195,36 @@ function submitReview() {
         $(".myReviewData").val("");
         $(".pop-close").click();
         audreview();
+      } else {
+      }
+    },
+  });
+}
+
+function loadEditServices() {
+  $.ajax({
+    type: "POST",
+    url: API_URL + "customer/booking-session/",
+    success: function (response) {
+      var jsonData = JSON.parse(response);
+      if (jsonData.status === "OK") {
+        $(".aData").hide();
+        $(".arrival").val(jsonData.booking.arrival);
+        $(".timeslot")
+          .find("option[value=" + jsonData.booking.timeslot + "]")
+          .attr("selected", "selected");
+        $(".toe")
+          .find("option[value=" + jsonData.booking.eventtype + "]")
+          .attr("selected", "selected");
+        if (jsonData.booking.timeslot == 1) {
+          $(".time-slot").html("9:00 AM - 2:30 PM");
+        } else {
+          $(".time-slot").html("3:00 PM - 9:00 PM");
+        }
+        $(".event-slot").html(jsonData.booking.eventtype);
+
+        $("#nameorg").val(jsonData.booking.org);
+        $("#otherReq").val(jsonData.booking.other);
       } else {
       }
     },

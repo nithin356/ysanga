@@ -53,7 +53,7 @@
 		</div>
 		<!--END HOTEL ROOMS-->
 		<!--TOP SECTION-->
-		<div class="offer">
+		<div class="offer" style="display: none;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">

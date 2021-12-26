@@ -2,7 +2,7 @@
     <div class="mm">
         <div class="mm-inn">
             <div class="mm-logo">
-                <a href="index.html"><img src="img/siteimages/logo.png" height="40" width="40" alt="">
+                <a href="index.php"><img src="img/siteimages/logo.png" height="40" width="40" alt="">
                 </a>
             </div>
             <div class="mm-icon"><span><i class="fa fa-bars show-menu" aria-hidden="true"></i></span>
@@ -12,7 +12,7 @@
                 </div>
                 <ul>
                     <li class="side-bar-close">
-                        <a href="db-profile.html"><img src="images/icon/2.png" alt=""> My Profile</a>
+                        <a href="my-profile.php"><img src="images/icon/2.png" alt=""> My Profile</a>
                     </li>
                     <li class="side-bar-close">
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>

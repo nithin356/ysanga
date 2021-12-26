@@ -22,7 +22,7 @@
                 <ul id='dropdown1' class='dropdown-content drop-con-man'>
 
                     <li>
-                        <a href="db-profile.html"><img src="images/icon/2.png" alt=""> My Profile</a>
+                        <a href="my-profile.php"><img src="images/icon/2.png" alt=""> My Profile</a>
                     </li>
                     <li>
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>

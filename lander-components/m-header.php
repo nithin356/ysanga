@@ -17,10 +17,13 @@
                     <li class="side-bar-close">
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
-                    <li class="side-bar-close">
+                    <li class="side-bar-close logOut">
+                        <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> Log out</a>
+                    </li>
+                    <li class="side-bar-close RegisterSide">
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>
                     </li>
-                    <li class="side-bar-close">
+                    <li class="side-bar-close LoginSide">
                         <a href="#!" data-toggle="modal" id="loginModal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
                     </li>
                 </ul>

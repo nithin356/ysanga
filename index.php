@@ -435,7 +435,7 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="blog hom-com">
+		<!-- <div class="blog hom-com">
 			<div class="container">
 				<div class="row">
 					<div class="hom1-title">
@@ -522,7 +522,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 	<!--END HEADER SECTION-->
 

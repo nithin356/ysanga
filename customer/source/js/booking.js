@@ -17,6 +17,7 @@ $(document).ready(function () {
       var toe = $("select.toe option").filter(":selected").val();
       var noa = $("#nameorg").val();
       var others = $("#otherReq").val();
+      alert("dd");
       $.ajax({
         type: "POST",
         url: API_URL + "customer/checking/",
@@ -29,7 +30,11 @@ $(document).ready(function () {
           edit: fromEditSession,
         },
         success: function (response) {
+          alert("dd");
+
           var jsonData = JSON.parse(response);
+      alert(jsonData.status);
+
           if (jsonData.status === "OK") {
             $(".clickThisFor").click();
           } else {
@@ -50,8 +55,13 @@ function loadServices() {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
         $(".serviceName").html(jsonData.service.sname);
-        $(".serviceSdesc").html(jsonData.service.sdesc+"<br><span class='room-price-1' style='color:white;'>Price : ₹" +jsonData.service.price+'</span>');
-        
+        $(".serviceSdesc").html(
+          jsonData.service.sdesc +
+            "<br><span class='room-price-1' style='color:white;'>Price : ₹" +
+            jsonData.service.price +
+            "</span>"
+        );
+
         $(".serviceLdesc").html(jsonData.service.ldesc);
         $(".servicePhone").html(jsonData.service.phone);
         $(".hrefCall").attr("href", "tel:" + jsonData.service.phone);

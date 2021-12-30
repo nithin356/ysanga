@@ -21,16 +21,19 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content drop-con-man'>
 
-                    <li>
+                    <li class="logOut">
                         <a href="my-profile.php"><img src="images/icon/2.png" alt=""> My Profile</a>
                     </li>
-                    <li>
+                    <li class="logOut">
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
-                    <li>
+                    <li class="logOut">
+                        <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> Log Out</a>
+                    </li>
+                    <li class="RegisterSide">
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>
                     </li>
-                    <li>
+                    <li class="RegisterSide">
                         <a href="#!" id="loginModal" data-toggle="modal" data-target="#modal1"><img src="images/icon/6.png" alt=""> Log In</a>
                     </li>
                     <!-- <li>

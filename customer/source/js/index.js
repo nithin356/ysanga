@@ -99,7 +99,7 @@ function loadService() {
               jsonData.service[i].img +
               '" alt="" /></div><div class="r2 r-com"><h4>' +
               jsonData.service[i].sname +
-              '</h4><div class="r2-ratt"> '+mydataReview+' <span> '+jsonData.service[i].fullRation+' / 5</span> </div><ul><li>Capacity: ' +
+              '</h4><div class="r2-ratt"> '+mydataReview+' <span> '+jsonData.service[i].fullRation+' / 5</span> </div><ul><li>Capacity: <i class="fa fa-couch"></i>   ' +
               jsonData.service[i].capacity +
               '</li><li></li><li></li></ul></div><div class="r3 r-com"><ul>' +
               specs +

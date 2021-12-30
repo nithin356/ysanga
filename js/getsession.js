@@ -9,8 +9,14 @@ function getSession() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
+        $(".logOut").show();
+        $(".RegisterSide").hide();
+        $(".LoginSide").hide();
         localStorage.setItem("sessionkey", "1");
       } else {
+        $(".logOut").hide();
+        $(".RegisterSide").show();
+        $(".LoginSide").show();
         localStorage.setItem("sessionkey", "0");
       }
     },

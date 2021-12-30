@@ -28,7 +28,7 @@
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
                     <li class="logOut">
-                        <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> Log Out</a>
+                        <a href="backend/customer/logout"><img src="images/icon/16.png" alt=""> Log Out</a>
                     </li>
                     <li class="RegisterSide">
                         <a href="#!" data-toggle="modal" data-target="#modal2"><img src="images/icon/5.png" alt=""> Register</a>

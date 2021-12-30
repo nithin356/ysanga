@@ -50,15 +50,8 @@ function loadServices() {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
         $(".serviceName").html(jsonData.service.sname);
-        $(".serviceSdesc").html(
-          "CAPACITY: " +
-            jsonData.service.capacity +
-            ", PRICE: " +
-            jsonData.service.price +
-            ", " +
-            jsonData.service.sdesc +
-            ""
-        );
+        $(".serviceSdesc").html(jsonData.service.sdesc+"<br><span class='room-price-1' style='color:white;'>Price : ₹" +jsonData.service.price+'</span>');
+        
         $(".serviceLdesc").html(jsonData.service.ldesc);
         $(".servicePhone").html(jsonData.service.phone);
         $(".hrefCall").attr("href", "tel:" + jsonData.service.phone);

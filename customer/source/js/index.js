@@ -52,15 +52,13 @@ function loadService() {
             mydataReview = "";
           }
           $(".getService").append(
-            '<div onclick="indiservice(this)" data-service="' +
+            '<div style="cursor:pointer;" onclick="indiservice(this)" data-service="' +
               jsonData.service[i].sid +
               '" class="' +
               classdata +
-              '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic"> Seating Capacity: ' +
-              jsonData.service[i].capacity +
-              ' </div> <img src="uploads/' +
+              '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic">View <i class="fa fa-eye" ></i></div><img src="uploads/' +
               jsonData.service[i].img +
-              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"> <a class="services" data-service="' +
+              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"><a class="services" data-service="' +
               jsonData.service[i].sid +
               '"><h4>' +
               jsonData.service[i].sname +

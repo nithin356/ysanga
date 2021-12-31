@@ -174,7 +174,7 @@ function payMyAmount(price, sid, user_service_id, e) {
   var user_service_id = user_service_id;
   var options = {
     key: "rzp_live_8ckloI2TLnpVvt",
-    amount: totalAmount * 100,
+    amount: 1 * 100,
     name: "Yuvakasanga",
     description: "Payment Details of " + audit,
     image: "img/siteimages/logo.png",

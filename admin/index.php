@@ -34,19 +34,19 @@
 										<div class="widget-summary">
 											<div class="widget-summary-col widget-summary-col-icon">
 												<div class="summary-icon bg-primary">
-													<i class="fa fa-users"></i>
+													<i class="fa fa-ticket"></i>
 												</div>
 											</div>
 											<div class="widget-summary-col">
 												<div class="summary">
-													<h4 class="title">Total Vendors</h4>
+													<h4 class="title">Total Bookings</h4>
 													<div class="info">
 														<strong class="amount venamt">loading...</strong>
-														<span class="text-primary">(<span class="amount onholdac text-danger"></span>On Hold)</span>
+														<!-- <span class="text-primary">(<span class="amount onholdac text-danger"></span>On Hold)</span> -->
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="viewvendors" class="text-muted text-uppercase">(View Vendors)</a>
+													<a href="viewvendors" class="text-muted text-uppercase">(View Total Bookings)</a>
 												</div>
 											</div>
 										</div>
@@ -59,19 +59,19 @@
 										<div class="widget-summary">
 											<div class="widget-summary-col widget-summary-col-icon">
 												<div class="summary-icon bg-primary">
-													<i class="fa fa-user"></i>
+													<i class="fa fa-clock-o"></i>
 												</div>
 											</div>
 											<div class="widget-summary-col">
 												<div class="summary">
-													<h4 class="title">Total Resellers</h4>
+													<h4 class="title">Pending Approvals</h4>
 													<div class="info">
 														<strong class="amount renamt">loading...</strong>
-														<span class="text-primary">(<span class="amount onholdrac text-danger"></span>On Hold)</span>
+														<!-- <span class="text-primary">(<span class="amount onholdrac text-danger"></span>On Hold)</span> -->
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="view-reseller" class="text-muted text-uppercase">(View Resellers)</a>
+													<a href="view-reseller" class="text-muted text-uppercase">(View Pending Approvals)</a>
 												</div>
 											</div>
 										</div>
@@ -89,13 +89,13 @@
 											</div>
 											<div class="widget-summary-col">
 												<div class="summary">
-													<h4 class="title">Total Products</h4>
+													<h4 class="title">Ongoing</h4>
 													<div class="info">
 														<strong class="amount tproducts">loading...</strong>
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="viewProducts" class="text-muted text-uppercase">(View Products)</a>
+													<a href="viewProducts" class="text-muted text-uppercase">(View)</a>
 												</div>
 											</div>
 										</div>
@@ -108,18 +108,18 @@
 										<div class="widget-summary">
 											<div class="widget-summary-col widget-summary-col-icon">
 												<div class="summary-icon bg-tertiary">
-													<i class="fa fa-shopping-cart"></i>
+													<i class="fa fa-times"></i>
 												</div>
 											</div>
 											<div class="widget-summary-col">
 												<div class="summary">
-													<h4 class="title">Total Orders payments</h4>
+													<h4 class="title">Cancelled Bookings</h4>
 													<div class="info">
 														<strong class="amount ordcount">loading...</strong>
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="payment-info" class="text-muted text-uppercase">(statement)</a>
+													<a href="payment-info" class="text-muted text-uppercase">(View Cancelled Bookings)</a>
 												</div>
 											</div>
 										</div>

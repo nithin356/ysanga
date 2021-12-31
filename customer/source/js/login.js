@@ -26,6 +26,7 @@ function login() {
   $(".loginErrordiv").slideDown().hide();
   var pnum = $("#phone").val();
   if (pnum === "") {
+    $(".loginErrordiv").slideDown().show();
     $(".loginError").html("Please fill all the fields!");
   } else {
     $.ajax({
@@ -57,38 +58,41 @@ function login() {
 }
 
 //Register
-var Remail = "";
 function register() {
+  $(".RegErrordiv").slideDown().hide();
+  var Remail = $("#Remail").val();
   var Rusername = $("#Rusername").val();
   var Rphno = $("#Rphonenumber").val();
-  Remail = $("#Remail").val();
   var Lphone = Rphno.length;
-  if ((Rusername = "" || Rphno == "" || Remail == "")) {
+  if (Rusername == "" || Rphno == "" || Remail == "") {
+    $(".RegErrordiv").slideDown().show();
     $(".RegError").html("Please fill all the fields!");
   } else if (Lphone != 10) {
+    $(".RegErrordiv").slideDown().show();
     $(".RegError").html("Invalid Phone Number!");
   } else {
-    emailVal();
-    alert("Success");
     $.ajax({
       type: "POST",
-      url: API_URL + "",
+      url: API_URL + "customer/registerasotp/",
       data: {
-        Rusername: Rusername,
-        Rphone: Rphno,
-        Remail: Remail,
+        name: Rusername,
+        phone: Rphno,
+        email: Remail,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
+          $(".regClose").click();
+          $("#phone").val(Rphno);
+          $(".phoneData").hide();
+          $("#loginModal").click();
         } else {
+          $(".RegErrordiv").slideDown().show();
+          $(".RegError").html(jsonData.message);
         }
       },
     });
   }
-
-  // var Rpassword = $("#Rpswd").val();
-  // var RCpassword = $("#Rcpswd").val();
 }
 
 //Verify

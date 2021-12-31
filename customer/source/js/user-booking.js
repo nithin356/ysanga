@@ -13,6 +13,7 @@ function loadBooking() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
+        $(".myBookingDetails").empty();
         var myBookingData = "";
         for (var i = 0; i < jsonData.booking.length; i++) {
           var status = jsonData.booking[i].status;
@@ -75,9 +76,19 @@ function loadBooking() {
             timeslot +
             ".<br>Event Type &nbsp;: " +
             eventtype +
-            '.</p> <a id="rzp-button1" class="waves-effect waves-light inn-re-mo-btn" ' +
+            '.</p> <a data-val="' +
+            jsonData.booking[i].name +
+            '"; onclick="payMyAmount(' +
+            jsonData.booking[i].price +
+            "," +
+            jsonData.booking[i].sid +
+            "," +
+            jsonData.booking[i].usid +
+            ',this); return false;" class="waves-effect waves-light inn-re-mo-btn" ' +
             pbtn +
-            '><i class="fa fa-lock"></i> Pay</a> <a class="waves-effect waves-light inn-re-mo-btn" ' +
+            '><i class="fa fa-lock"></i> Pay ₹' +
+            jsonData.booking[i].price +
+            ' </a> <a class="waves-effect waves-light inn-re-mo-btn" ' +
             pbtns +
             ' onclick="indieditservice(' +
             jsonData.booking[i].sid +
@@ -154,4 +165,61 @@ function indiservice(e) {
   } else {
     $("#loginModal").click();
   }
+}
+
+function payMyAmount(price, sid, user_service_id, e) {
+  var totalAmount = price;
+  var audit = $(e).attr("data-val");
+  var service_id = sid;
+  var user_service_id = user_service_id;
+  var options = {
+    key: "rzp_live_8ckloI2TLnpVvt",
+    amount: totalAmount * 100,
+    name: "Yuvakasanga",
+    description: "Payment Details of " + audit,
+    image: "img/siteimages/logo.png",
+    handler: function (response) {
+      successPayment(
+        response.razorpay_payment_id,
+        service_id,
+        totalAmount,
+        user_service_id
+      );
+    },
+    theme: {
+      color: "#528FF0",
+    },
+  };
+  var rzp1 = new Razorpay(options);
+  rzp1.open();
+}
+
+function successPayment(
+  razorpay_payment_id,
+  service_id,
+  totalAmount,
+  user_service_id
+) {
+  var razorpay_payment_id = razorpay_payment_id;
+  var totalAmount = totalAmount;
+  var service_id = service_id;
+  var user_service_id = user_service_id;
+  $.ajax({
+    url: API_URL + "customer/payment-process/",
+    type: "POST",
+    data: {
+      razorpay_payment_id: razorpay_payment_id,
+      totalAmount: totalAmount,
+      service_id: service_id,
+      user_service_id: user_service_id,
+    },
+    success: function (res) {
+      var jsonData = JSON.parse(res);
+      if (jsonData.status === "OK") {
+        loadBooking();
+      } else {
+        alert(jsonData.msg);
+      }
+    },
+  });
 }

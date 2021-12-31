@@ -52,15 +52,13 @@ function loadService() {
             mydataReview = "";
           }
           $(".getService").append(
-            '<div onclick="indiservice(this)" data-service="' +
+            '<div style="cursor:pointer;" onclick="indiservice(this)" data-service="' +
               jsonData.service[i].sid +
               '" class="' +
               classdata +
-              '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic"> Seating Capacity: ' +
-              jsonData.service[i].capacity +
-              ' </div> <img src="uploads/' +
+              '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic">View <i class="fa fa-eye" ></i></div><img src="uploads/' +
               jsonData.service[i].img +
-              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"> <a class="services" data-service="' +
+              '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"><a class="services" data-service="' +
               jsonData.service[i].sid +
               '"><h4>' +
               jsonData.service[i].sname +
@@ -101,7 +99,7 @@ function loadService() {
               jsonData.service[i].img +
               '" alt="" /></div><div class="r2 r-com"><h4>' +
               jsonData.service[i].sname +
-              '</h4><div class="r2-ratt"> '+mydataReview+' <span> '+jsonData.service[i].fullRation+' / 5</span> </div><ul><li>Capacity: ' +
+              '</h4><div class="r2-ratt"> '+mydataReview+' <span> '+jsonData.service[i].fullRation+' / 5</span> </div><ul><li>Capacity: <i class="fa fa-couch"></i>   ' +
               jsonData.service[i].capacity +
               '</li><li></li><li></li></ul></div><div class="r3 r-com"><ul>' +
               specs +

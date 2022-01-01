@@ -29,7 +29,7 @@ if ($count > 0) {
         $reviewData = array("review" => $Rrow['yn_review'], "stars" => $Rrow['yn_stars'], "uname" => $getuname['yn_name'], "date" => $Rrow['yn_reviewdate']);
         array_push($reviewArr, $reviewData);
     }
-    $service = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "cimg" => $rowservice['yn_s_images'], "phone" => $rowservice['yn_phone'], "price" => $rowservice['yn_price'], "capacity" => $rowservice['yn_capacity'], "specs" => $rowservice['yn_specs'], "addr" => $rowservice['yn_address'], "img" => $imgarray, "review" => $reviewArr, "creview" => $countreview, "resultReview" => number_format($myReviewAudit,1));
+    $service = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "cimg" => $rowservice['yn_s_images'], "phone" => $rowservice['yn_phone'], "price" => $rowservice['yn_price'], "capacity" => $rowservice['yn_capacity'], "specs" => $rowservice['yn_specs'], "addr" => $rowservice['yn_address'], "img" => $imgarray, "review" => $reviewArr, "creview" => $countreview, "resultReview" => number_format($myReviewAudit, 1));
     $data = array("status" => "OK", "message" => "success", "service" => $service);
 } else {
     $data = array("status" => "KO", "message" => "There was an error, Please try again!");

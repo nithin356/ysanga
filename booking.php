@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head CSS Files -->
-<?php include 'lander-components/head.php' ?>
+<?php
+include_once 'backend/access/connect.php';
+session_start();
+include 'lander-components/head.php' ?>
 <style>
     .owl-nav {
         display: none;
+    }
+
+    #ui-datepicker-div {
+        z-index: 999999999999999 !important;
     }
 
     @keyframes ldio-ayfowbn9khk {
@@ -157,7 +164,7 @@
                                 <div class="row">
                                     <div class="input-field col s12 m4 l2">
                                         <input type="text" id="from" name="from" class="arrival">
-                                        <label for="from" class="aData">Arrival Date</label>
+                                        <label for="from" class="aData">Available Date</label>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <select class="timeslot">
@@ -428,10 +435,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-
+    <script>
+    </script>
     <script src="customer/source/js/booking.js"></script>
+    <?php
+    $sid =  $_SESSION['yn_sid'];
+    $dateQuery = mysqli_query($connection, "SELECT * FROM ys_user_service WHERE yn_sid = '$sid'");
+    $newDate = "";
+    while ($date = mysqli_fetch_assoc($dateQuery)) {
+        $oldDate = $date['yn_arrival'];
+        $arr = explode('/', $oldDate);
+        $one = ltrim($arr[1], 0);
+        $two = ltrim($arr[0], 0);
+        $newDate .= "'$one-$two-$arr[2]',";
+    }
+    ?>
+    <script>
+        var unavailableDates = [<?php echo substr($newDate, 0, -1);  ?>];
 
+        function unavailable(date) {
+            dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+            if ($.inArray(dmy, unavailableDates) == -1) {
+                return [true, ""];
+            } else {
+                return [false, "", "Unavailable"];
+            }
+        }
 
+        $("#from").datepicker({
+            beforeShowDay: unavailable
+        });
+    </script>
 </body>
 
 </html>

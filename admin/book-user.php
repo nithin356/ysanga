@@ -112,6 +112,16 @@
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-sm-2">Price <span class="required"></span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-rupee"></i>
+                                            </span>
+                                            <input type="text" name="price" class="form-control vn_price" placeholder="Enter Price"></input>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-sm-2">Time Slot <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">

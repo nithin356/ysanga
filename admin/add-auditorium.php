@@ -86,7 +86,17 @@
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2">Price <span class="required">*</span></label>
+                                        <label class="col-sm-2">Discounted Price <span class="required">*</span></label>
+                                        <div class="col-sm-10 input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-file-text"></i>
+                                            </span>
+                                            <textarea type="text" name="oprice" class="form-control vn_oprice" placeholder="Enter the Discounted price"></textarea>
+                                        </div>
+                                        <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2">Original Price <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-file-text"></i>

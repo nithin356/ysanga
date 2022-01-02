@@ -67,7 +67,7 @@ function loadService() {
               '<div class="dir-rat-star ho-hot-rat-star"> ' +
               mydataReview +
               ' </div></li><li><span class="ho-hot-pri-dis">₹ ' +
-              jsonData.service[i].price +
+              jsonData.service[i].oprice +
               '</span><span class="ho-hot-pri">₹ ' +
               jsonData.service[i].price +
               "</span></li></ul></div></div></div></div>"
@@ -106,7 +106,7 @@ function loadService() {
               '</ul></div><div class="r4 r-com"><p>Price</p><p><span class="room-price-1">₹ ' +
               jsonData.service[i].price +
               '</span> <span class="room-price">₹: ' +
-              jsonData.service[i].price +
+              jsonData.service[i].oprice +
               '</span></p><p>Non Refundable</p></div><div class="r5 r-com"><div class="r2-available" style="display:none;">Available</div><center><br><a onclick="indiservice(this)" data-service="' +
               jsonData.service[i].sid +
               '" class="inn-room-book" style="cursor: pointer;">Book</a></center></div></div>'

@@ -11,13 +11,14 @@ if (isset($_POST) & !empty($_POST)) {
     $sdes = mysqli_real_escape_string($connection, $_POST['sdes']);
     $bdes = mysqli_real_escape_string($connection, $_POST['bdes']);
     $price = mysqli_real_escape_string($connection, $_POST['price']);
+    $oprice = mysqli_real_escape_string($connection, $_POST['oprice']);
     $status = mysqli_real_escape_string($connection, $_POST['status']);
     $phone = mysqli_real_escape_string($connection, $_POST['phone']);
     $capacity = mysqli_real_escape_string($connection, $_POST['capacity']);
     $specs = mysqli_real_escape_string($connection, $_POST['specifications']);
     $address = mysqli_real_escape_string($connection, $_POST['address']);
 
-    $sql1 = "UPDATE ys_service SET yn_sname = '$name', yn_sdesc = '$sdes', yn_ldesc = '$bdes', yn_price = '$price', yn_status = '$status', yn_capacity = '$capacity', yn_phone = '$phone', yn_specs = '$specs', yn_address = '$address' WHERE yn_a_id = '$ids' AND yn_sid= '$id'";
+    $sql1 = "UPDATE ys_service SET yn_sname = '$name', yn_sdesc = '$sdes', yn_ldesc = '$bdes', yn_price = '$price', yn_og_price = '$oprice', yn_status = '$status', yn_capacity = '$capacity', yn_phone = '$phone', yn_specs = '$specs', yn_address = '$address' WHERE yn_a_id = '$ids' AND yn_sid= '$id'";
     $result1 = mysqli_query($connection, $sql1);
     if ($result1) {
         $res = array('status' => 'OK', 'message' => 'Your Data Updated Successfully!');

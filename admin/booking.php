@@ -85,6 +85,9 @@
                         <li>
                             <a href="#success" data-toggle="tab"><i class="fa fa-check"></i> SUCCESS</a>
                         </li>
+                        <li>
+                            <a href="#cancel" data-toggle="tab"><i class="fa fa-times"></i> CANCEL</a>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div id="edit" class="tab-pane active">
@@ -104,6 +107,13 @@
                         <div id="success" class="tab-pane">
                             <div class="container">
                                 <div class="row completedBooking">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cancel" class="tab-pane">
+                            <div class="container">
+                                <div class="row canceledBooking">
                                     
                                 </div>
                             </div>

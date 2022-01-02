@@ -7,7 +7,7 @@ include '../backend/access/adminaccesscontrol.php';
 <meta name="keywords" content="Yuvakasanga" />
 <meta name="description" content="Yuvakasanga">
 <meta name="author" content="Yuvakasanga">
-<link rel="shortcut icon" type="image/x-icon" href="../lander-assets/images/logo/favi.png">
+<link rel="shortcut icon" type="image/x-icon" href="../img/siteimages/logo.png">
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 

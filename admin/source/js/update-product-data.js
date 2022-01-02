@@ -7,6 +7,7 @@ $(document).ready(function () {
     var bdes = $(".vn_bdes").val();
     var status = $(".vn_status").val();
     var price = $(".vn_price").val();
+    var oprice = $(".vn_oprice").val();
     var capacity = $(".vn_cap").val();
     var phone = $(".vn_phone").val();
     var specs = $(".vn_specs").val();
@@ -17,6 +18,7 @@ $(document).ready(function () {
       sdes === "" ||
       bdes === "" ||
       price === "" ||
+      oprice === "" ||
       capacity === "" ||
       address === "" ||
       specs === "" ||
@@ -34,6 +36,7 @@ $(document).ready(function () {
           sdes: sdes,
           bdes: bdes,
           price: price,
+          oprice: oprice,
           status: status,
           capacity: capacity,
           specifications: specs,

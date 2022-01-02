@@ -14,7 +14,7 @@ if ($count > 0) {
         $reviewone = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_review WHERE yn_sid='$sid' AND yn_stars='1'"));
         $myReviewAudit = (5 * $reviewfive + 4 * $reviewfour + 3 * $reviewthree + 2 * $reviewtwo + 1 * $reviewone) / ($reviewfive + $reviewfour + $reviewthree + $reviewtwo + $reviewone);
 
-        $services = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "img" => $rowservice['yn_s_images'], "price" => $rowservice['yn_price'], "capacity" => $rowservice['yn_capacity'], "img" => $rowservice['yn_s_images'], "specs" => $rowservice['yn_specs'], "fullRation" => ceil($myReviewAudit));
+        $services = array("sid" => $rowservice['yn_sid'], "sname" => $rowservice['yn_sname'], "sdesc" => $rowservice['yn_sdesc'], "ldesc" => $rowservice['yn_ldesc'], "img" => $rowservice['yn_s_images'], "price" => $rowservice['yn_price'], "oprice" => $rowservice['yn_og_price'], "capacity" => $rowservice['yn_capacity'], "img" => $rowservice['yn_s_images'], "specs" => $rowservice['yn_specs'], "fullRation" => ceil($myReviewAudit));
         array_push($service, $services);
     }
 

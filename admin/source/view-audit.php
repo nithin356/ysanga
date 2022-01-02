@@ -31,6 +31,7 @@ $cover_image_data = mysqli_fetch_assoc($cover_image);
 $mul_image = mysqli_query($connection, "SELECT * FROM ys_service_img where yn_s_id='$pid' AND yn_s_cover='0'");
 //$mul_image_data = mysqli_fetch_assoc($mul_image);
 $price = $row['yn_price'];
+$oprice = $row['yn_og_price'];
 if ($no_product) { ?>
     <div class="col-md-12">
         <section class="panel">
@@ -133,6 +134,16 @@ if ($no_product) { ?>
                             ₹ &nbsp;
                         </span>
                         <input type="text" name="price" class="form-control vn_price" placeholder="eg.: 100" value="<?php echo $price ?>" />
+                    </div>
+                    <p class="col-sm-offset-2  text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Original Price <span class="required">*</span></label>
+                    <div class="col-sm-10 input-group">
+                        <span class="input-group-addon">
+                            ₹ &nbsp;
+                        </span>
+                        <input type="text" name="oprice" class="form-control vn_oprice" placeholder="eg.: 100" value="<?php echo $oprice ?>" />
                     </div>
                     <p class="col-sm-offset-2  text-danger"></p>
                 </div>

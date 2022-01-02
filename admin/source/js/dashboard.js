@@ -5,12 +5,10 @@ $(document).ready(function () {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "success") {
-          $('.tproducts').html(jsonData.pcount);
-          $('.venamt').html(jsonData.vendor);
-          $('.onholdac').html(jsonData.vendoroh);
-          $('.renamt').html(jsonData.reseller);
-          $('.onholdrac').html(jsonData.roh);
-          $('.ordcount').html(jsonData.payment);
+          $('.urbooking').html(jsonData.urbooking);
+          $('.pendingbooking').html(jsonData.pendingbooking);
+          $('.cancelled').html(jsonData.cancelled);
+          $('.onbooking').html(jsonData.onbooking);
       }
     },
   });

@@ -1,16 +1,11 @@
 <?php
 include "../../backend/access/connect.php";
-$product = mysqli_query($connection, "SELECT * FROM ec_product");
-$pcount = mysqli_num_rows($product);
-$payment = mysqli_query($connection, "SELECT * FROM ec_payment_track");
-$paymentc = mysqli_num_rows($payment);
-$vendor = mysqli_query($connection, "SELECT * FROM ec_vendor");
-$vendorc = mysqli_num_rows($vendor);
-$vendorhold = mysqli_query($connection, "SELECT * FROM ec_vendor WHERE ec_vn_accstatus='0'");
-$vendorch = mysqli_num_rows($vendorhold);
-$res = mysqli_query($connection, "SELECT * FROM ec_reseller");
-$resc = mysqli_num_rows($res);
-$reshold = mysqli_query($connection, "SELECT * FROM ec_reseller WHERE ec_rs_accstatus='0'");
-$resch = mysqli_num_rows($reshold);
-$data = array("status" => 'success', "pcount" => $pcount, "vendor" => $vendorc, "vendoroh" => $vendorch, "reseller" => $resc, "roh" => $resch, "payment" => $paymentc);
+session_start();
+$data = 0;
+$id = $_SESSION['yn_aid'];
+$booking = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service ON ys_service.yn_sid=ys_user_service.yn_sid"));
+$pbook = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service ON ys_service.yn_sid=ys_user_service.yn_sid WHERE yn_s_status=0"));
+$obook = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service ON ys_service.yn_sid=ys_user_service.yn_sid WHERE yn_s_status=1"));
+$cbook = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service ON ys_service.yn_sid=ys_user_service.yn_sid WHERE yn_s_status=3"));
+$data = array("status" => 'success', "urbooking" => $booking, "pendingbooking" => $pbook, "onbooking" => $obook, "cancelled" => $cbook);
 echo json_encode($data);

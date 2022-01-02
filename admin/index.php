@@ -41,12 +41,12 @@
 												<div class="summary">
 													<h4 class="title">Total Bookings</h4>
 													<div class="info">
-														<strong class="amount venamt">loading...</strong>
+														<strong class="amount urbooking">loading...</strong>
 														<!-- <span class="text-primary">(<span class="amount onholdac text-danger"></span>On Hold)</span> -->
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="viewvendors" class="text-muted text-uppercase">(View Total Bookings)</a>
+													<a href="booking.php" class="text-muted text-uppercase">(View Total Bookings)</a>
 												</div>
 											</div>
 										</div>
@@ -66,12 +66,12 @@
 												<div class="summary">
 													<h4 class="title">Pending Approvals</h4>
 													<div class="info">
-														<strong class="amount renamt">loading...</strong>
+														<strong class="amount pendingbooking">loading...</strong>
 														<!-- <span class="text-primary">(<span class="amount onholdrac text-danger"></span>On Hold)</span> -->
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="view-reseller" class="text-muted text-uppercase">(View Pending Approvals)</a>
+													<a href="booking.php#pending" class="text-muted text-uppercase">(View Pending Approvals)</a>
 												</div>
 											</div>
 										</div>
@@ -91,11 +91,11 @@
 												<div class="summary">
 													<h4 class="title">Ongoing</h4>
 													<div class="info">
-														<strong class="amount tproducts">loading...</strong>
+														<strong class="amount cancelled">loading...</strong>
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="viewProducts" class="text-muted text-uppercase">(View)</a>
+													<a href="booking.php#ongoing" class="text-muted text-uppercase">(View Ongoing Bookings)</a>
 												</div>
 											</div>
 										</div>
@@ -115,11 +115,11 @@
 												<div class="summary">
 													<h4 class="title">Cancelled Bookings</h4>
 													<div class="info">
-														<strong class="amount ordcount">loading...</strong>
+														<strong class="amount onbooking">loading...</strong>
 													</div>
 												</div>
 												<div class="summary-footer">
-													<a href="payment-info" class="text-muted text-uppercase">(View Cancelled Bookings)</a>
+													<a href="booking.php#cancelled" class="text-muted text-uppercase">(View Cancelled Bookings)</a>
 												</div>
 											</div>
 										</div>

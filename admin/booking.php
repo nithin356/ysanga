@@ -77,16 +77,16 @@
                 <div class="tabs">
                     <ul class="nav nav-tabs tabs-primary">
                         <li class="active">
-                            <a href="#edit" data-toggle="tab"><i class="fa fa-archive"></i> NEW</a>
+                            <a href="#edit" class="edit" data-toggle="tab"><i class="fa fa-archive"></i> NEW</a>
                         </li>
                         <li>
-                            <a href="#open" data-toggle="tab"><i class="fa fa-tasks"></i> ON PROCESS</a>
+                            <a href="#open" class="open" data-toggle="tab"><i class="fa fa-tasks"></i> ON PROCESS</a>
                         </li>
                         <li>
-                            <a href="#success" data-toggle="tab"><i class="fa fa-check"></i> SUCCESS</a>
+                            <a href="#success" class="success" data-toggle="tab"><i class="fa fa-check"></i> SUCCESS</a>
                         </li>
                         <li>
-                            <a href="#cancel" data-toggle="tab"><i class="fa fa-times"></i> CANCEL</a>
+                            <a href="#cancel" class="cancel" data-toggle="tab"><i class="fa fa-times"></i> CANCEL</a>
                         </li>
                     </ul>
                     <div class="tab-content">

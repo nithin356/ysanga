@@ -5,6 +5,15 @@ $(document).ready(function () {
   $(".sidebar-toggle").click();
   $(".sidebar-toggle").attr("style", "pointer-events:none;");
   getBookings();
+  if (window.location.href.indexOf("#ongoing") > -1) {
+    $(".open").click();
+  }
+  if (window.location.href.indexOf("#pending") > -1) {
+    $(".edit").click();
+  }
+  if (window.location.href.indexOf("#cancelled") > -1) {
+    $(".cancel").click();
+  }
 });
 
 function getBookings() {
@@ -57,7 +66,7 @@ function getBookings() {
               jsonData.booking[$i].sid +
               ');">CHANGE STATUS TO APPROVED</a></div><hr><div class="card-footer  text-right">' +
               timestamp +
-              "</div></div></div>";
+              "</div></div></div><br/>";
           }
           if (jsonData.booking[$i].statusno == 1) {
             proccessed +=

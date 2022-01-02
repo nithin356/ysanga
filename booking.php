@@ -438,6 +438,8 @@ include 'lander-components/head.php' ?>
     <script>
     </script>
     <script src="customer/source/js/booking.js"></script>
+    <script src="customer/source/js/user-profile.js"></script>
+
     <?php
     $sid =  $_SESSION['yn_sid'];
     $dateQuery = mysqli_query($connection, "SELECT * FROM ys_user_service WHERE yn_sid = '$sid'");

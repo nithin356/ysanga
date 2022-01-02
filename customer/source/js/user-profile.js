@@ -38,6 +38,7 @@ function loadProfile() {
             var jsonData = JSON.parse(response);
             if (jsonData.status === "OK") {
                 $("#UserName").val(jsonData.name);
+                $(".username").html(jsonData.name+" ");
                 $("#OldNumber").val(jsonData.phone);
                 $("#PhNumber").val(jsonData.phone);
                 $("#Eml").val(jsonData.email);

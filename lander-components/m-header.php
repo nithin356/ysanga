@@ -12,7 +12,7 @@
                 </div>
                 <ul>
                     <li class="side-bar-close">
-                        <a href="my-profile.php"><img src="images/icon/2.png" alt=""> My Profile</a>
+                        <a href="my-profile.php"><img src="images/icon/2.png" alt=""> <span class="username">Loading</span></a>
                     </li>
                     <li class="side-bar-close">
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>

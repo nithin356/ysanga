@@ -120,6 +120,8 @@
     <?php include 'lander-components/jslink.php' ?>
     <!--ALL SCRIPT FILES-->
     <script src="customer/source/js/index.js"></script>
+    <script src="customer/source/js/user-profile.js"></script>
+
 </body>
 
 </html>

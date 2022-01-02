@@ -3,7 +3,7 @@
         <div class="row">
             <div class="top-bar">
                 <ul>
-                    <li><a class='dropdown-button' href='#' data-activates='dropdown1'> My Account <i class="fa fa-angle-down"></i></a>
+                    <li><a class='dropdown-button' href='#' data-activates='dropdown1'> <span class="username" style="font-size: 12px;">My Account </span><i class="fa fa-angle-down"></i></a>
                     </li>
                     <!-- <li><a href="hotel-details.html">Our Hotels</a>
                     </li> -->

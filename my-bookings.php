@@ -125,6 +125,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script src="customer/source/js/user-booking.js"></script>
+    <script src="customer/source/js/user-profile.js"></script>
+
 </body>
 
 </html>

@@ -42,7 +42,14 @@
                             <i class="fa fa-ticket" aria-hidden="true"></i>
                             <span>Your Booking</span>
                         </a>
-                    </li> <li>
+                    </li>
+                    <li>
+                        <a href="book-user.php">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            <span>Book Auditorium</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="source/logout.php">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
                             <span>Logout</span>

@@ -51,14 +51,14 @@ $(document).ready(function () {
           success: function (response) {
             var jsonData = JSON.parse(response);
             if (jsonData.status === "OK") {
-              $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
+              // $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               $(".clickThisFor").click();
               $(".bookErrordiv").slideDown().hide();
               setTimeout(() => {
                 window.location.href = "my-bookings.php";
               }, 3000);
             } else {
-              $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
+              // $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               $(".bookErrordiv").slideDown().show();
               $(".bookError").html(jsonData.message);
             }

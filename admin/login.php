@@ -162,8 +162,6 @@
 
 	<?php include("components/jslinks.php"); ?>
 	<script src="source/js/auth_login.js"></script>
-	<script src="source/js/get_paymentinfo.js"></script>
-
 </body>
 
 </html>

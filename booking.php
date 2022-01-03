@@ -157,6 +157,7 @@ include 'lander-components/head.php' ?>
                         <div class="inn-com-form">
                             <form class="col s12" id="submitData">
                                 <div class="alert alert-danger alert-dismissable bookErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
+                                <div class="alert alert-info alert-dismissable bookLoginshow"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Info!</strong> <span class="bookLogin"></span> </div>
                                 <div class="row">
                                     <div class="col s12 avail-title">
                                         <h4>Check Availability</h4>
@@ -416,7 +417,7 @@ include 'lander-components/head.php' ?>
                 <h4>Thank you for checking with us!</h4>
                 <form>
                     <div>
-                        <label>Will get back to you! Thanks for your patience <a href="my-bookings.php">Click here to know more!</a></label>
+                        <label>Will get back to you! Thanks for your patience you will be redirected in 3 seconds! <a href="my-bookings.php">Click here to know more!</a></label>
                     </div>
                 </form>
             </div>

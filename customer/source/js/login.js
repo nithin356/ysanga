@@ -2,6 +2,9 @@ $(document).ready(function () {
   //OTP SCREEN
   $(".otpScreen").hide();
   $(".vryBtn").hide();
+  $(".bookLogin").hide();
+  $(".bookLoginshow").hide();
+
   $(".loginErrordiv").hide();
   $(".RegErrordiv").slideDown().hide();
 
@@ -114,6 +117,9 @@ function verify() {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
         if (window.location.href.indexOf("booking.php") > -1) {
+          $(".bookLogin").show();
+          $(".bookLoginshow").show();
+          $(".bookLogin").html("Please Enter Submit Button to Verify your Booking")
           // $("#submitData").submit();
           // $("#submitData").trigger('submit');
         }
@@ -122,7 +128,7 @@ function verify() {
         $(".LoginSide").hide();
         localStorage.setItem("sessionkey", "1");
         loadProfile();
-        $('.loginClose').click();
+        $(".loginClose").click();
       } else {
         localStorage.setItem("sessionkey", "0");
         $(".logOut").hide();

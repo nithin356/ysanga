@@ -92,7 +92,7 @@
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2">Arrival Date <span class="required">*</span></label>
+                                        <label class="col-sm-2">Available Date <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-calendar-o"></i>

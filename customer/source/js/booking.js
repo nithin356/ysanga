@@ -1,6 +1,9 @@
 var starVal = 0;
 var fromEditSession = 0;
+var unavailableDates = [];
 $(document).ready(function () {
+  $(".bookLogin").hide();
+  $(".bookLoginshow").hide();
   $(".hideme").show();
   $(".hidemeReview").hide();
   $(".bookErrordiv").hide();
@@ -9,6 +12,11 @@ $(document).ready(function () {
     loadEditServices();
     fromEditSession = 1;
     $(".btnCheckSubmit").val("EDIT");
+  }
+  if (window.location.href.indexOf("booking.php") > -1) {
+    $('#myElement').tooltip().mouseover();
+    // $("#submitData").submit();
+    // $("#submitData").trigger('submit');
   }
   $("#submitData").submit(function (e) {
     if (getSessionKey()) {
@@ -28,6 +36,7 @@ $(document).ready(function () {
         $(".bookErrordiv").slideDown().show();
         $(".bookError").html("Please Enter all the details!");
       } else {
+        $(".btnCheckSubmit").attr("style", "pointer-events:none;");
         $.ajax({
           type: "POST",
           url: API_URL + "customer/checking/",
@@ -42,10 +51,14 @@ $(document).ready(function () {
           success: function (response) {
             var jsonData = JSON.parse(response);
             if (jsonData.status === "OK") {
+              $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               $(".clickThisFor").click();
               $(".bookErrordiv").slideDown().hide();
-              // window.location.href = "my-bookings.php";
+              setTimeout(() => {
+                window.location.href = "my-bookings.php";
+              }, 3000);
             } else {
+              $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               $(".bookErrordiv").slideDown().show();
               $(".bookError").html(jsonData.message);
             }

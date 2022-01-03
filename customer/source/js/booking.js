@@ -3,6 +3,7 @@ var fromEditSession = 0;
 $(document).ready(function () {
   $(".hideme").show();
   $(".hidemeReview").hide();
+  $(".bookErrordiv").hide();
   loadServices();
   if (window.location.href.indexOf("uidtrackSessionedit=true") > -1) {
     loadEditServices();
@@ -17,29 +18,40 @@ $(document).ready(function () {
       var toe = $("select.toe option").filter(":selected").val();
       var noa = $("#nameorg").val();
       var others = $("#otherReq").val();
-    
-      $.ajax({
-        type: "POST",
-        url: API_URL + "customer/checking/",
-        data: {
-          arrival: arrival,
-          timeSlot: timeSlot,
-          toe: toe,
-          noa: noa,
-          others: others,
-          edit: fromEditSession,
-        },
-        success: function (response) {
-         
-
-          var jsonData = JSON.parse(response);
-          if (jsonData.status === "OK") {
-            $(".clickThisFor").click();
-          } else {
-            alert(jsonData.message);
-          }
-        },
-      });
+      if (
+        arrival == "" ||
+        timeSlot == "" ||
+        toe == "" ||
+        noa == "" ||
+        others == ""
+      ) {
+        $(".bookErrordiv").slideDown().show();
+        $(".bookError").html("Please Enter all the details!");
+      } else {
+        $.ajax({
+          type: "POST",
+          url: API_URL + "customer/checking/",
+          data: {
+            arrival: arrival,
+            timeSlot: timeSlot,
+            toe: toe,
+            noa: noa,
+            others: others,
+            edit: fromEditSession,
+          },
+          success: function (response) {
+            var jsonData = JSON.parse(response);
+            if (jsonData.status === "OK") {
+              $(".clickThisFor").click();
+              $(".bookErrordiv").slideDown().hide();
+              // window.location.href = "my-bookings.php";
+            } else {
+              $(".bookErrordiv").slideDown().show();
+              $(".bookError").html(jsonData.message);
+            }
+          },
+        });
+      }
     } else {
       $("#loginModal").click();
     }

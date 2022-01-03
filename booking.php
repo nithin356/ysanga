@@ -156,6 +156,7 @@ include 'lander-components/head.php' ?>
                     <div class="col-md-12">
                         <div class="inn-com-form">
                             <form class="col s12" id="submitData">
+                                <div class="alert alert-danger alert-dismissable bookErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
                                 <div class="row">
                                     <div class="col s12 avail-title">
                                         <h4>Check Availability</h4>
@@ -409,13 +410,13 @@ include 'lander-components/head.php' ?>
     </div>
     <div id="success" class="modal fade" role="dialog">
         <div class="log-in-pop">
-            <div class="log-in-pop-right">
+            <div class="log-in-pop-right" style="width: 100%;">
                 <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
-                <h4>Thank you!</h4>
-                <form class="s12" id="ratingsForm">
+                <h4>Thank you for checking with us!</h4>
+                <form>
                     <div>
-                        <label>Will get back to you! Thanks for your patience!</label>
+                        <label>Will get back to you! Thanks for your patience <a href="my-bookings.php">Click here to know more!</a></label>
                     </div>
                 </form>
             </div>

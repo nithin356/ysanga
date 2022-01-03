@@ -115,7 +115,7 @@ function verify() {
       if (jsonData.status === "OK") {
         if (window.location.href.indexOf("booking.php") > -1) {
           // $("#submitData").submit();
-          $("#submitData").trigger('submit');
+          // $("#submitData").trigger('submit');
         }
         $(".logOut").show();
         $(".RegisterSide").hide();

@@ -19,6 +19,12 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="booking.php">
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            <span>Your Bookings</span>
+                        </a>
+                    </li>
                     <li class="nav-parent">
                         <a>
                             <i class="fa fa-home"></i>
@@ -38,15 +44,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="booking.php">
-                            <i class="fa fa-ticket" aria-hidden="true"></i>
-                            <span>Your Booking</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="book-user.php">
                             <i class="fa fa-ticket" aria-hidden="true"></i>
                             <span>Book Auditorium</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payment-info.php">
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+                            <span>View Payments</span>
                         </a>
                     </li>
                     <li>

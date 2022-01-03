@@ -10,7 +10,7 @@
                 </ul>
             </div>
             <div class="log-in-pop-right">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                <a href="#" class="pop-close loginClose" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
                 <h4>Login</h4>
                 <div class="alert alert-danger alert-dismissable loginErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="loginError"></span> </div>

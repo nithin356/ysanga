@@ -113,8 +113,21 @@ function verify() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
-        location.reload();
+        if (window.location.href.indexOf("booking.php") > -1) {
+          // $("#submitData").submit();
+          $("#submitData").trigger('submit');
+        }
+        $(".logOut").show();
+        $(".RegisterSide").hide();
+        $(".LoginSide").hide();
+        localStorage.setItem("sessionkey", "1");
+        loadProfile();
+        $('.loginClose').click();
       } else {
+        localStorage.setItem("sessionkey", "0");
+        $(".logOut").hide();
+        $(".RegisterSide").show();
+        $(".LoginSide").show();
         $(".otp").addClass("bellno");
         setTimeout(() => {
           $(".otp").removeClass("bellno");

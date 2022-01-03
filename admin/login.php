@@ -85,7 +85,7 @@
 					<div class="form-group mb-lg">
 						<div class="clearfix">
 							<label class="pull-left">Password</label>
-							<a class="modal-with-form pull-right" href="#modalForm">Lost Password?</a>
+							<!-- <a class="modal-with-form pull-right" href="#modalForm">Lost Password?</a> -->
 						</div>
 						<div class="input-group input-group-icon">
 							<input name="pass" id="password" placeholder="Enter your password" type="password" class="form-control input-lg" />
@@ -162,6 +162,7 @@
 
 	<?php include("components/jslinks.php"); ?>
 	<script src="source/js/auth_login.js"></script>
+	<script src="source/js/get_paymentinfo.js"></script>
 
 </body>
 

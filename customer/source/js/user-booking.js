@@ -15,23 +15,32 @@ function loadBooking() {
       if (jsonData.status === "OK") {
         $(".myBookingDetails").empty();
         var myBookingData = "";
+        var pbtn = "";
+        var pbtns = "";
+        var pbtnCANCEL = "";
         for (var i = 0; i < jsonData.booking.length; i++) {
           var status = jsonData.booking[i].status;
-          var pbtn = "";
-          var pbtns = "";
           if (status == 0) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Pending Aprroval</label>";
             pbtn = "style=display:none;";
+            pbtnCANCEL = "style=display:none;";
           } else if (status == 1) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Payment Pending</label>";
             pbtns = "style=display:none;";
+            pbtnCANCEL = "style=display:none;";
           } else if (status == 2) {
             status =
               "<label style='color:Green;font-size:12px;line-height:0;'>Success</label>";
             pbtn = "style=display:none;";
             pbtns = "style=display:none;";
+          } else if (status == 3) {
+            status =
+              "<label style='color:red;font-size:12px;line-height:0;'>Cancelled</label>";
+            pbtn = "style=display:none;";
+            pbtns = "style=display:none;";
+            pbtnCANCEL = "style=display:none;";
           }
           var timeslot = jsonData.booking[i].timeslot;
           if (timeslot === "1") {
@@ -96,13 +105,57 @@ function loadBooking() {
             jsonData.booking[i].usid +
             "," +
             jsonData.booking[i].uid +
-            ')"><i class="fa fa-edit"></i> Edit</a></div></div>';
+            ')"><i class="fa fa-edit"></i> Edit</a> <a class="waves-effect waves-light inn-re-mo-btn ' +
+            pbtnCANCEL +
+            ' onclick="cancelBooking(' +
+            jsonData.booking[i].sid +
+            "," +
+            jsonData.booking[i].usid +
+            "," +
+            jsonData.booking[i].uid +
+            ')""><i class="fa fa-times"></i> Cancel</a></div></div>';
         }
         $(".myBookingDetails").html(myBookingData);
       } else {
       }
     },
   });
+}
+
+function cancelBooking(i, usid, uid) {
+  if (getSessionKey()) {
+    $.ajax({
+      type: "POST",
+      url: API_URL + "customer/edit-booking/",
+      data: {
+        usid: usid,
+        cancel:1
+
+      },
+      success: function (response) {
+        var jsonData = JSON.parse(response);
+        if (jsonData.status === "OK") {
+          $.ajax({
+            type: "POST",
+            url: API_URL + "customer/service-session/",
+            data: {
+              sid: i,
+            },
+            success: function (response) {
+              var jsonData = JSON.parse(response);
+              if (jsonData.status === "OK") {
+                loadBooking();
+              } else {
+              }
+            },
+          });
+        } else {
+        }
+      },
+    });
+  } else {
+    $("#loginModal").click();
+  }
 }
 
 function indieditservice(i, usid, uid) {
@@ -112,6 +165,7 @@ function indieditservice(i, usid, uid) {
       url: API_URL + "customer/edit-booking/",
       data: {
         usid: usid,
+        cancel:0
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
@@ -174,7 +228,7 @@ function payMyAmount(price, sid, user_service_id, e) {
   var user_service_id = user_service_id;
   var options = {
     key: "rzp_live_8ckloI2TLnpVvt",
-    amount: 1 * 100,
+    amount: totalAmount * 100,
     name: "Yuvakasanga",
     description: "Payment Details of " + audit,
     image: "img/siteimages/logo.png",

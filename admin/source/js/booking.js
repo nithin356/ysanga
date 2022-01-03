@@ -66,7 +66,7 @@ function getBookings() {
               jsonData.booking[$i].sid +
               ');">CHANGE STATUS TO APPROVED</a></div><hr><div class="card-footer  text-right">' +
               timestamp +
-              "</div></div></div><br/>";
+              "</div></div><br/></div>";
           }
           if (jsonData.booking[$i].statusno == 1) {
             proccessed +=
@@ -96,7 +96,7 @@ function getBookings() {
               jsonData.booking[$i].sid +
               ');">CHANGE STATUS TO COMPLETED</a></div><hr><div class="card-footer  text-right">' +
               timestamp +
-              "</div></div></div><br>";
+              "</div></div><br/></div>";
           }
           if (jsonData.booking[$i].statusno == 2) {
             completed +=
@@ -124,7 +124,7 @@ function getBookings() {
               jsonData.booking[$i].other +
               '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary">COMPLETED</a></div><hr><div class="card-footer text-right">' +
               timestamp +
-              "</div></div></div><br>";
+              "</div></div><br></div>";
           }
           if (jsonData.booking[$i].statusno == 3) {
             canceled +=
@@ -152,7 +152,7 @@ function getBookings() {
               jsonData.booking[$i].other +
               '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary">COMPLETED</a></div><hr><div class="card-footer text-right">' +
               timestamp +
-              "</div></div></div><br>";
+              "</div></div><br></div>";
           }
         }
         $(".newBookings").html(newBookings);

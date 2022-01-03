@@ -6,8 +6,6 @@ $(document).ready(function () {
     $(".otpUpdate").show();
     if (getSessionKey()) {
         loadProfile();
-    } else {
-        $("#loginModal").click();
     }
     $(".updateOtp").click(function () {
         edit = 1;

@@ -33,8 +33,6 @@ $(document).ready(function () {
          
 
           var jsonData = JSON.parse(response);
-          alert(jsonData.status);
-
           if (jsonData.status === "OK") {
             $(".clickThisFor").click();
           } else {

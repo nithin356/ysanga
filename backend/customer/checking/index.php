@@ -31,6 +31,3 @@ if ($fromSession == 1) {
     }
 }
 echo json_encode($data);
-$disprice = mysqli_fetch_assoc(mysqli_query($connection,"SELECT * ys_service WHERE yn_sid='$sid'"));
-$price = $disprice['yn_og_price'];
-echo $price;

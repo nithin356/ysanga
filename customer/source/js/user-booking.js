@@ -24,17 +24,16 @@ function loadBooking() {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Pending Aprroval</label>";
             pbtn = "style=display:none;";
-            pbtnCANCEL = "style=display:none;";
           } else if (status == 1) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Payment Pending</label>";
             pbtns = "style=display:none;";
-            pbtnCANCEL = "style=display:none;";
           } else if (status == 2) {
             status =
               "<label style='color:Green;font-size:12px;line-height:0;'>Success</label>";
             pbtn = "style=display:none;";
             pbtns = "style=display:none;";
+            pbtnCANCEL = "style=display:none;";
           } else if (status == 3) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Cancelled</label>";
@@ -95,7 +94,7 @@ function loadBooking() {
             jsonData.booking[i].usid +
             ',this); return false;" class="waves-effect waves-light inn-re-mo-btn" ' +
             pbtn +
-            '><i class="fa fa-lock"></i> Pay ₹' +
+            '>Pay ₹' +
             jsonData.booking[i].price +
             ' </a> <a class="waves-effect waves-light inn-re-mo-btn" ' +
             pbtns +
@@ -105,15 +104,15 @@ function loadBooking() {
             jsonData.booking[i].usid +
             "," +
             jsonData.booking[i].uid +
-            ')"><i class="fa fa-edit"></i> Edit</a> <a class="waves-effect waves-light inn-re-mo-btn ' +
-            pbtnCANCEL +
-            ' onclick="cancelBooking(' +
+            ')"><i class="fa fa-edit"></i> Edit</a> <a class="waves-effect waves-light inn-re-mo-btn" onclick="cancelBooking(' +
             jsonData.booking[i].sid +
             "," +
             jsonData.booking[i].usid +
             "," +
             jsonData.booking[i].uid +
-            ')""><i class="fa fa-times"></i> Cancel</a></div></div>';
+            ')" ' +
+            pbtnCANCEL +
+            '><i class="fa fa-times"></i> Cancel</a></div></div>';
         }
         $(".myBookingDetails").html(myBookingData);
       } else {
@@ -129,8 +128,7 @@ function cancelBooking(i, usid, uid) {
       url: API_URL + "customer/edit-booking/",
       data: {
         usid: usid,
-        cancel:1
-
+        cancel: 1,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);
@@ -165,7 +163,7 @@ function indieditservice(i, usid, uid) {
       url: API_URL + "customer/edit-booking/",
       data: {
         usid: usid,
-        cancel:0
+        cancel: 0,
       },
       success: function (response) {
         var jsonData = JSON.parse(response);

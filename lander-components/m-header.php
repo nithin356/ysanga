@@ -11,10 +11,10 @@
                 <div class="mm-close"><span><i class="fa fa-times hide-menu" aria-hidden="true"></i></span>
                 </div>
                 <ul>
-                    <li class="side-bar-close">
+                    <li class="side-bar-close logOut">
                         <a href="my-profile.php"><img src="images/icon/2.png" alt=""> <span class="username">Loading</span></a>
                     </li>
-                    <li class="side-bar-close">
+                    <li class="side-bar-close logOut">
                         <a href="my-bookings.php"><img src="images/icon/16.png" alt=""> My Bookings</a>
                     </li>
                     <li class="side-bar-close logOut">

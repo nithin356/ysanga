@@ -24,14 +24,14 @@ function loadBooking() {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Pending Aprroval</label>";
             pbtn = "style=display:none;";
-            pbtns = "style=display:inline;";
-            pbtnCANCEL = "style=display:inline;";
+            pbtns = "style=display:;";
+            pbtnCANCEL = "style=display:;";
           } else if (status == 1) {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Payment Pending</label>";
             pbtns = "style=display:none;";
-            pbtn = "style=display:inline;";
-            pbtnCANCEL = "style=display:inline;";
+            pbtn = "style=display:;";
+            pbtnCANCEL = "style=display:;";
           } else if (status == 2) {
             status =
               "<label style='color:Green;font-size:12px;line-height:0;'>Success</label>";

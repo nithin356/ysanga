@@ -169,7 +169,7 @@ function loadServices() {
             '<li><div class="lr-user-wr-img" style="background:blue;color:white;height:50px;width:50px;line-height: 1.8;font-size: 28px;font-weight: bolder;padding-left: 2%;">' +
             jsonData.service.review[i].uname[0] +
             '</div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
-            jsonData.service.review[i].uname+
+            jsonData.service.review[i].uname +
             " <span>" +
             jsonData.service.review[i].stars +
             '<i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">' +
@@ -338,6 +338,10 @@ function getBookdate(e) {
           $('.timeSlotVal[value="' + jsonData.slot[i].time + '"]').hide();
         }
         $('.timeSlotVal[value="3"]').hide();
+        if (jsonData.slot.length >= 2) {
+          $(".succeShow").show();
+          $(".succeShow").html("2 Slots are Booked");
+        }
         if (jsonData.slot.length == 0) {
           for (var i = 1; i < 4; i++) {
             $('.timeSlotVal[value="' + i + '"]').show();

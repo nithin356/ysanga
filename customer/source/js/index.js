@@ -52,11 +52,11 @@ function loadService() {
             mydataReview = "";
           }
           $(".getService").append(
-            '<div style="cursor:pointer;" onclick="indiservice(this)" data-service="' +
+            '<div style="cursor:pointer;border-radius:10px;" onclick="indiservice(this)" data-service="' +
               jsonData.service[i].sid +
               '" class="' +
               classdata +
-              '"><div class="to-ho-hotel-con"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic">View <i class="fa fa-eye" ></i></div><img src="uploads/' +
+              '"><div class="to-ho-hotel-con" style="cursor:pointer;border-radius:10px;"><div class="to-ho-hotel-con-1"><div class="hom-hot-av-tic" style="left:80%;">View <i class="fa fa-eye" ></i></div><img style="cursor:pointer;border-radius:10px;" src="uploads/' +
               jsonData.service[i].img +
               '" alt=""></div><div class="to-ho-hotel-con-23"><div class="to-ho-hotel-con-2"><a class="services" data-service="' +
               jsonData.service[i].sid +
@@ -66,11 +66,11 @@ function loadService() {
               jsonData.service[i].sdesc +
               '<div class="dir-rat-star ho-hot-rat-star"> ' +
               mydataReview +
-              ' </div></li><li><span class="ho-hot-pri-dis">₹ ' +
+              ' </div></li><li  style="visibility:hidden;"><span class="ho-hot-pri-dis">₹ ' +
               jsonData.service[i].oprice +
-              '</span><span class="ho-hot-pri">₹ ' +
+              '</span><!--<span class="ho-hot-pri">₹ ' +
               jsonData.service[i].price +
-              "</span></li></ul></div></div></div></div>"
+              "</span>--></li></ul></div></div></div></div>"
           );
           var f = "";
           if (featured != 0) {

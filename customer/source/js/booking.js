@@ -14,7 +14,7 @@ $(document).ready(function () {
     $(".btnCheckSubmit").val("EDIT");
   }
   if (window.location.href.indexOf("booking.php") > -1) {
-    $('#myElement').tooltip().mouseover();
+    $("#myElement").tooltip().mouseover();
     // $("#submitData").submit();
     // $("#submitData").trigger('submit');
   }
@@ -81,9 +81,9 @@ function loadServices() {
         $(".serviceName").html(jsonData.service.sname);
         $(".serviceSdesc").html(
           jsonData.service.sdesc +
-          "<br><span class='room-price-1' style='color:white;'>Price : ₹" +
-          jsonData.service.price +
-          "</span>"
+            "<br><span class='room-price-1' style='color:white;'>Price : ₹" +
+            jsonData.service.price +
+            "</span>"
         );
 
         $(".serviceLdesc").html(jsonData.service.ldesc);
@@ -92,13 +92,13 @@ function loadServices() {
         var res = "";
         for (var i = 0; i < jsonData.service.img.length; i++) {
           res +=
-            "<div class='item'><img class='img-responsive' src='uploads/" +
+            "<div class='item'><img class='img-responsive' style='height:550px;' src='uploads/" +
             jsonData.service.img[i].oimg +
             "'/></div>";
           $(".photoservice").append(
             '<li><img class="materialboxed" data-caption=" " src="uploads/' +
-            jsonData.service.img[i].oimg +
-            '" alt=""></li>'
+              jsonData.service.img[i].oimg +
+              '" alt=""></li>'
           );
         }
         var array = jsonData.service.specs;
@@ -106,18 +106,33 @@ function loadServices() {
         var specs = "";
         var icon = "";
         for (var w = 0; w < str_array.length; w++) {
-          if (str_array[w].includes("Air")) {
+          if (str_array[w].toLowerCase().includes("air")) {
             icon = "fa-fan";
-          } else if (str_array[w].includes("Air")) {
-            icon = "fa-fan";
+          } else if (str_array[w].toLowerCase().includes("speaker")) {
+            icon = "fa-volume-up";
+          } else if (str_array[w].toLowerCase().includes("mic")) {
+            icon = "fa-microphone-alt";
+          } else if (str_array[w].toLowerCase().includes("audio")) {
+            icon = "fa-headphones-alt";
+          } else if (str_array[w].toLowerCase().includes("light")) {
+            icon = "fa-lightbulb";
           } else {
             icon = "fa-info";
           }
           specs +=
-            "<li><i class='fas " + icon + " ' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" + str_array[w] + "</li> ";
+            "<li><i class='fas " +
+            icon +
+            " ' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" +
+            str_array[w] +
+            "</li> ";
         }
         $(".address").html("Address: " + jsonData.service.addr);
-        $(".specs").html("<li><i class='fas fa-chair' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" + jsonData.service.capacity + " Seats</li>" + specs);
+        $(".specs").html(
+          "<li><i class='fas fa-chair' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" +
+            jsonData.service.capacity +
+            " Seats</li>" +
+            specs
+        );
         $("#content").html('<div id="carousel-section">' + res + "</div>");
         $("#carousel-section").addClass("owl-carousel");
         $("#carousel-section").owlCarousel({
@@ -134,10 +149,10 @@ function loadServices() {
         $(".materialboxed").materialbox();
         $(".reviewdata").html(
           "<span>" +
-          jsonData.service.resultReview +
-          '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
-          jsonData.service.creview +
-          " reviews</label>"
+            jsonData.service.resultReview +
+            '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
+            jsonData.service.creview +
+            " reviews</label>"
         );
         $(".hidemeReview").show();
         var review = "";
@@ -146,7 +161,9 @@ function loadServices() {
           date = date.substring(0, date.length - 2);
           const timestamp = moment(date).fromNow();
           review +=
-            '<li><div class="lr-user-wr-img"> <img src="images/users/2.png" alt=""> </div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
+            '<li><div class="lr-user-wr-img" style="background:blue;color:white;height:50px;width:50px;line-height: 1.8;font-size: 28px;font-weight: bolder;padding-left: 4%;">' +
+            jsonData.service.review[i].uname[0] +
+            '</div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
             jsonData.service.review[i].uname +
             " <span>" +
             jsonData.service.review[i].stars +
@@ -180,10 +197,10 @@ function audreview() {
           $(".hidemeReview").show();
           $(".reviewdata").html(
             "<span>" +
-            jsonData.service.resultReview +
-            '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
-            jsonData.service.creview +
-            " reviews</label>"
+              jsonData.service.resultReview +
+              '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
+              jsonData.service.creview +
+              " reviews</label>"
           );
 
           var review = "";
@@ -257,7 +274,9 @@ function loadEditServices() {
             .attr("selected", "selected");
           if (jsonData.booking.timeslot == 1) {
             $(".time-slot").html("9:00 AM - 2:30 PM");
-          } else {
+          } else if (jsonData.booking.timeslot == 2) {
+            $(".time-slot").html("3:00 PM - 9:00 PM");
+          } else if (jsonData.booking.timeslot == 3) {
             $(".time-slot").html("3:00 PM - 9:00 PM");
           }
           $(".toe").val(jsonData.booking.eventtype);
@@ -271,4 +290,48 @@ function loadEditServices() {
   } else {
     $("#loginModal").click();
   }
+}
+
+function unavailable(date) {
+  dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  if ($.inArray(dmy, unavailableDates) == -1) {
+    return [true, ""];
+  } else {
+    return [false, "", "Unavailable"];
+  }
+}
+
+var msg = "";
+$("#from").click(function () {
+  msg =
+    "<div class='tabledata' style='margin-top:5px;'><span><i style='border-radius: 1px;border:1px solid #000!important;color:#fff;background:#fff;padding-left:5px;font-size:9px;'>B&nbsp;</i></span> Available&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i style='border-radius: 1px;border:1px solid #000!important;color:#fa1515;background:#fa1515;padding-left:5px;font-size:9px;'>B</i></span> Booked&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>";
+  $('.ui-datepicker-unselectable[title="Unavailable"]')
+    .find("span")
+    .removeClass("ui-state-default")
+    .addClass("colorData");
+  $(".tabledata").remove();
+  $("table").after(msg);
+  msg = "";
+});
+
+function getBookdate(e) {
+  var date = $(e).val();
+  $.ajax({
+    type: "POST",
+    url: API_URL + "customer/bookingdate/",
+    data: {
+      date: date,
+    },
+    success: function (response) {
+      var jsonData = JSON.parse(response);
+      if (jsonData.status === "OK") {
+        $('.timeslot option[value="3"]').wrap('<span/>');
+        for (var i = 0; i < jsonData.slot.length; i++) {
+          $('.timeslot option[value="' + jsonData.slot[i].time + '"]').wrap('<span/>');
+        }
+        $("select").material_select();
+      } else {
+      }
+    },
+  });
 }

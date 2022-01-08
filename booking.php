@@ -4,14 +4,25 @@
 <?php
 include_once 'backend/access/connect.php';
 session_start();
+$sid =  $_SESSION['yn_sid'];
+$dQuery = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM ys_service WHERE yn_sid = '$sid'"));
+
 include 'lander-components/head.php' ?>
 <style>
     .owl-nav {
         display: none;
     }
-    td[title="Unavailable"] {
-        background-color: red;
+
+    .colorData {
+        background-color: #fa1515 !important;
+        font-weight: bold !important;
+        color: white !important;
     }
+
+    .ui-state-disabled span {
+        color: white !important;
+    }
+
     #ui-datepicker-div {
         z-index: 999999999999999 !important;
     }
@@ -157,9 +168,9 @@ include 'lander-components/head.php' ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="inn-com-form">
-                            <form class="col s12" id="submitData">
-                                <div class="alert alert-danger alert-dismissable bookErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
-                                <div class="alert alert-info alert-dismissable bookLoginshow"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Info!</strong> <span class="bookLogin"></span> </div>
+                            <form class="col s12" id="submitData" autocomplete="off">
+                                <div class="alert alert-danger alert-dismissable bookErrordiv" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
+                                <div class="alert alert-info alert-dismissable bookLoginshow" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Info!</strong> <span class="bookLogin"></span> </div>
                                 <div class="row">
                                     <div class="col s12 avail-title">
                                         <h4>Check Availability</h4>
@@ -167,7 +178,7 @@ include 'lander-components/head.php' ?>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="from" name="from" class="arrival">
+                                        <input type="text" id="from" name="from" class="arrival" onchange="getBookdate(this)" readonly="readonly">
                                         <label for="from" class="aData">Available Date</label>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
@@ -175,11 +186,12 @@ include 'lander-components/head.php' ?>
                                             <option value="" disabled selected>Time Slot</option>
                                             <option value="1">9:00 AM - 2:30 PM</option>
                                             <option value="2">3:00 PM - 9:00 PM</option>
+                                            <option value="3">9:00 AM - 9:00 PM</option>
                                         </select>
                                         <span class="time-slot"></span>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <input type="text" class="toe" placeholder="Type of Events">
+                                        <input type="text" class="toe" placeholder="Enter your Event">
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">
@@ -346,8 +358,7 @@ include 'lander-components/head.php' ?>
                         <!--=========================================-->
                         <div class="hp-book hp-right-com hp-right-com-block">
                             <div class="hp-book-in">
-                                <!-- <button class="like-button"><i class="fa fa-heart-o"></i> Bookmark this listing</button> -->
-                                <span class="address"></span>
+                                <?php echo $dQuery['yn_address'];  ?>
                             </div>
                         </div>
                         <!--=========================================-->
@@ -434,12 +445,10 @@ include 'lander-components/head.php' ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script>
     </script>
-    <script src="customer/source/js/booking.js"></script>
     <script src="customer/source/js/user-profile.js"></script>
 
     <?php
-    $sid =  $_SESSION['yn_sid'];
-    $dateQuery = mysqli_query($connection, "SELECT * FROM ys_user_service WHERE yn_sid = '$sid'");
+    $dateQuery = mysqli_query($connection, "SELECT * FROM ys_user_service WHERE yn_sid = '$sid' AND yn_time=3");
     $newDate = "";
     while ($date = mysqli_fetch_assoc($dateQuery)) {
         $oldDate = $date['yn_arrival'];
@@ -449,22 +458,14 @@ include 'lander-components/head.php' ?>
         $newDate .= "'$one-$two-$arr[2]',";
     }
     ?>
+    <script src="customer/source/js/booking.js"></script>
     <script>
         var unavailableDates = [<?php echo substr($newDate, 0, -1);  ?>];
-
-        function unavailable(date) {
-            dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-            if ($.inArray(dmy, unavailableDates) == -1) {
-                return [true, ""];
-            } else {
-                return [false, "", "Unavailable"];
-            }
-        }
-
         $("#from").datepicker({
             beforeShowDay: unavailable
         });
     </script>
+
 </body>
 
 </html>

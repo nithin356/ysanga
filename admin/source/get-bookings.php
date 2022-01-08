@@ -25,17 +25,10 @@ if ($count > 0) {
             $timeslot = "9:00 AM - 2:30 PM";
         } else if ($timeslot === "2") {
             $timeslot = "3:00 PM - 9:00 PM";
+        } else if ($timeslot === "3") {
+            $timeslot = "9:00 AM - 9:00 PM";
         }
         $eventtype = $rowservice['yn_eventtype'];
-        if ($eventtype === "1") {
-            $eventtype = "Type 1";
-        } else if ($eventtype === "2") {
-            $eventtype = "Type 2";
-        } else if ($eventtype === "3") {
-            $eventtype = "Type 3";
-        } else if ($eventtype === "3") {
-            $eventtype = "Type 4";
-        }
         $services = array("sid" => $rowservice['yn_us_id'], "status" => $status, "statusno" => $rowservice['yn_s_status'], "timeslot" => $timeslot, "eventtype" => $eventtype, "img" => $rowservice['yn_s_images'], "arrival" => $rowservice['yn_arrival'], "org" => $rowservice['yn_organisation'], "other" => $rowservice['yn_other'], "created" => $rowservice['yn_created'], "name" => $rowservice['yn_sname'], "username" => $usname, "phone" => $phone, "email" => $email);
         array_push($service, $services);
     }

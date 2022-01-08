@@ -163,9 +163,11 @@ if ($no_product) { ?>
                         <span class="input-group-addon">
                             <i class="fa fa-file-text"></i>
                         </span>
-                        <textarea type="text" name="address" class="form-control vn_addrs" placeholder="Enter the Address."  ><?php echo $row['yn_address']; ?></textarea>
+                        <textarea type="text" name="address" class="form-control vn_addrs" placeholder="Enter the Address."><?php echo $row['yn_address']; ?></textarea>
                     </div>
-                    <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
+                    <p class="col-sm-offset-2">
+                        <i class="fa fa-info"></i> <a href="https://support.google.com/maps/answer/144361?hl=en&co=GENIE.Platform%3DDesktop"> Get Help</a>
+                    </p>
                 </div>
                 <hr>
                 <div class="form-group cover">

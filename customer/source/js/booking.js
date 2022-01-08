@@ -166,10 +166,10 @@ function loadServices() {
           date = date.substring(0, date.length - 2);
           const timestamp = moment(date).fromNow();
           review +=
-            '<li><div class="lr-user-wr-img" style="background:blue;color:white;height:50px;width:50px;line-height: 1.8;font-size: 28px;font-weight: bolder;padding-left: 4%;">' +
+            '<li><div class="lr-user-wr-img" style="background:blue;color:white;height:50px;width:50px;line-height: 1.8;font-size: 28px;font-weight: bolder;padding-left: 2%;">' +
             jsonData.service.review[i].uname[0] +
             '</div><div class="lr-user-wr-con lr-user-wr-con-block"><h6>' +
-            jsonData.service.review[i].uname +
+            jsonData.service.review[i].uname+
             " <span>" +
             jsonData.service.review[i].stars +
             '<i class="fa fa-star" aria-hidden="true"></i></span></h6> <span class="lr-revi-date">' +

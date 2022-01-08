@@ -9,7 +9,9 @@ include 'lander-components/head.php' ?>
     .owl-nav {
         display: none;
     }
-
+    td[title="Unavailable"] {
+        background-color: red;
+    }
     #ui-datepicker-div {
         z-index: 999999999999999 !important;
     }
@@ -177,14 +179,7 @@ include 'lander-components/head.php' ?>
                                         <span class="time-slot"></span>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <select class="toe">
-                                            <option value="" disabled selected hidden>Type of Events</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="1">4</option>
-                                        </select>
-                                        <span class="event-slot"></span>
+                                        <input type="text" class="toe" placeholder="Type of Events">
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">

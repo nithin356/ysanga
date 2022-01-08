@@ -23,7 +23,7 @@ $(document).ready(function () {
       e.preventDefault();
       var arrival = $(".arrival").val();
       var timeSlot = $("select.timeslot option").filter(":selected").val();
-      var toe = $("select.toe option").filter(":selected").val();
+      var toe = $(".toe").val();
       var noa = $("#nameorg").val();
       var others = $("#otherReq").val();
       if (
@@ -81,9 +81,9 @@ function loadServices() {
         $(".serviceName").html(jsonData.service.sname);
         $(".serviceSdesc").html(
           jsonData.service.sdesc +
-            "<br><span class='room-price-1' style='color:white;'>Price : ₹" +
-            jsonData.service.price +
-            "</span>"
+          "<br><span class='room-price-1' style='color:white;'>Price : ₹" +
+          jsonData.service.price +
+          "</span>"
         );
 
         $(".serviceLdesc").html(jsonData.service.ldesc);
@@ -97,19 +97,27 @@ function loadServices() {
             "'/></div>";
           $(".photoservice").append(
             '<li><img class="materialboxed" data-caption=" " src="uploads/' +
-              jsonData.service.img[i].oimg +
-              '" alt=""></li>'
+            jsonData.service.img[i].oimg +
+            '" alt=""></li>'
           );
         }
         var array = jsonData.service.specs;
         var str_array = array.split(",");
         var specs = "";
+        var icon = "";
         for (var w = 0; w < str_array.length; w++) {
+          if (str_array[w].includes("Air")) {
+            icon = "fa-fan";
+          } else if (str_array[w].includes("Air")) {
+            icon = "fa-fan";
+          } else {
+            icon = "fa-info";
+          }
           specs +=
-            "<li><img src='images/icon/a1.png'>" + str_array[w] + "</li> ";
+            "<li><i class='fas " + icon + " ' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" + str_array[w] + "</li> ";
         }
         $(".address").html("Address: " + jsonData.service.addr);
-        $(".specs").html(specs);
+        $(".specs").html("<li><i class='fas fa-chair' style='height: 45px;width: 45px;line-height: 2.8;background:black;color:white;margin-bottom:10px;'></i><br>" + jsonData.service.capacity + " Seats</li>" + specs);
         $("#content").html('<div id="carousel-section">' + res + "</div>");
         $("#carousel-section").addClass("owl-carousel");
         $("#carousel-section").owlCarousel({
@@ -126,10 +134,10 @@ function loadServices() {
         $(".materialboxed").materialbox();
         $(".reviewdata").html(
           "<span>" +
-            jsonData.service.resultReview +
-            '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
-            jsonData.service.creview +
-            " reviews</label>"
+          jsonData.service.resultReview +
+          '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
+          jsonData.service.creview +
+          " reviews</label>"
         );
         $(".hidemeReview").show();
         var review = "";
@@ -172,10 +180,10 @@ function audreview() {
           $(".hidemeReview").show();
           $(".reviewdata").html(
             "<span>" +
-              jsonData.service.resultReview +
-              '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
-              jsonData.service.creview +
-              " reviews</label>"
+            jsonData.service.resultReview +
+            '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
+            jsonData.service.creview +
+            " reviews</label>"
           );
 
           var review = "";
@@ -247,15 +255,12 @@ function loadEditServices() {
           $(".timeslot")
             .find("option[value=" + jsonData.booking.timeslot + "]")
             .attr("selected", "selected");
-          $(".toe")
-            .find("option[value=" + jsonData.booking.eventtype + "]")
-            .attr("selected", "selected");
           if (jsonData.booking.timeslot == 1) {
             $(".time-slot").html("9:00 AM - 2:30 PM");
           } else {
             $(".time-slot").html("3:00 PM - 9:00 PM");
           }
-          $(".event-slot").html(jsonData.booking.eventtype);
+          $(".toe").val(jsonData.booking.eventtype);
 
           $("#nameorg").val(jsonData.booking.org);
           $("#otherReq").val(jsonData.booking.other);

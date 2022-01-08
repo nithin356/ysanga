@@ -52,15 +52,6 @@ function loadBooking() {
             timeslot = "3:00 PM - 9:00 PM";
           }
           var eventtype = jsonData.booking[i].eventtype;
-          if (eventtype === "1") {
-            eventtype = "Type 1";
-          } else if (eventtype === "2") {
-            eventtype = "Type 2";
-          } else if (eventtype === "3") {
-            eventtype = "Type 3";
-          } else if (eventtype === "3") {
-            eventtype = "Type 4";
-          }
           var arrival = moment(jsonData.booking[i].arrival).format("MMM Do YY");
           var date = jsonData.booking[i].created;
           date = date.substring(0, date.length - 2);

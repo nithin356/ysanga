@@ -1,6 +1,7 @@
 var starVal = 0;
 var fromEditSession = 0;
 var unavailableDates = [];
+var timeSlotval = 0;
 $(document).ready(function () {
   $(".bookLogin").hide();
   $(".bookLoginshow").hide();
@@ -8,6 +9,10 @@ $(document).ready(function () {
   $(".hidemeReview").hide();
   $(".bookErrordiv").hide();
   loadServices();
+  $(".timeSlotVal").click(function () {
+    timeSlotval = $(this).attr("value");
+    $(".btnDrop").html($(this).text());
+  });
   if (window.location.href.indexOf("uidtrackSessionedit=true") > -1) {
     loadEditServices();
     fromEditSession = 1;
@@ -22,13 +27,13 @@ $(document).ready(function () {
     if (getSessionKey()) {
       e.preventDefault();
       var arrival = $(".arrival").val();
-      var timeSlot = $("select.timeslot option").filter(":selected").val();
+      var timeSlot = timeSlotval;
       var toe = $(".toe").val();
       var noa = $("#nameorg").val();
       var others = $("#otherReq").val();
       if (
         arrival == "" ||
-        timeSlot == "" ||
+        timeSlot == 0 ||
         toe == "" ||
         noa == "" ||
         others == ""
@@ -92,7 +97,7 @@ function loadServices() {
         var res = "";
         for (var i = 0; i < jsonData.service.img.length; i++) {
           res +=
-            "<div class='item'><img class='img-responsive' style='height:550px;' src='uploads/" +
+            "<div class='item'><img class='img-responsive' src='uploads/" +
             jsonData.service.img[i].oimg +
             "'/></div>";
           $(".photoservice").append(
@@ -269,15 +274,15 @@ function loadEditServices() {
         if (jsonData.status === "OK") {
           $(".aData").hide();
           $(".arrival").val(jsonData.booking.arrival);
-          $(".timeslot")
-            .find("option[value=" + jsonData.booking.timeslot + "]")
-            .attr("selected", "selected");
           if (jsonData.booking.timeslot == 1) {
-            $(".time-slot").html("9:00 AM - 2:30 PM");
+            timeSlotval = 1;
+            $(".btnDrop").html("9:00 AM - 2:30 PM");
           } else if (jsonData.booking.timeslot == 2) {
-            $(".time-slot").html("3:00 PM - 9:00 PM");
+            timeSlotval = 2;
+            $(".btnDrop").html("3:00 PM - 9:00 PM");
           } else if (jsonData.booking.timeslot == 3) {
-            $(".time-slot").html("3:00 PM - 9:00 PM");
+            timeSlotval = 3;
+            $(".btnDrop").html("3:00 PM - 9:00 PM");
           }
           $(".toe").val(jsonData.booking.eventtype);
 
@@ -325,12 +330,24 @@ function getBookdate(e) {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
-        $('.timeslot option[value="3"]').wrap('<span/>');
-        for (var i = 0; i < jsonData.slot.length; i++) {
-          $('.timeslot option[value="' + jsonData.slot[i].time + '"]').wrap('<span/>');
+        $(".succeShow").hide();
+        for (var i = 0; i < 3; i++) {
+          $('.timeSlotVal[value="' + i + '"]').show();
         }
-        $("select").material_select();
+        for (var i = 0; i < jsonData.slot.length; i++) {
+          $('.timeSlotVal[value="' + jsonData.slot[i].time + '"]').hide();
+        }
+        $('.timeSlotVal[value="3"]').hide();
+        if (jsonData.slot.length == 0) {
+          for (var i = 1; i < 4; i++) {
+            $('.timeSlotVal[value="' + i + '"]').show();
+          }
+        }
       } else {
+        $(".succeShow").hide();
+        for (var i = 1; i < 4; i++) {
+          $('.timeSlotVal[value="' + i + '"]').show();
+        }
       }
     },
   });

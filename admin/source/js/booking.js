@@ -62,9 +62,13 @@ function getBookings() {
               jsonData.booking[$i].org +
               '</p><p class="card-text">Other Info : ' +
               jsonData.booking[$i].other +
-              '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary" onclick="changeStatus(1,' +
+              '</p><p class="card-text">Payment Status : ' +
+              jsonData.booking[$i].payment +
+              '</p><a class="btn btn-primary" onclick="changeStatus(1,' +
               jsonData.booking[$i].sid +
-              ');">CHANGE STATUS TO APPROVED</a></div><hr><div class="card-footer  text-right">' +
+              ');">CHANGE STATUS TO APPROVED</a> <a class="btn btn-danger" onclick="changeStatus(3,' +
+              jsonData.booking[$i].sid +
+              ');">Cancel</a></div><hr><div class="card-footer  text-right">' +
               timestamp +
               "</div></div><br/></div>";
           }
@@ -92,7 +96,9 @@ function getBookings() {
               jsonData.booking[$i].org +
               '</p><p class="card-text">Other Info : ' +
               jsonData.booking[$i].other +
-              '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary" onclick="changeStatus(2,' +
+              '</p><p class="card-text">Payment Status : ' +
+              jsonData.booking[$i].payment +
+              '</p><a class="btn btn-primary" onclick="changeStatus(2,' +
               jsonData.booking[$i].sid +
               ');">CHANGE STATUS TO COMPLETED</a></div><hr><div class="card-footer  text-right">' +
               timestamp +
@@ -122,7 +128,9 @@ function getBookings() {
               jsonData.booking[$i].org +
               '</p><p class="card-text">Other Info : ' +
               jsonData.booking[$i].other +
-              '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary">COMPLETED</a></div><hr><div class="card-footer text-right">' +
+              '</p><p class="card-text">Payment Status : ' +
+              jsonData.booking[$i].payment +
+              '</p><a class="btn btn-primary">COMPLETED</a></div><hr><div class="card-footer text-right">' +
               timestamp +
               "</div></div><br></div>";
           }
@@ -150,7 +158,9 @@ function getBookings() {
               jsonData.booking[$i].org +
               '</p><p class="card-text">Other Info : ' +
               jsonData.booking[$i].other +
-              '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary">COMPLETED</a></div><hr><div class="card-footer text-right">' +
+              '</p><p class="card-text">Payment Status : Not Proccessed</p><a class="btn btn-primary" onclick="changeStatus(1,' +
+              jsonData.booking[$i].sid +
+              ');">REVOKE</a></div><hr><div class="card-footer text-right">' +
               timestamp +
               "</div></div><br></div>";
           }

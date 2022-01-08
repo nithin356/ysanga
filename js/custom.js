@@ -24,7 +24,7 @@ $(document).ready(function() {
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
     $('.carousel').carousel();
-    $('select').material_select();
+    // $('select').material_select();
     $('.slider').slider();
     $('.dropdown-button').dropdown({
         inDuration: 300,

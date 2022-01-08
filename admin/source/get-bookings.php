@@ -29,7 +29,15 @@ if ($count > 0) {
             $timeslot = "9:00 AM - 9:00 PM";
         }
         $eventtype = $rowservice['yn_eventtype'];
-        $services = array("sid" => $rowservice['yn_us_id'], "status" => $status, "statusno" => $rowservice['yn_s_status'], "timeslot" => $timeslot, "eventtype" => $eventtype, "img" => $rowservice['yn_s_images'], "arrival" => $rowservice['yn_arrival'], "org" => $rowservice['yn_organisation'], "other" => $rowservice['yn_other'], "created" => $rowservice['yn_created'], "name" => $rowservice['yn_sname'], "username" => $usname, "phone" => $phone, "email" => $email);
+        $userserid = $rowservice['yn_us_id'];
+        $getPayMentCount = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_razorpay_trans WHERE yn_rp_usid='$userserid'"));
+        $payment = "";
+        if ($getPayMentCount > 0) {
+            $payment = "Success";
+        } else {
+            $payment = "Not Processed";
+        }
+        $services = array("sid" => $rowservice['yn_us_id'], "status" => $status, "statusno" => $rowservice['yn_s_status'], "timeslot" => $timeslot, "eventtype" => $eventtype, "img" => $rowservice['yn_s_images'], "arrival" => $rowservice['yn_arrival'], "org" => $rowservice['yn_organisation'], "other" => $rowservice['yn_other'], "created" => $rowservice['yn_created'], "name" => $rowservice['yn_sname'], "username" => $usname, "phone" => $phone, "email" => $email, "payment" => $payment);
         array_push($service, $services);
     }
 

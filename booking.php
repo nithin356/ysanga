@@ -182,13 +182,22 @@ include 'lander-components/head.php' ?>
                                         <label for="from" class="aData">Available Date</label>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
-                                        <select class="timeslot">
+                                        <!-- <select class="timeslot" id="thisData">
                                             <option value="" disabled selected>Time Slot</option>
                                             <option value="1">9:00 AM - 2:30 PM</option>
                                             <option value="2">3:00 PM - 9:00 PM</option>
                                             <option value="3">9:00 AM - 9:00 PM</option>
-                                        </select>
-                                        <span class="time-slot"></span>
+                                        </select> -->
+                                        <!-- <span class="time-slot"></span> -->
+                                        <li class="dropdown " style="list-style: none;">
+                                            <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="btnDrop dropdown-toggle" style="width: 100%;height:45px;background:white;border:none;border-radius:3px;text-align: left;padding-left: 6%;font-size: 12px;">Available Time Slot<span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="succeShow">Choose the Date  </a></li>
+                                                <li><a class="timeSlotVal" value="1" style="display:none;">9:00 AM - 2:30 PM</a></li>
+                                                <li><a class="timeSlotVal" value="2" style="display:none;">3:00 PM - 9:00 PM</a></li>
+                                                <li><a class="timeSlotVal" value="3" style="display:none;">9:00 AM - 9:00 PM</a></li>
+                                            </ul>
+                                        </li>
                                     </div>
                                     <div class="input-field col s12 m4 l2">
                                         <input type="text" class="toe" placeholder="Enter your Event">

@@ -41,8 +41,8 @@ function login() {
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
-          $("#timer").html(jsonData.otp);
-          console.log(jsonData.otp);
+          // $("#timer").html(jsonData.otp);
+          // console.log(jsonData.otp);
           $(".otpScreen").slideDown().show();
           $(".lgnBtn").slideDown().hide();
           $(".phoneField").slideDown().hide();

@@ -30,7 +30,7 @@ function loadBooking() {
             status =
               "<label style='color:red;font-size:12px;line-height:0;'>Payment Pending</label>";
             pbtns = "style=display:none;";
-            pbtn = "style=display:;";
+            pbtn = "style=display:;background:green;";
             pbtnCANCEL = "style=display:;";
           } else if (status == 2) {
             status =

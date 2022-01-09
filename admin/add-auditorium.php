@@ -69,9 +69,9 @@
                                         <label class="col-sm-2">Capacity <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-user"></i>
                                             </span>
-                                            <textarea type="text" name="capac" class="form-control vn_cap" placeholder="Enter the room capacity"></textarea>
+                                            <input type="text" name="capac" class="form-control vn_cap" placeholder="Enter the room capacity"></input>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
@@ -79,9 +79,9 @@
                                         <label class="col-sm-2">Phone <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-phone"></i>
                                             </span>
-                                            <textarea type="text" name="phone" class="form-control vn_phone" placeholder="Enter the phone number"></textarea>
+                                            <input type="text" name="phone" class="form-control vn_phone" placeholder="Enter the phone number"></input>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
@@ -89,9 +89,9 @@
                                         <label class="col-sm-2">Discounted Price <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-inr"></i>
                                             </span>
-                                            <textarea type="text" name="oprice" class="form-control vn_oprice" placeholder="Enter the Discounted price"></textarea>
+                                            <input type="text" name="oprice" class="form-control vn_oprice" placeholder="Enter the Discounted price"></input>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
@@ -99,9 +99,9 @@
                                         <label class="col-sm-2">Original Price <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-inr"></i>
                                             </span>
-                                            <textarea type="text" name="price" class="form-control vn_price" placeholder="Enter the price"></textarea>
+                                            <input type="text" name="price" class="form-control vn_price" placeholder="Enter the price"></input>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>
@@ -109,7 +109,7 @@
                                         <label class="col-sm-2">Specifications <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-gear"></i>
                                             </span>
                                             <textarea type="text" name="specifications" class="form-control vn_specs" placeholder="Eg: Air Condition,Etc. please use comma after each specifications."></textarea>
                                         </div>
@@ -119,7 +119,7 @@
                                         <label class="col-sm-2">Address <span class="required">*</span></label>
                                         <div class="col-sm-10 input-group">
                                             <span class="input-group-addon">
-                                                <i class="fa fa-file-text"></i>
+                                                <i class="fa fa-map-marker"></i>
                                             </span>
                                             <textarea type="text" name="address" class="form-control vn_addr" placeholder="Please Read the below link to add your address."></textarea>
                                         </div>

@@ -131,6 +131,7 @@
                                                 <option value="" disabled selected>Time Slot</option>
                                                 <option value="1">9:00 AM - 2:30 PM</option>
                                                 <option value="2">3:00 PM - 9:00 PM</option>
+                                                <option value="3">9:00 AM - 9:00 PM</option>
                                             </select>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
@@ -141,13 +142,14 @@
                                             <span class="input-group-addon">
                                                 <i class="fa fa-list"></i>
                                             </span>
-                                            <select name="etype" id="etype" class="form-control etype" required>
+                                            <!-- <select name="etype" id="etype" class="form-control etype" required>
                                                 <option value="" disabled selected hidden>Type of Events</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="1">4</option>
-                                            </select>
+                                            </select> -->
+                                            <input type="text" name="etype" id="etype" class="form-control etype" placeholder="Enter Event Type"></input>
                                         </div>
                                         <p class="col-sm-offset-2 text-danger-bdes text-danger"></p>
                                     </div>

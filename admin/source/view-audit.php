@@ -111,7 +111,7 @@ if ($no_product) { ?>
                     <label class="col-sm-2">Phone <span class="required">*</span></label>
                     <div class="col-sm-10 input-group">
                         <span class="input-group-addon">
-                            ₹ &nbsp;
+                        <i class="fa fa-phone"></i>
                         </span>
                         <input type="text" name="vn_phone" class="form-control vn_phone" placeholder="Enter Phone number" value="<?php echo $row['yn_phone']; ?>" />
                     </div>
@@ -121,7 +121,7 @@ if ($no_product) { ?>
                     <label class="col-sm-2">Capacity <span class="required">*</span></label>
                     <div class="col-sm-10 input-group">
                         <span class="input-group-addon">
-                            ₹ &nbsp;
+                            <i class="fa fa-user"></i>
                         </span>
                         <input type="text" name="vn_cap" class="form-control vn_cap" placeholder="Enter seating capacity" value="<?php echo $row['yn_capacity']; ?>" />
                     </div>
@@ -151,7 +151,7 @@ if ($no_product) { ?>
                     <label class="col-sm-2">Specifications <span class="required">*</span></label>
                     <div class="col-sm-10 input-group">
                         <span class="input-group-addon">
-                            <i class="fa fa-file-text"></i>
+                            <i class="fa fa-gear"></i>
                         </span>
                         <textarea type="text" name="specifications" class="form-control vn_specs" placeholder="Eg: Air Condition,Etc. please use comma after each specifications."><?php echo $row['yn_specs']; ?></textarea>
                     </div>
@@ -161,7 +161,7 @@ if ($no_product) { ?>
                     <label class="col-sm-2">Address <span class="required">*</span></label>
                     <div class="col-sm-10 input-group">
                         <span class="input-group-addon">
-                            <i class="fa fa-file-text"></i>
+                            <i class="fa fa-map-marker"></i>
                         </span>
                         <textarea type="text" name="address" class="form-control vn_addrs" placeholder="Enter the Address."><?php echo $row['yn_address']; ?></textarea>
                     </div>

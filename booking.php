@@ -303,7 +303,7 @@ include 'lander-components/head.php' ?>
                             </div>
                             <div class="hp-section">
                                 <div class="hp-sub-tit hp-sub-tit-block">
-                                    <h4><span>Aminitiese</span> Room</h4>
+                                    <h4><span>Facilities</span> of <span class="serviceName"></span></h4>
                                 </div>
                                 <div class="hp-amini hp-amini-block">
                                     <div class="hideme loadingio-spinner-spinner-i7cawj2sq">

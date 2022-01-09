@@ -83,7 +83,7 @@ function loadServices() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
-        $('.containers').show();
+        $(".containers").show();
         $(".serviceName").html(jsonData.service.sname);
         $(".serviceSdesc").html(
           jsonData.service.sdesc +
@@ -153,13 +153,17 @@ function loadServices() {
         $(".myReview").empty();
         $(".hideme").hide();
         $(".materialboxed").materialbox();
-        $(".reviewdata").html(
-          "<span>" +
+        if (jsonData.service.creview > 0) {
+          rdata =
+            "<span>" +
             jsonData.service.resultReview +
             '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
             jsonData.service.creview +
-            " reviews</label>"
-        );
+            " reviews";
+        } else {
+          rdata = "<span>No Reviews</span>";
+        }
+        $(".reviewdata").html(rdata);
         $(".hidemeReview").show();
         var review = "";
         for (var i = 0; i < jsonData.service.review.length; i++) {
@@ -201,13 +205,19 @@ function audreview() {
         if (jsonData.status === "OK") {
           $(".hideme").hide();
           $(".hidemeReview").show();
-          $(".reviewdata").html(
-            "<span>" +
+          var rdata = "";
+          if (jsonData.service.creview > 0) {
+            rdata =
+              "<span>" +
               jsonData.service.resultReview +
               '<i class="fa fa-star" aria-hidden="true"></i></span>based on ' +
               jsonData.service.creview +
-              " reviews</label>"
-          );
+              " reviews";
+          } else {
+            rdata =
+              '<span>No Review Found<i class="fa fa-star" aria-hidden="true"></i></span>';
+          }
+          $(".reviewdata").html(rdata);
 
           var review = "";
           for (var i = 0; i < jsonData.service.review.length; i++) {

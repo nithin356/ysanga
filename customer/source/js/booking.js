@@ -24,6 +24,8 @@ $(document).ready(function () {
     // $("#submitData").trigger('submit');
   }
   $("#submitData").submit(function (e) {
+    var checked = 0;
+
     if (getSessionKey()) {
       e.preventDefault();
       var arrival = $(".arrival").val();
@@ -31,6 +33,11 @@ $(document).ready(function () {
       var toe = $(".toe").val();
       var noa = $("#nameorg").val();
       var others = $("#otherReq").val();
+      if ($("#exampleCheck1").is(":checked")) {
+        checked = 1;
+      } else {
+        checked = 0;
+      }
       if (
         arrival == "" ||
         timeSlot == 0 ||
@@ -52,6 +59,7 @@ $(document).ready(function () {
             noa: noa,
             others: others,
             edit: fromEditSession,
+            checked: checked,
           },
           success: function (response) {
             var jsonData = JSON.parse(response);
@@ -63,6 +71,7 @@ $(document).ready(function () {
                 window.location.href = "my-bookings.php";
               }, 3000);
             } else {
+              $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               // $(".btnCheckSubmit").attr("style", "pointer-events:cursor;");
               $(".bookErrordiv").slideDown().show();
               $(".bookError").html(jsonData.message);
@@ -284,6 +293,7 @@ function loadEditServices() {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "OK") {
           $(".aData").hide();
+          loadCheckBox(jsonData.booking.sid);
           $(".arrival").val(jsonData.booking.arrival);
           if (jsonData.booking.timeslot == 1) {
             timeSlotval = 1;
@@ -363,6 +373,31 @@ function getBookdate(e) {
         for (var i = 1; i < 4; i++) {
           $('.timeSlotVal[value="' + i + '"]').show();
         }
+      }
+    },
+  });
+}
+
+//load user profile details
+function loadCheckBox(sid) {
+  var edit = 0;
+  $.ajax({
+    type: "POST",
+    url: API_URL + "customer/edit-profile/",
+    data: {
+      edit: edit,
+    },
+    success: function (response) {
+      var jsonData = JSON.parse(response);
+      if (jsonData.status === "OK") {
+        var array = jsonData.notif;
+        var str_array = array.split(",");
+        for (var w = 0; w < str_array.length; w++) {
+          if (sid == str_array[w]) {
+            $("#exampleCheck1").click();
+          }
+        }
+      } else {
       }
     },
   });

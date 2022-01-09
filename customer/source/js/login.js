@@ -74,27 +74,32 @@ function register() {
     $(".RegErrordiv").slideDown().show();
     $(".RegError").html("Invalid Phone Number!");
   } else {
-    $.ajax({
-      type: "POST",
-      url: API_URL + "customer/registerasotp/",
-      data: {
-        name: Rusername,
-        phone: Rphno,
-        email: Remail,
-      },
-      success: function (response) {
-        var jsonData = JSON.parse(response);
-        if (jsonData.status === "OK") {
-          $(".regClose").click();
-          $("#phone").val(Rphno);
-          $(".phoneData").hide();
-          $("#loginModal").click();
-        } else {
-          $(".RegErrordiv").slideDown().show();
-          $(".RegError").html(jsonData.message);
-        }
-      },
-    });
+    if ($("#AgreeCheck").is(":checked")) {
+      $.ajax({
+        type: "POST",
+        url: API_URL + "customer/registerasotp/",
+        data: {
+          name: Rusername,
+          phone: Rphno,
+          email: Remail,
+        },
+        success: function (response) {
+          var jsonData = JSON.parse(response);
+          if (jsonData.status === "OK") {
+            $(".regClose").click();
+            $("#phone").val(Rphno);
+            $(".phoneData").hide();
+            $("#loginModal").click();
+          } else {
+            $(".RegErrordiv").slideDown().show();
+            $(".RegError").html(jsonData.message);
+          }
+        },
+      });
+    } else {
+    $(".RegErrordiv").slideDown().show();
+      $(".RegError").html("Please Agree our Terms and Condition!");
+    }
   }
 }
 
@@ -119,7 +124,9 @@ function verify() {
         if (window.location.href.indexOf("booking.php") > -1) {
           $(".bookLogin").show();
           $(".bookLoginshow").show();
-          $(".bookLogin").html("Please Enter Submit Button to Verify your Booking")
+          $(".bookLogin").html(
+            "Please Enter Submit Button to Verify your Booking"
+          );
           // $("#submitData").submit();
           // $("#submitData").trigger('submit');
         }

@@ -9,7 +9,7 @@ if ($edit == 0) {
     $count = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM ys_user WHERE yn_uid='$uid'"));
     if ($count > 0) {
         $query = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM ys_user WHERE yn_uid='$uid'"));
-        $data = array("status" => "OK", "message" => "success", "name" => $query['yn_name'], "phone" => $query['yn_phone'], "email" => $query['yn_email']);
+        $data = array("status" => "OK", "message" => "success", "name" => $query['yn_name'], "phone" => $query['yn_phone'], "email" => $query['yn_email'], "notif" => $query['yn_notification']);
     } else {
         $data = array("status" => "KO", "message" => "There was an error, Please try again!");
     }
@@ -54,6 +54,11 @@ if ($edit == 0) {
                 $QueryOTP = mysqli_query($connection, "INSERT INTO ys_otp (yn_otp_phone,yn_otp_val)VALUES('$phone','$OTP')");
                 if ($QueryOTP) {
                     $data = array("status" => "OK", "otp" => $OTP);
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, "http://sms.dewdropds.com/sendsms/sendsms.php?username=ddysanga&password=tech321&type=TEXT&sender=%20YSANGA&mobile=$phone&message=%20Your%20OTP%20to%20Login%20for%20YuvakaSangha%20Facility%20booking%20is%20$OTP.%20Valid%20for%205%20minutes.&PEID=1501640110000034974&HeaderId=1505164102607446927&templateId=%201507164140126743578");
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                    $response = curl_exec($ch);
+                    curl_close($ch);
                 } else {
                     $data = array("status" => "KO", "message" => "There was an error,Please try again!" . mysqli_error($connection));
                 }

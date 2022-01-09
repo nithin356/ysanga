@@ -37,7 +37,7 @@ include 'lander-components/head.php' ?>
         margin-right: 10%;
         margin-top: 15%;
         max-width: 350px;
-        padding: 16px;
+        padding: 25px;
         background-color: white;
         z-index: 2;
         border-radius: 25px;
@@ -216,6 +216,10 @@ include 'lander-components/head.php' ?>
                 <label style="color: grey;"><b>Other Requirements</b></label>
                 <input type="text" id="otherReq" name="otherReq" class="form-control" placeholder="Other Requirements">
                 <br>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Allow us to send notifications on <i class="fab fa-whatsapp" style="color:green;"></i> Whatsapp!</label>
+                </div>
                 <center>
                     <input type="submit" value="submit" class="form-btn btnCheckSubmit">
                 </center>
@@ -274,6 +278,10 @@ include 'lander-components/head.php' ?>
                                         </div>
                                         <div class="input-field col s12 m4 l2">
                                             <input type="text" id="otherReq" name="otherReq" placeholder="Other Requirements">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Allow us to send notifications on <i class="fab fa-whatsapp" style="color:green;"></i> Whatsapp!</label>
                                         </div>
                                         <div class="input-field col s12 m4 l2">
                                             <input type="submit" value="submit" class="form-btn btnCheckSubmit">

@@ -9,7 +9,7 @@ $sessionservice = mysqli_query($connection, "SELECT * FROM ys_user_service WHERE
 $count = mysqli_num_rows($sessionservice);
 if ($count > 0) {
     $rowservice = mysqli_fetch_assoc($sessionservice);
-    $booking = array("timeslot" => $rowservice['yn_time'], "arrival" => $rowservice['yn_arrival'], "org" => $rowservice['yn_organisation'], "status" => $rowservice['yn_s_status'], "eventtype" => $rowservice['yn_eventtype'], "other" => $rowservice['yn_other'], "created" => $rowservice['yn_created']);
+    $booking = array("timeslot" => $rowservice['yn_time'], "arrival" => $rowservice['yn_arrival'], "org" => $rowservice['yn_organisation'], "status" => $rowservice['yn_s_status'], "eventtype" => $rowservice['yn_eventtype'], "other" => $rowservice['yn_other'], "created" => $rowservice['yn_created'], "sid" => $sid);
     $data = array("status" => "OK", "message" => "success", "booking" => $booking);
 } else {
     $data = array("status" => "KO", "message" => "There was an error, Please try again!");

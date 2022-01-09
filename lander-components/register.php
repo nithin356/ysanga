@@ -3,7 +3,7 @@
         <div class="log-in-pop">
             <div class="log-in-pop-left">
                 <h1>Hello... <span>{{ name }}</span></h1>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                <p>Don't have an account? Create your account. It's take less then a minutes! <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2" style="color:white;font-weight:bold;">Click here to Register</a></p>
                 <ul>
                     <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2"><i class="fa fa-plus"></i> Create a new account</a>
                     </li>
@@ -51,7 +51,7 @@
             <div class="log-in-pop-left">
                 <h1>Hello... <span>{{ name1 }}</span></h1>
                 <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                <h4>Already have an account ?</h4>
+                <h4>Own an account?</h4>
                 <ul>
                     <li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1"><i class="fas fa-sign-in-alt"></i> Login</a>
                     </li>
@@ -60,7 +60,7 @@
             <div class="log-in-pop-right">
                 <a href="#" class="pop-close regClose" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                 </a>
-                <h4>Create an Account</h4>
+                <!-- <h4>Create an Account</h4> -->
                 <div class="alert alert-danger alert-dismissable RegErrordiv"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="RegError"></span> </div>
                 <form class="s12">
                     <div>
@@ -81,54 +81,25 @@
                             <label>Email id</label>
                         </div>
                     </div>
-                    <div>
-                        <div class="input-field s4">
-                            <input type="button" id="Rsubmit" value="Register" class="waves-effect waves-light log-in-btn register">
+                    <div style="margin-left: -5%;">
+                        <div class="input-field s12">
+                            <input type="checkbox" class="form-check-input" id="AgreeCheck">
+                            <label class="form-check-label" for="AgreeCheck">Agree Our Terms and Conditions!</label>
                         </div>
+                    </div>
+                    <div style="margin-top: 14px;">
+                        <center>
+                            <div class="input-field s4">
+                                <input type="button" id="Rsubmit" value="Register" class="waves-effect waves-light log-in-btn register">
+                            </div>
+                            <br>
+                            <label class="form-check-label">Already have an Account ?<a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Login</a></label>
+
+                        </center>
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- FORGOT SECTION -->
-    <!-- <div id="modal3" class="modal fade" role="dialog">
-        <div class="log-in-pop">
-            <div class="log-in-pop-left">
-                <h1>Hello... <span>{{ name3 }}</span></h1>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                <h4>Login with social media</h4>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="log-in-pop-right">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                </a>
-                <h4>Forgot password</h4>
-                <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                <form class="s12">
-                    <div>
-                        <div class="input-field s12">
-                            <input type="text" data-ng-model="name3" class="validate">
-                            <label>User name or email id</label>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="input-field s4">
-                            <input type="submit" value="Submit" class="waves-effect waves-light log-in-btn">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> -->
 </section>

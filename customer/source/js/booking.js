@@ -83,6 +83,7 @@ function loadServices() {
     success: function (response) {
       var jsonData = JSON.parse(response);
       if (jsonData.status === "OK") {
+        $('.containers').show();
         $(".serviceName").html(jsonData.service.sname);
         $(".serviceSdesc").html(
           jsonData.service.sdesc +
@@ -340,7 +341,7 @@ function getBookdate(e) {
         $('.timeSlotVal[value="3"]').hide();
         if (jsonData.slot.length >= 2) {
           $(".succeShow").show();
-          $(".succeShow").html("2 Slots are Booked");
+          $(".succeShow").html("Not Available");
         }
         if (jsonData.slot.length == 0) {
           for (var i = 1; i < 4; i++) {

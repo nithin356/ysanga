@@ -5,6 +5,13 @@
 include_once 'backend/access/connect.php';
 session_start();
 $sid =  $_SESSION['yn_sid'];
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$mobile = 0;
+if (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i', $useragent) || preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i', substr($useragent, 0, 4))) {
+    $mobile = 1;
+} else {
+    $mobile = 0;
+}
 $dQuery = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM ys_service WHERE yn_sid = '$sid'"));
 
 include 'lander-components/head.php' ?>
@@ -21,6 +28,34 @@ include 'lander-components/head.php' ?>
 
     .ui-state-disabled span {
         color: white !important;
+    }
+
+    /* Add styles to the form container */
+    .containers {
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        margin-top: 15%;
+        max-width: 350px;
+        padding: 16px;
+        background-color: white;
+        z-index: 2;
+        border-radius: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .btns {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .btns:hover {
+        opacity: 1;
     }
 
     #ui-datepicker-div {
@@ -158,66 +193,99 @@ include 'lander-components/head.php' ?>
         <!-- <div class="hp-view">
           <iframe src="https://www.w3schools.com/bootstrap/la.jpg" allowfullscreen=""></iframe>
         </div> -->
+        <?php
+        if ($mobile == 0) { ?>
+            <form class="containers" style="display: none;" id="submitData" autocomplete="off">
+                <h1>Check Availability</h1>
+                <label style="color: grey;"><b>Available Date</b></label>
+                <input type="text" id="from" name="from" class="arrival form-control" onchange="getBookdate(this)" readonly="readonly" placeholder="Available Dates">
+                <label style="color: grey;"><b>Available Time Slot</b></label>
+                <li class="dropdown" style="list-style: none;">
+                    <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="btnDrop dropdown-toggle form-control" style="width: 100%;height:45px;background:white;border-radius:3px;text-align: left;padding-left: 4%;font-size: 12px;">Available Time Slot<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="succeShow">Choose the Date </a></li>
+                        <li><a class="timeSlotVal" value="1" style="display:none;">9:00 AM - 2:30 PM</a></li>
+                        <li><a class="timeSlotVal" value="2" style="display:none;">3:00 PM - 9:00 PM</a></li>
+                        <li><a class="timeSlotVal" value="3" style="display:none;">9:00 AM - 9:00 PM</a></li>
+                    </ul>
+                </li>
+                <label style="color: grey;"><b>Event type</b></label>
+                <input type="text" class="toe form-control" placeholder="Enter your Event">
+                <label style="color: grey;"><b>Organisation Name</b></label>
+                <input type="text" id="nameorg" name="nameorg" class="form-control" placeholder="Name or Organisation name">
+                <label style="color: grey;"><b>Other Requirements</b></label>
+                <input type="text" id="otherReq" name="otherReq" class="form-control" placeholder="Other Requirements">
+                <br>
+                <center>
+                    <input type="submit" value="submit" class="form-btn btnCheckSubmit">
+                </center>
+            </form>
+        <?php
+        }
+        ?>
         <div id="content">
             <img src="img/siteimages/ezgif-2-6d0b072c3d3f.gif" style="width: 100%;margin-top:50px;" />
         </div>
         <!--END HOTEL ROOMS-->
         <!--CHECK AVAILABILITY FORM-->
-        <div class="check-available">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="inn-com-form">
-                            <form class="col s12" id="submitData" autocomplete="off">
-                                <div class="alert alert-danger alert-dismissable bookErrordiv" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
-                                <div class="alert alert-info alert-dismissable bookLoginshow" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Info!</strong> <span class="bookLogin"></span> </div>
-                                <div class="row">
-                                    <div class="col s12 avail-title">
-                                        <h4>Check Availability</h4>
+        <?php
+        if ($mobile == 1) { ?>
+            <div class="check-available">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="inn-com-form">
+                                <form class="col s12" id="submitData" autocomplete="off">
+                                    <div class="alert alert-danger alert-dismissable bookErrordiv" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Warning!</strong> <span class="bookError"></span> </div>
+                                    <div class="alert alert-info alert-dismissable bookLoginshow" style="display:none;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> <strong>Info!</strong> <span class="bookLogin"></span> </div>
+                                    <div class="row">
+                                        <div class="col s12 avail-title">
+                                            <h4>Check Availability</h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="from" name="from" class="arrival" onchange="getBookdate(this)" readonly="readonly">
-                                        <label for="from" class="aData">Available Date</label>
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <!-- <select class="timeslot" id="thisData">
+                                    <div class="row">
+                                        <div class="input-field col s12 m4 l2">
+                                            <input type="text" id="from" name="from" class="arrival" onchange="getBookdate(this)" readonly="readonly">
+                                            <label for="from" class="aData">Available Date</label>
+                                        </div>
+                                        <div class="input-field col s12 m4 l2">
+                                            <!-- <select class="timeslot" id="thisData">
                                             <option value="" disabled selected>Time Slot</option>
                                             <option value="1">9:00 AM - 2:30 PM</option>
                                             <option value="2">3:00 PM - 9:00 PM</option>
                                             <option value="3">9:00 AM - 9:00 PM</option>
                                         </select> -->
-                                        <!-- <span class="time-slot"></span> -->
-                                        <li class="dropdown " style="list-style: none;">
-                                            <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="btnDrop dropdown-toggle" style="width: 100%;height:45px;background:white;border:none;border-radius:3px;text-align: left;padding-left: 6%;font-size: 12px;">Available Time Slot<span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="succeShow">Choose the Date  </a></li>
-                                                <li><a class="timeSlotVal" value="1" style="display:none;">9:00 AM - 2:30 PM</a></li>
-                                                <li><a class="timeSlotVal" value="2" style="display:none;">3:00 PM - 9:00 PM</a></li>
-                                                <li><a class="timeSlotVal" value="3" style="display:none;">9:00 AM - 9:00 PM</a></li>
-                                            </ul>
-                                        </li>
+                                            <!-- <span class="time-slot"></span> -->
+                                            <li class="dropdown " style="list-style: none;">
+                                                <button id="options" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="btnDrop dropdown-toggle" style="width: 100%;height:45px;background:white;border:none;border-radius:3px;text-align: left;padding-left: 6%;font-size: 12px;">Available Time Slot<span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="succeShow">Choose the Date </a></li>
+                                                    <li><a class="timeSlotVal" value="1" style="display:none;">9:00 AM - 2:30 PM</a></li>
+                                                    <li><a class="timeSlotVal" value="2" style="display:none;">3:00 PM - 9:00 PM</a></li>
+                                                    <li><a class="timeSlotVal" value="3" style="display:none;">9:00 AM - 9:00 PM</a></li>
+                                                </ul>
+                                            </li>
+                                        </div>
+                                        <div class="input-field col s12 m4 l2">
+                                            <input type="text" class="toe" placeholder="Enter your Event">
+                                        </div>
+                                        <div class="input-field col s12 m4 l2">
+                                            <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">
+                                        </div>
+                                        <div class="input-field col s12 m4 l2">
+                                            <input type="text" id="otherReq" name="otherReq" placeholder="Other Requirements">
+                                        </div>
+                                        <div class="input-field col s12 m4 l2">
+                                            <input type="submit" value="submit" class="form-btn btnCheckSubmit">
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <input type="text" class="toe" placeholder="Enter your Event">
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="nameorg" name="nameorg" placeholder="Name or Organisation name">
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <input type="text" id="otherReq" name="otherReq" placeholder="Other Requirements">
-                                    </div>
-                                    <div class="input-field col s12 m4 l2">
-                                        <input type="submit" value="submit" class="form-btn btnCheckSubmit">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
         <!--END CHECK AVAILABILITY FORM-->
         <div class="hom-com hom-com-block">
             <div class="container">
@@ -359,8 +427,8 @@ include 'lander-components/head.php' ?>
                     <div class="col-md-4">
                         <!--=========================================-->
                         <div class="hp-call hp-right-com hp-right-com-block">
-                            <div class="hp-call-in"> <img src="images/icon/dbc4.png" alt="">
-                                <h3><span>Check Availability. Call us!</span><span class="servicePhone">Loading</span></h3> <small>We are available 24/7 Monday to Sunday</small> <a class="hrefCall">Call Now</a>
+                            <div class="hp-call-in">
+                                <h3><span>Check Availability. Call us!</span><span class="servicePhone">Loading</span></h3><a class="hrefCall">Call Now</a>
                             </div>
                         </div>
                         <!--=========================================-->

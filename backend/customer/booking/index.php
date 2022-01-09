@@ -2,7 +2,7 @@
 include_once '../../access/connect.php';
 session_start();
 $uid =  $_SESSION['yn_uid'];
-$sessionservice = mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service_img on ys_user_service.yn_sid=ys_service_img.yn_s_id JOIN ys_service on ys_user_service.yn_sid=ys_service.yn_sid WHERE yn_s_cover='1' AND yn_uid='$uid'");
+$sessionservice = mysqli_query($connection, "SELECT * FROM ys_user_service JOIN ys_service_img on ys_user_service.yn_sid=ys_service_img.yn_s_id JOIN ys_service on ys_user_service.yn_sid=ys_service.yn_sid WHERE yn_s_cover='1' AND yn_uid='$uid' ORDER BY yn_us_id DESC");
 
 $count = mysqli_num_rows($sessionservice);
 if ($count > 0) {

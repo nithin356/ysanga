@@ -14,7 +14,7 @@ $(document).ready(function () {
       success: function (response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status === "error") {
-          alert("show error message");
+          alert(jsonData.message);
         } else if (jsonData.status === "success") {
           location.reload();
         }

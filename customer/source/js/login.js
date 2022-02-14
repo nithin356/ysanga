@@ -137,6 +137,8 @@ function verify() {
         loadProfile();
         $(".loginClose").click();
       } else {
+        $(".loginError").html(jsonData.message);
+        $(".loginErrordiv").slideDown().show();
         localStorage.setItem("sessionkey", "0");
         $(".logOut").hide();
         $(".RegisterSide").show();
